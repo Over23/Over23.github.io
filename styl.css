@@ -1,0 +1,58 @@
+/*styl pro homepage a stranky k ni sdruzene, menu plave jen v mozille         */
+
+/*royalblue*/
+
+/*#D0D0D0*/
+body {background-color : black ; color: #D0D0D0  ; font-size: 11pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica;} 
+table {background-color : black ; color: #D0D0D0  ; font-size: 11pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica;} 
+
+/*firebrick*/
+h1{color : firebrick; font-size:18pt; margin: 10px 0 10px 0; font-style: strong}
+h2{color : firebrick; font-size:16pt; margin: 10px 0 10px 0;}
+h3{color : firebrick; font-size:12pt; margin: 10px 0 10px 0; font-style: strong}
+h4{color : firebrick; font-size:10pt; margin: 10px 0 10px 0; font-style: strong}  
+
+/*#6699CC*/
+/*#99CCFF*/
+a:link    {color: #6699CC ; text-decoration:none}
+a:visited {color: #6699CC; text-decoration:none}
+a:hover   {color: firebrick ; text-decoration:none}
+/*006699*/
+
+.obrL   {float : left; margin : 0 5px 0 0; border: 0px solid}
+.obrR   {float : right; margin : 0 5px 0 0; border: 0px solid }
+.obrC   {float : center; margin : 20px 5px 20px 0; border: 0px solid }
+.secret {color : black};
+
+.citace {font-size: 8pt; color: #E0E0E0 ; text-align:right; font-style: italic}
+.odkud  {font-size:  7pt; color: #E0E0E0 ; text-align:right; font-style: italic}
+.zvyraz {/*background-color : #D0D0D0  ;*/color: red  ;}
+
+
+.menu { background-color : black ; color: #D0D0D0  ; font-size: 9pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica;
+	border: solid;  
+        border-width: 1px; 
+        padding: 10px;
+        margin:   3px;
+        position: fixed; top: 0; right: 77%; left: 0;
+        }
+
+.obal { border: none;  
+        border-width: 1px;
+        position: fixed; top: 0; width: 22%; heigh: 100%;}
+
+.celek {border: solid;  
+        border-width: 1px;
+        padding: 10px; 
+        margin:  3px;
+        position: absolute; top: 0; left: 23%; right:0%;
+        }
+.usek {
+        color: #D0D0D0 ; 
+        border:solid; 
+        border-width: 0px 0px 0px 0px;
+        padding: 0px; 
+        margin: 0px 0px 30px 0px;
+        position: relative; top:auto; left: auto; right:auto;
+        }
+
