@@ -1,0 +1,618 @@
++================================+
+
+ Virtual Realities 2.0 - Pøeklad do èe¹tiny v.0.1
+
++================================+
+Pozor: tento dokument není oficiální ani povolený pøeklad pravidel a má slou¾it jako pomúcka pro ménì jaykovì zdatné majitele anglického originálu knihy, je¾ vydala FASA corp.
+Jinak vøele doporuèuji knihu Virtual Realities 2.0 v originální papírové podobì u¾ jen kvùli tomu ¾e se lépe ète, jsou v ní hezké obrázky a vùbec nevím co je¹tì...
+
+Pokud vás napadne nìjaké vylep¹ení, nebo v podstatì cokoli s textem souvisejícího, tak po¹lete emajl na tpetru@gmail.com
+
+
+
+Kapitola první : o tom jak maminka chtela pro svoji dcerusku to nejlepsi <---------------------------pøepsat
+-----------------------------------------------------------------------
+cyberterminály se od deckù li¹í tím, ¾e neobsahují identifikaèní chipy, které automaticky zanechají svùj otisk na v¹em, èeho se u¾ivatel "dotkne"
+Jinak mohou být zcela srovnatelné výkonem, pamìtí a v¹ím ostatním.
+Dal¹í rozdíl je ten ¾e OMOP (MPCP - Master Person Controll Program) není vybaven rutinami pro práci s chipy MASKOVÁNÍ (masking) a ÚNIK (evasion). Pota¾mo vybaven být mù¾e, ale hardware chipy stejnì nejsou installované.
+(Deckeri korporací mají installované i evasion chipy, ale niky ne masking)
+
+Existují bì¾nì pou¾ívané programy, jako napøíklad Medic, které v sobì obsahují bezpeènostní signaturu identifikující jejch u¾ivatele. Na ty by si decker mìl dát pozor pøi koupi na ulici.
+
+Existují prý jakési èipy, které identifikaèní signatury filtrují, ale nejsou 100% spolehlivé, proto¾e na Fuchy hardware nefungují. (Nemaskují Fuchy a nemaskují pred Fuchy)
+
+Øíká se, ¾e v sítích Aztechnology jsou maskovací rutiny k nièemu...
+
+Ka¾dý cyberterminál má hardwarovì zadrátované heslo, které je implicitnì pou¾ito pøi pohybu v TRIXu. Pokud náhodou u¾ivatel na svém cyberterminálu pou¾ije jiné heslo, ne¾ je to v HW zadrátované, bude o tom informován system admin.
+Nìkdy je poøeba ovìøit EEG nebo jiné biometrické údaje pro to, aby mohlo být heslo pova¾ováno za platné.
+Heslo má samozøejmì rùzné úrovnì dùvìryhodnosti. Pokud se pokusí¹ udìlat nìco, na co nemá¹ právo, mù¾eto úroveò sní¾it, cím¾ omezuje¹ své mo¾nosti v TRIXu.
+
+
+Celý matrix je propojen jakýmsi systémem hyperlinkù, které mohou odkazovat napøíklad na man, ale mohou také uvádìt v chod rùzné jiné (a pravdìpodobnì i ¹kodlivé) rutiny.
+
+<h1>Co je Matrix a k èemu slou¾í<h1>
+
+Od jisté doby komplexnost systémù svìta zaèala být natolik slo¾itá, ¾e pøestalo být mo¾né orientovat se v ní díky paradigmatu souborového systému ve 2d rozhraní ovládaného pomocí pøíkazové øádky èi oken.
+V roce 2029 nastal definitivní prùlom, kterým bylo  nalezení propojky mezi lidkým neurálním rozhraním a poèítaèem (DNI - direct neural interface).
+Díky této technologii dens netrvá vyhledání dat nekoneènì dlouho, jak tomu bylo, tokud je¹tì u¾ivatel musel pou¾ívat k práci klávesnici, dnes staèí jen a pouze se pøipojit a ponoøit se na nìkolik milisekund do vesmíru peèlivì uspoøádaných dat.
+Pøestavte si data jako obrovské knihovny jejich¾ knihovníci jsou slo¾ité tøídící rutiny, které na základì va¹ich pøístupových práv a po¾adavkù umo¾òují nalezení ka¾dé informace v nepatrném èase.
+U¾ivatel se jen dotkne daného souboru a tento je ji¾ kopírován do jeho cyberdecku.
+U¾ivatelé si u¾ dnes nemusí pamatovat ¾ádné kódy nebo sady pøíkazù, pokud chtìjí ovládat výrobní linku nebo pracovat s laboratorní technikou, prostì jen myslí vnímají senzory a modelují pomocí virtuálních komponent... a poèítaè se pøitom uèí. Práce moderního chemika je tak napøíklad velice podobná tomu, kdy¾ jste jako dìti sestavovali drátìné modely molekul. Poèítaè va¹i virtuální práci v koneèném dùsledku pøevede na program, který ovlivní pøístroje a zaøízení v reálném svìtì. No není to ú¾asné.
+Cyberdecky se od oficiálnì registrovaných u¾ivatelských cyberterminálù li¹í tím, ¾e nezanechávají své bezpeènostní signatury na v¹em, èeho se jejich u¾ivatel dotkne. Je tedy mo¾né, aby deckeøi tanèili mezi bezpeènostními opatøeními se smíchem na rtech, nicménì kde není ¾alobce není ani soudce a mù¾e se tak snadno stát, ¾e decker vypustí v matrixu du¹i nadobro.
+
+Tak a to jsou základní premisy, které se nezmìnily od dob vydání shadowrunu 2.0.
+To co tvoøí základ knihy je nový pojem SYSTEM OPERATION (SO) co¾ je v podstatì seznam vìcí, které musí u¾ivatel udìlat, aby mohl vyøe¹it nìjaký úkol.
+SO se skládá z SYSTEM TEST (ST), UTILITY PROGRAMS (Utils), které test ovlivòují a ACTIONS, které decker oèekává ¾e nastanou, pokud se test zdaøí.
+
+ST je kontrastní test mezi deckerem a systémem, který se na¾í manipulovat.
+Decker provádí patøièný test subsistému (SUBSYSTEM TEST) X GM provádí bezpeènostní test (SECURITY TEST) proti deckerovu DETECTION FACTORU.
+
+<h1>IKONY:</h1>
+Ka¾dá vìc má v matrix své zpodobnìní ve formì IKONY, v pøípadì u¾ivatele se této ikonì øíká PERSONA, nicménì význam je stejný.
+U¾ivatel neurálního rozhraní nikdy necestuje fyzickz matrixem, jeho tìlo (maso) zùstává na místì odkud se pøipojil (jackpoint), je pomocí symulovaného rozhraní (ASIST) dochází do jeho mozku jiné signály ne¾ ty reálné a mozek tedy mù¾e vnímat jiné vìci ne¾ tìlo, podobnì jako je tomu v pøípadì SimSense.
+Programy persony a základní utility (defacto attributy) jsou nezbytným minimem pro to, aby se mohl u¾ivatel pøipojit do matrix. Kdy¾ se decker pøipojuje do møí¾ky (GRID) nebo k hostiteli (HOST), pracuje se se dvema sadami programù. Jedny z nich jsou takzvaný front-end, neboli u¾ivatelská èást a druhé z nich jsou server side programy, tedy programy, které zpracovávají to co u¾ivatel dìlá, tak aby se tyto akce projevily v systému.
+Server side aplikace s u¾ivatelem komunikují právì pomocí persony, persona tvoøí front-end, který u¾ivatel pøímo vnímá. Proces samozøejmì funguje i obrácenì.
+Je li u¾ivatel odpojen, je-li persona nepou¾itelná nebo je li shozen server, je u¾ivatel offline. Padá do tzv. DÍRY.
+
+
+<h1>MØÍ®KY (GRID) A HOSTITELÉ (HOSTS):<h1>
+Matrix je tvoøen sítí (kabelù telekomunikací, bezdrátových spojení...) propojující rùzná zaøízení, této síti se øíká møí¾ka (GRID). Jednotlivá zaøízení na møí¾ce pøipojená (nemusí se jednat o jeden poèítaè, ale klidnì i podsí» nebo tak) se nazývají hostitelé (HOSTS). Hostitelem je tedy pro potøeby Shadowrunu nazývána jakékoli zaøízení, které je pro deckera alespoò rámcovì zajímavé.
+
+<h1>STRUKTURA MATRIX (MATRIX TOPOLOGY):</h1>
+Møí¾ka, tedy spojení mezi zaøízeními, vytváøí základní strukturu sítì. Existují pouze ètyøi základní druhy spojení: plnì otevøená (open-access), pøístup pomocí poskytovatele (tiered-access), host-host (HOST TO HOST) a pøipojené soukromé møí¾ky (private grid connection).
+
+    <h3>PLNÌ OTEVØENÁ SPOJENÍ (OPEN-ACCESS)</h3>
+Ka¾dé zaøízení prostì pøipojené na møí¾ku má okam¾itì plnì otevøené propojení. Ka¾dý u¾ivatel pøistupující k møí¾ce kdekoli na svìtì má mo¾nost plného pøipojení k takovýmto hostitelùm.
+Ka¾dý kdo je k nìjakému takovému hostiteli pøipojen se mù¾e v klidu odpojit a pøipojit se k jinému ani¾ by tím ukonèil svùj run v matrix.
+
+     |      |
+ ---O---O---O-
+     |      |            LTG
+ ---O---O---
+     |      |
+
+/// definuje se zde pojem Local Telecommunication Grid (LTG), co¾ je møí¾ka na místní úrovni
+
+    <h3>PØÍSTUP POMOCÍ POSKYTOVATELE (TIERED-ACCESS)</h3>
+Pouze jeden u¾ivatel má pøístup pøímo na møí¾ku, ostatí se pøipojují a¾ jeho prostøednictvím.
+Toto uspoøádání v praxi znamená, ¾e ka¾dý kdo se che dostat na hostitele na úrovni B musí projít pøes hostitele na ùrovni A
+
+           LTG
+              |
+              |
+A:          O
+          /   |    \
+         /    |     \
+B:    o    o      o
+
+Pøístup pomocí poskytovatele je èasto vyu¾íván jako bezpeènostní øe¹ení, kdy A hostitel selektuje koho pustí na úroveò hostitelù B. Takováto bezpeènostní politika se nazývá dizajn kontrolního bodu (check-point-design). Tedy host A má velice vysoké zabezpeèení, naproti tomu hostitelé na úrovni B mají ji¾ relativnì nízkou bezpeènostní úroveò.
+
+    <h3>PØIPOJENÍ HOST-HOST (HOST TO HOST ACCESS)</h3>
+Typické zapojení poèítaèù v pøípadì, ¾e potøebují navzájem sdílet dat, ale pøitom ka¾dý z nich vykonává samostatné procesy zpracování tìchto dat.
+Znamená to, ¾e poèítaèe jsou v podsatì zapojeny ka¾dý s ka¾dým a jen nìkolik málo z nich je pøipojeno k hostiteli úrovnì A nebo pøípmo na LTG.
+
+        LTG
+           |
+           |
+A:       O          <-- tiered-access (pøipojení pomocí hostitele)
+           \
+B:        o-------o
+                    / \     <--- host to host
+                  o---o
+
+Na shcematu je naznaèena kombinace propojení pomocí poskytovatele a host-host propojení.
+U¾ivatelé se mohou mezi jednotlivými hosty pohybovat poze tam, kde existuje patøièné spojení.
+
+
+<h3>PØIPOJENÉ SOUKROMÉ MØÍ®KY (PIVATE ACCESS GRID)</h3>
+Na hlavní møí¾ku je pøipojena møí¾ka dal¹í, povìt¹inou firemní, korporaèní, vládní, státní atd., která vytáøí dal¹í úroveò zapojení, ke kterému u¾ jednotliví hostitelé mohou být pøipojeni jakýmkoli z vý¹e popsaných zpùsobù. A také jsou. Paranoia není v sí»ovém designu patologickým jevem, ale pøímou nezbytností.
+
+                    /     /
+              ----O---O---O-
+                 /     /     /
+           ----O---O---O-     <---- Private Access Grid
+               |
+    -O---O--|-O---
+    /      /    | /
+  -O---O---O----             <--- LTG (Local Telephone Grid)
+  /      /     /
+ O---O---O----
+ 
+ 
+ <h1>SYSTÉMOVÁ HODNOCENÍ (SYSTEM RATINGS)</h1>
+ Pravdla matrixu v 1.0 mapovala velice pøesnì ka¾dý uzel sítì a la¾dému pøidìlovala bezpeènostní hodnocení. v pravidlech v 2.0 má ka¾dý systém, a» u¾ host nebo møí¾ka své hodnocení a pìt hodnocení podsystémù: ACCESS, CONTROL, INDEX, FILES SLAVE.
+Tyto hodnocení jsou obecnì oznaèovány za Systémové Hodnocení (SYSTEM RATING).
+	
+
+<h2>BEZPEÈNOSTNÍ HODNOCENÍ (SECURYTY RATING)</h2>
+Bezpeènostní hodnocení se skládá ze dvou èástí bezpeènostního kódu, tedy barvy (SECURITY CODE - COLOR) a hodnoty zabezpeèení, tedy èísla (SECURITY VALUE - NUMBER).
+Rozeznáváme ètyøi bezpeènostní kódy
+	modý - ¾ádný nebo nízký stupeò
+	zelený - prùmìrná bezpeènostní opatøení
+	oran¾ový	- záva¾ná bezpeènostní opatøení
+	rudý - nejvy¹¹í bezpeènostní stupeò
+Existuje je¹tì jeden stupeò, který není oznaèován oficiální barevnou ¹kálou, tento deckeøi nazývají UV (Ultra Violet), nebo také èerný a oznaèuje systémy obsahující smrtící protiopatøení. Zabezpeèení èernéých hostitelù je naprosto rozdílné od tìch, které postihuje standardní barevná ¹kála.
+Hodnocení zabezpeèení se vìt¹inou pohybuje v rozmezí od 4 do 12, ale rozmezí se mù¾e roz¹iøovat. Jisté je to, ¾e dvojciferné hodnocení popisuje extrémní zabezpeèené systémy. Hodnota zabezpeèení urèuje poèet kostek, kterými gamemaster hází vùèi deckerovì systémovému testu.
+
+<h2>HODNOCENÍ SUBSYSTÉMÙ (SUBSYSTEM RATINGS)</H2>
+Pìt hodnocení subsystémù - pøístup (ACCESS), ovládání (CONTROL), prohledávání (INDEX), soubory (FILES) a periferie (SLAVE) - reprezentuje odolnost systémových subsystémù vùèi neautorizované manipulace ze strany deckera. Hodnocení tedy urèují cílová èísla pro v¹echny testy, které musí decker podstoupit, chce li ilegálnì manipulovat se systémem. Napøíklad pokud se decker neautorizovanì pokusí èíst soubory (FILES) v systému, pou¾ije své poèítaèové dovednosti aby provedl pøístupový test (ACCESS TEST) a test souborù (FILES TEST). Pøístupový test se provádí proti pøístupovému hodnocení (ACCESS) a urèuje to, zda se decker dostal do møí¾ky hostitelského systému (nebo do hostitelského systému). Následující test souborù, je-li úspì¹ný, dovolí deckerovi èíst samotné soubory.
+Je dobré si uvìdomit, ¾e jakkoli vysoké hodnoty tìchto pìti  subsystémù se nevstahují na autorizované u¾ivatele, a tedy jim nijak nepøeká¾ejí.
+
+<h3>PØÍSTUP (ACCESS RATING)</h3>
+Je mìøítkem toho, jak obtí¾né je pro neautorizovaného deckera dostat se do hostitelovi møí¾ky. Jestli¾e se tedy o nìco takového decker chce pokusit musí podstoupit test pøístupu (ACCESS) proti hodnocení pøístupového podystému.
+Jestli¾e se decker chce dostat do konkrétního systému, musí podstoupit pøístupový test vùèi hodnocení pøístupového subsystému daného hostitele.
+
+<h3>OVLÁDÁNÍ (CONTROL RATING)</h3>
+Je mírou odolnosti systému proti neoprávnìné manipulaci pomocí administrativních pøíkazù. Napøíklad pokud chce decker ze systému vykopnout autorizovaného u¾ivatele musí podstoupit test. Stejnì tak, pokud by napøíklad chtìl zmìnit bezpeènostní hodnocení a pod.
+
+<h3>PROHLEDÁVÁNÍ (INDEX RATING)</h3>
+Je mírou rezistence systému proti neoprávnìnému prohledávání. Decker který prohledává møí¾ku nebo hostitele, s cílem najít nìco konkrétního, musí si hodit test.
+
+<h3>SOUBORY (FILES)</h3>
+Decker musí hodit proti hodnocení souborù poka¾dé, kdy¾ se sna¾í o jejich neoprávnìné ètení, de¹iforvání, nebo jejich kopírování, tisknutí nebo sma¾ení na chipy.
+
+<h3>PERIFERIE (SLAVE)</h3>
+Pøi pøekonání tohoto hodnocení mù¾e decker ovládat periferní zaøízení, se kterými mù¾e hostitel pracovat (napøíklad kamery, výtahy...)
+
+<h2>FORMÁT ZÁPISU HODNOCENÍ (RATING FORMAT)</h2>
+
+BEZPEÈNOSTNÍ KÓD -BEZPEÈNOSTNÍ HODNOTA /PØÍSTUP/OVLÁDÁNÍ/PROHLEDÁVÁNÍ/SOUBORY/PERIFERIE
+
+èervený-6 s pøístupem a prohledáváním 10, ovládáním 12 a periferiemi na 9 bude zapsán
+
+rudá-6/10/12/10/9/9
+
+ale v podstatì si mù¾e GM zapisovat jak chce, napøíklad vynechat  soubory a periferie, nebo tak nìco...
+
+
+<h1>HODNOCENÍ CYBERDECKÙ (DECK RATINGS)</h1>
+Síla decerovy persony je definována výkonem MPCP (hlavní kontrolní program persony - Master Persona Control Program), ale také programy persony: integritou - podle sr2.0cz LID (bod), sensory (sensors), únikem (evasion) a maskováním (masking). MPCP je de facto operaèní systém cyberdecku a hodnot MPCP reprezentuje mj. schopnost decku odolávat zranìní, bez pøeru¹ení provozu. Na èíselné hodnoty programù persony mù¾e být nahlí¾eno jako na jakési "atributy" deckerovy persony a jsou to právì ony, které se pou¾ívají pro vìt¹inu testù vùèi deckerovi v dobì, kdy je pøipojen v Matrix. Deckeøi pova¾ují tyto "atributy" persony za své vlastní, v matrixových interakcích.
+
+Hodnocení MPCP je ústøední hodnotou cyberdecku. MPCP vynásobeno tøemi je 	maximální celková hodota programù persony a ¾ádný z tìchto programù nesmí svým hodocením pøesáhnout hodnotu MPCP. MPCP je také maximální hodnota pro témìø v¹echny ostatní programové utility, je¾ mohou být v decku vyu¾ity.
+
+Zkrácený formát zápisu vlastností cyberdecku je:
+
+MPCP / INTEGRITA / ÚNIK / MASKOVÁNÍ / SENSORY
+
+Tak¾e napøíklad deck s MPCP 8, který má adekvátnì installovány v¹echny programy persony (3*8=24) by bylo mo¾nozapsat takto:
+
+MPCP-8/8/5/6/5
+
+
+<h1>FAKTOR OBÌVENÍ (DETECTION FACTOR)</h1> <---------------------------- ????
+Gm pou¾ívá faktor obìvení jako cílové èíslo v pøípadì, ¾e provádí test toho, zda byla zji¹tìna deckerova pøítomnost v systému, nebo aby zabránil deckerovi ve vykonání nìjakých akcí v Matrix [více v kapitole systémové testy (System Tests)]. Pro urèení faktoru obìvení seètìte hodnotu maskování s hodnotou podloudnického programu (sleaze), vydìlte dvìma a zaokrouhlete nahoru. 
+
+Pøíkladnì decker s MPCP-8/6/8/6/4 deckem na kterém bì¾í podoudnický program 8 bude mít faktor obìvení 4 [6(maskování)+8(podloudník)=14 --> 14/2=7].
+
+Pokud decer nepou¾ívá podloudnický program, bude jeho faktor obìvení polovina jeho maskování. A to je pøesnì dùvod proè je podloudnický program kurva nezbytný pro ka¾dého deckera s ambicemi a vyvinutéý pudem sebezáchovy.
+
+<h1>HACKOVACÍ REZERVY (HACKING POOL)</h1>
+Systém Matrix 2.0 dává k dispozici deckerovi ménì hackovacích rezerv ne¾ v 1.0.
+Mno¾ství hackovacích rezerv dostanete seètením hodnoty deckerovy inteligence s MPCP decku, vydìlením tøemi a zaokrouhlením dolù. Jakékoli zvý¹ení deckerovi inteligece pomocí drog, cyberware nebo magie se poèítá a je kumulativní pokud gamemaster nerozhodne o pou¾ití volitelného pravidla Vícenásobné Vylep¹ení, které probereme dále.
+
+Obecnì mohou být hackovací rezervy pøidány k jakémukoli testu v Matrix - tedy k systémovému testu, obrannému èi útoènému testu, manévrování, programování a k testùm atributù.
+Nicménì hackovací rezervy nemohou být  pou¾ity v testu iniciativy, nebo v pøípadech, kdy je napøíklad nutné hodit 1k6 na to, aby se zjistilo za jak dlouho hostitel spadne. Tyto testy toti¾ v Shadowrunu nejsou definovány jako testy proti nìjakému cílovému èíslu..
+Hackovací rezervy navíc nemohou být pou¾ity pøi testu síly vùle nebo pøi tìlesném testu v pøípadì, ¾e decker odolává zranìní od èerného IC. V takovéto situaci pomáhá jen karma, vylep¹ení cyberdecku nebo magicko/biowarové vylep¹ení tìla a síly vùle.
+
+<h2>CYBERWARE A REZERY</h1>
+Ka¾dá z cyberhraèek ze Shadowrunu 2.0, Shadowtechu nebo Cybertechnology Sourcebooku, která zvy¹uje Inteligenci mù¾e být pou¾ita pro zvý¹ení hackovacích rezerv, jak bylo ji¾ popsáno vý¹e. Dva specifické pøíklady takovýchto pøedmìtù, èasto pou¾ívaných mazanými deckery vy¾adují speciální pozornost. Tyto jsou Encephalon implants (mozkový implantát?) a Math SPU (viz. Shadowtech str 49 a 52).
+Encephalon iplants zvy¹ují inteligenci a tento bonus je zahrnut do výpoètu hackovacích rezerv. navíc poskytují tyto implantáty Task Pool (?????) pro nìkteré konkrétní aktivity. Pokud má decker vlo¾ený dovednostní èip (skillsoft) poèítaèových dovedností s hodnocením rovným nebo vy¹¹ím ne¾ jeho vlstní dovednost, nebo pokud pou¾ívá pouze softwarovou dovednost je Task Pool také pøièten k hackovacím rezervám. Zde stojí za pov¹imutí, ¾e nejní tøeba neurospoj v pøípadì, ¾e má decker implantovaný encephalon implantát aèkoli jinak by zapotøebí byl.
+Math SPU zvy¹uje inteligenci postavy o polovinu dosavadního hodnocení pro potøeby deckování. Co¾ je velice u¾iteèné, ¾e decker prostì nemá milion nujenù k tomu, aby si postavil kurva-¾havej deck. takhle staèí 23.000 a nìjaká zanedbatelná tro¹ka esence.
+
+
+
+<h2>VOLITELNÉ PRAVIDLO: VÍCENÁSOBNÉ VYLEP©ENÍ (OPTIONAL RULE: MULTIPLE IMPROVEMENTS)</H2>
+ravidlo vícenásobných vylep¹ení mù¾e být vyu¾ito v pøípadì, ¾e GM chce zabránit hráèùm vytváøet superdeckerské postavy s obrovskými hackovacími rezrrvami.
+V takovém pøípadì mù¾e postava vyu¾ít pouze inteligenci, ebo vy¹¹í z vylep¹ených hodnot. Vìt¹inou bude tedy pou¾it bonus za encephalon implant, proto¾e do hakovacích rezerv pøímo pøidává i task pool.
+
+<h1>SYSTÉMOVÉ TESTY (SYSTEM TESTS)</h1>
+Jak ji¾ bylo zmínìno v úvodní èásti knihy, neutorizovaný decker musí provádìt systémové testy, kdykoli se pokusí provést nìjakou akci v Matrix. Tyto testy jsou v¾dy øe¹eny jako kontrastní test mezi deckerem a hostitelem/møí¾kou. Decker pou¾ívá poèítaèové dovednosti v testu subsystémù, podle toho, kterou z akcí se pokou¹í provést. Tak¾e napøíklad logování do systému vy¾aduje test pøístupu (ACCESS TEST) proti pøístupového hodnocení systému. Obdobnì je tomu i pøi ètení souborù atd. Cílové èíslo je navíc modifikováno nìkterou utilitou kterou má decker spu¹tìnou a také aktuálním situaèním modifikátorem (úrovní poplachu systému (system alerts level), po¹kozením cyberdecku nebo deckera atd.)
+Pro vyhodnocení úspìchu GM hodí hodnotou zabezpeèení (security value) hostitele nebo møí¾ky proti deckerovu faktoru obìvení (detection factor).
+
+Následující pøíklad ukazuje první krok, který decker musí udìlat. tedy vniknutí do systému, ani¾ by byl spozorován.
+
+<i>
+VymazanáHlava má poèítaèe na 6 a MPCP-8/6/6/6/6 deck.
+Má také spu¹tìn podloudnický program: 5, tak¾e jeho faktor obìvení je 6 (6+5=11/2 = 5,5 zaokrouhleno nahoru). VymazanáHlava má installovaný a  aktivovaný i program klamání (deception): 4.
+Sna¾í se pøipojit k  Rudá-8 hostiteli s pøístupem 11. Vzhùru k systémovému testu.
+
+VymazanáHlava hodí 6k6 svých poèítaèových dovedností, proti 11 (pøístup)-4 (za program klamání), tedy celkove je cílové èíslo 7.
+
+GM hodí 8k6 (hodnota systémového zabezpeèení) proti cílovému èíslu 6, co¾ je Výmazùv faktor obìvení.
+
+Po hodech se uká¾e ¾e decker má jeden úspìch a hostitel ¾ádný, tak¾e je vevnitø a mìl sakra ¹tìstí. Mù¾e jen doufat, ¾e mu vydr¾í.
+
+Kdyby decker nemìl pu¹tìný klamavý program, nemìl by ¾ádný úspìch a nedostal by se dovnitø.
+
+POUÈENÍ: Kdy¾ chce¹ nìco od sytému, sna¾ se jej oklamat. (hodnì volný pøeklad :)
+</i>
+
+Jestli¾e decker dosáhne více úspìchù ne¾ hositel, vyhrál a mù¾e provádìt své akce. Jestli¾e v¹ak decker prohraje GM si zapí¹e poèet úspìchù hostitele spoleènì s jakýmikoli pøedchozími jeho úspìchy, které dosáhnul v systémovém testu proti deckerovi. Celková hodnota je hodnotou poèítadla problémù (SECURITY TALLY)
+
+<h1>POÈÍTADLO PROBLÉMÙ (SECURITY TALLY)</h1>
+GM si zaznamenává ka¾dý úspìch, kterým systém pøevá¾il nad deckerem v systémovém testu do takzvaného poèítadla problémù. V momentì, kdy poèítadlo pøekroèí GMstrem stanovenou hodnotu, nìco se stane. Mù¾e to být v podstatì cokoli, v závislosti na bezpeènostním kódu uzlu (barvì), od spu¹tìní èerného IC po naprosté nic. Decker nikdy neví na jak si se systémem stojí a co se stane. Tak¾e nikdy neví, kolik akcí mù¾e je¹tì provést ne¾ systém zjistí, ¾e se do nìj naboural a udìlá to nejlep¹í co bude umìt, aby jej dostal pryè.
+Více bude popsáno v èíásti urèené pouze pro GM.
+
+
+>>>>>>> [U¾ se to zase celý mìní.] <<<<<<<<
+                      - Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Ale panáèku, v¾dy» to je pøesnì to co to má dìlat :) <<<<<<
+                      - Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Ví¹, tro¹ku mì urá¾í, ¾e mi øíká¹ panáèku. U¾ od devìtadvacátýho jsme vìdìli, ¾e d¾in je venku z láhve. Pak to celý bylo jako velikej kolotoè. Ale kdy¾ se dostala ven technologie ASIST, soft pro decky a IC, tak to zaèala bejt opravdu kurevsky vostrá jízda lunaparkem. Kdo moh vìdìt kam to celý povede? Dva roky dozadu byly na modelované systémy natolik vzácný, ¾e se lidi pøipojovali jen proto, aby je videli. Dnes má svùj model snad ka¾dej hostitel z výprodeje na týhle planetì]      <<<<<<<
+                      - Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [JJ, ka¾dej takovej desetijenovej sýstém je prostì inflace, no.] <<<<<<
+                      - Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Ani chvilku to nepostojíí.] <<<<<<<<
+                      - Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Koneènì proè by taky mìlo. Jen si musí¹ zachovat smysl pro perspektivu. "To see the world in a groin of sand." jak øekl kámo¹ Blake] <<<<<<
+                      - Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Hovno kámo¹. Willi dìlal ze v¹eho okolo sebe peklo.] <<<<<<<<
+                      - Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Jam myslí¹, ka¾dopádnì to bylo nìco o tom, ¾e by èlovìk nemìl stratit zájem o vìci okolo sebe. A» u¾ jesou to svìty v klínì písku nebo bity tikajiící v køemíku. To u¾ je jedno.
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Ale za jakou cenu. Dne¹ní dìti nemají ani páru kdo to byl William Blake a kdy¾ se øekne ledovec, myslí hned na uzel plný IC. Nikdy ¾ádný z nich nevylezl ani na jediný a kdyby se vùbec dozvìdìli, ¾e byl nìkdo, na ledovce lezl, pova¾ovali by jej za blázna.
+Metafory se staly realitou jejich ¾ivota, prostì jsou naladìní na virtuální realitu a co se dìje vì svìtì masa, co v nìm co znamená, to je prostì nezajímá. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [A mo¾ná je to tak správnì? ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [No ty bys mìl vìdìt, ¾e smyslem Matrix je to, aby svìt byl lep¹í a¾ se ospojí¹. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Øekni tohle Cind nebo Wendell a Jerusalem. A kdy¾ u¾ si u toho, zeptej se Jerusalem na Billiho Blakea. Stáhne si megapulz nejpodrobnìj¹ích analýz døíve ne¾ ty dopí¹e¹ svùj pøíspìvek. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Jerusalem je quadriplegic s rejection syndromem (???????????????????) ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Ne to je Cind, Jerusalem ma myasthenia gravis. V reálném svìtì by pùsobili smì¹nì a stali by se snadným cílem predátorù, kteøí se motají v¹ude okolo. Ale v Trixu jsou skoro nevystopovatelní. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Jo ale není to realita sakra. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Realita? Kdy¾ vypadnem z tohodle kapesního systému a pevností bouøe, co si ji vystavìla Fuchi, proletíme do správného subsystému, mù¾eme odpojit elektriku vìt¹inì lidí v Seattle. Uvìdomuje¹ si vùbec, kolik lidí by to zabilo. Co je pak víc reálné? ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Pøesnì, dávat dané. Spousta z nás je daleka pokusùm znièit tenhle druh IC. Ale to co se tu pokou¹í¹ øíct je, ¾e mìøíme realitu pomocí schopnosti nièit? ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [A kdy to tak nebylo? Dnes lidé s nejvíce informacemi definují realitu. Døíve to býval ten s nejlépe vyzbrojenými rytíøi, kteøí dokázali chránit zemi. Ale ze síly vzniká krása, nìkdy dokonce mír. Cind doká¾e roztrhat procesy jako tygøice, ale stejnì vìt¹ina jejích penìz jde na upgrade syntetizátorù na které hraje v Matrixu své koncerty. Nauèila by se bez své síly hrát muziku jako bohynì? ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Tvùj hlavní argument je naivní. Jen pomysli na osvobození Východoevropských národù od Sovìtù v osumdesátejch. Nestøílelo se, zbranì nebyly potøeba. Na celém kontinetì. pero bylo silnìj¹í meèe. Ani tanky ani pu¹ky nemohly zachránit Stranu proti pisálkùm, kteøí chtìli zvolit Farnka Zappu ministrem kultury. Ale vìt¹ina deckerù jsou prostì pankáèi se spoustou hitechu, kteøí by nepoznali osobození a svobodu ani kdybz je trefila doprostøed èela. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Tak¾e ka¾dý sochaø je vrahem kamene, ¾e? Nedìlá to z lidí, kteøí dosáhnou vý¹ ménìcené? ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Ne, samozøejmì ¾e ne. Nedìlalo, nedìlá a dìlat nebude. Ale ta nová generace dìtí møí¾ky... prostì je jich toli, které umøou, a taky tolik, které se nauèí jak efektivnìj abít. A proè to v¹echno? Prostì jen pro spenì¾itelný data. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Plus ca change ... ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Ale di, s tímhle na mì znovu nechoï. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Promiò. Tak to tedy zkusme takhle: pøirozeností køivky technologického vývoje je stálá akcelerace dokud se celá infrastruktura nezhroutí a nedojde k tomu co Vinge nazývá singularitou. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Jasnì. A infrastuktura u¾ je na mnoha místech kolapsu velice blizouèko. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Ale na¹e schopnost pøedpovìdìt výsledky technologických zmìn se blý¾í naprosté nejistotì na stejnì mnoha místech. Tak¾e za¾ijeme nejdøíve kulturní krach, nebo snad kulturní pøerod? ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Nìkteøí z nás se obávají krachu. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Ahh, ale pøedstav si mo¾nosti pøerodu. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [A dìti? ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Mnoho z bude muset zemøít, pokud nepøijde zmìna. Poulièní sirotci, ¾ijí jako pekelné krysy, nebo se modlí k peklùm daleko stra¹nìj¹ím, ne¾ kterými jsem kdy kráèeli. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Ale o co TOMU teda jde? A proè TO chce dìti? ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [O co TOMU jde? A¾ ti budu moct øíct nìco o plánech drakù, budu ti taky moc povykládat o plánech TOHO. Ale proè dìti? V¾dy» je to jasné. Nejlep¹í jsou ty nejmlad¹í, ty které se je¹tì ani nenauèily mluvit. Je daleko snadnìj¹í formovat je. Mohou vnímat Matrix právì tím zpùsobem. Je to jako kdy¾ dítì vyrùstá mezi dvìma jazyky a uèí se je oba. Takovýmto dìtem øíkáme bilinguální. Mají dva rodné jazyky. Více výhodných imprintù, ménì nepøesností. Co myslí¹, jak se bude øíkat tìm novým? Bicosmické? ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [To je odporné. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Nìkteré dìti vyrùstají daleko od odmova, rodièi zcela ignorovány. To je odporné. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Ale já tam byl, skoro poøád jsem se o nìj staral. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+------------------HAUJOBB:OWERFLOW ------------- music
+
+>>>>>>> [Jenom¾e ONO se o nì stará ka¾dou mo¾nou nanosekundu. Tak proto. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Zaplati lsem za to, co jsem udìlal. Jaká bytost mù¾e chtít pou¾ívat dìti tímhle zpùsobem? ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Na to se ptá¹ dne¹ní noc, noc v¹ech nocí v roce, kdy Dítko se nám zrodilo... ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Nerouhej se! ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [To nemìl být útok. Ty slleduje¹ své cesty já sleduji své. Ty vidí¹ ve¹kerou nadìji svìta ve zrození dítìte, které¾to si pøipomíná¹ dne¹ní nocí. Jednou zøí¹ nadìji tvé zemì a tvého lidu ve zrození dal¹ího. Mo¾ná, ¾e TO vkládá SVOU nadìji do ditìte, které má být zrozeno. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+
+>>>>>>> [Ty si myslí¹, ¾e TO ví co pøijde? ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [A ví snad nìkdo z nás. Nìjaký èas TO tu nebylo, ale teï si myslím, ¾e nikdo na planetì nemù¾e øíct jaké zdroje TO má a kolik toho ví. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Já si myslím... ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Já vím co si myslí¹. Vím víc ne¾ dobøe, co pøijde tentokrát. Ale je¹tì nikdy tu nebylo nic podobného jako je Matrix. Jak se tenhle nový vesmír spojí se silami toho starého. To je to co nevím. Mo¾ná, ¾e mezi nimi zùstane stát pevná zeï, mo¾ná ¾e ne. Teï se je¹tì zdá pevná, ale mo¾ná pøí¹tí rok? Nebo pøí¹tí dekádu? Nemù¾em ani hádat. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Nepletu-li se tak tohle je pøesnì ta tvoje singularita, ¾e? Stav kdy nic z minulého, nemù¾e nám poskytnout dostatek záchytných bodù, z nich¾ by ¹lo usuzovat. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Dost pøesnì. A mù¾u ti øíct jednu vìc. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Hmm, co byto tak mìlo být. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [Budu se zajímat. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>>>>>> [Oh, jaká obrovská pomoc. ] <<<<<<<<
+- Ambrose {**:**:**/12-24-56}
+
+>>>>>>> [No dobøe, prostì nechce¹, aby to bylo snadné, ¾e? ©»astné a veselé vánoce Ambrose. ] <<<<<<<<
+- Vytlemenec {??:??:??/12-24-56}
+
+>>UKONÈI VSTUP
+<<VSTUP UKONÈEN>>
+
+
+
+<h1>
+¤'°`°'¤,¸¸,¤[ MØÍ®KA A HOSTITELÉ (GRID AND HOSTS) ]¤,¸¸,¤'°`°'¤
+</h1>
+
+
+Ne, pane. Oparvdu se o to nemusíme zajímat. My jsem telefonní spoleènost.
+  - souèást pøedstavení Lily Tomlin ze dvacátého století
+
+Ne, obèané. Opravdu se o to nemusíte zajímat. My jsme telefoní spoleènost. Je to nahráváno.
+  - reklama na slu¾by z jedenadvacátého století
+
+
+Tato èást knihy popisuje møí¾ku (systém propojení) a hostitele (poèítaèové systémy). Poskytuje informace o hodnocení tìchto systémù, rùzné metody pøístupu do nich a jiná u¾iteèná data pro deckery.
+
+<h2>MØÍ®KY (GRIDS)</h2>
+Termínem møí¾ka se èasto rozumí Matrix, ale v Matrix 2.0 termín oznaèuje pøedev¹ím telekomunikace, telefonní spoleènosti. Situace roku 2056 vychází z doby Pádu v devìtadvacátém, kdy se vìt¹ina vyspìlých spoleèností svìta rozhodla pro jednoho monopolního poskytovatele komunikaèních spojení. Rozhodnutí vycházelo z potøeby pøedcházet dal¹ímu Pádu a nemìlo nic spoleèného s loby megakorporací a samozøejmì u¾ vùbec ne s touhou kontrolovat toky informací proudící mezi obèany.
+
+Národní møí¾ky sestávají z Regionálních telekomunikaèních Møí¾ek (RTM) (Regional telecommunications Grid - RTG), které¾to jsou vlastnìny a udr¾ovány monoploním poskytovatelem. Regionální telekomunikaèní møí¾ky vìt¹inou obsahují dal¹í podmøí¾ky, zvané Lokální TM -LTM (Local Telecommunication Grids - LTG). LTM jsou defacto analogem smìrovacích telefonních pøedèísel známých ze 20 století a jsou udr¾ovány lokálními úøady nebo odno¾emi mateøské spoleènosti.
+
+<h3>REGIONÁLNÍ TELEKOMUNIKAÈNÍ MØÍ®KY - RTM (REGIONAL TELECOMMUNICATION GRIDS - RTG)</h3>
+Kompletní topologie RTM v Severní americe je popsaná na str. 164 v knize SRII. Hodnocení systémù podle Matrix 2.0 je rozepsán v tabulce HODNOCENÍ RTM V SEVERNÍ AMERICE. Hodnocení RTM zbytku svìta je zaznamenáno v tabulce obdobného jména.
+Proto¾e veøejná møí¾ka je deno dennì zatì¾ována obrovským prùtokem dat a disponuje relativnì malým mno¾stvím bezpeènostních zdrojù, jsou tyto hodnocení ni¾¹í ne¾ hodnocení typického hostitelského poèítaèe.
+jestli¾e nìjaká lokální møí¾ka není na seznamu, berte to tak, ¾e její Prùnikový Faktor (INTRUSION DIFFICULTY) je "snadné" a odeètìte 2 od v¹ech hodnocení (v rozpìtí 6 a¾ 8). Pokud chcete vìdìt víc, podívejte se do kapitoly Prùnikový Faktor (Intrusion Difficulty).
+Proto, aby se minimalizoval dopad vylep¹ení z Matrix 2.0 na ji¾ døíve publikované materiály, møí¾ky si zachovávají své pùvodní Bezpeènostní Hodnocení (Security Ratings).
+
+
+tabulka ---------------------------------> 34/184
+tabulka ---------------------------------> 35/185
+
+<h3>LOKÁLNÍ TELEKOMUNIKAÈNÍ MØÍ®KY - LTM (LOCAL TELECOMMUNICATIONS GRIDS - LTG)</h3>
+Kdy¾ se na zaèátku runu decker pøipojí k veøejné møí¾ce, jeho decker uploaduje jeho personu do LTM. Hodocení LTM, alespoò v Severní Americe jsou vìt¹inou shodné s Systémovým Hodnocením (System Rating) mateøské RTM. V zemích jako je napøíklad nìmecko se mohou Systémové Hodnocení lokální a regionální møí¾ky rùznit.
+
+<h4>VOLITELNÉ PRAVIDLO: ROZDÍLNÉ HODNOCENÍ LTM (OPTIONAL RULE: VARIABLE LTG RATING)</h4>
+Gamemastre mù¾e prùb¾nì mìnit Systémové Hodnocení møí¾ky, a tím vlastnì vyjádøit aktuální zatí¾ení systému, rùzná pøesmìrování, bezpeènostní poplachy a výpadky. Gamemaster rozhodne, zda toto hodocení paltí pro celou møí¾ku, nebo jen pro nìkteré její èásti. Také rozhoduje o tom, zda èísla platí pro celý run, nebo jen na pár hodin atd.
+Chcete-li toto urèit náhodnì, hoïte 1k6, kdy 1 a 2 sni¾ují Systémové Honodnocení o 1. 3 a 4, nic se nemìní. 5 a 6, hodnocení se zvedá o jedna.
+Ale jako v¾dy i zde olatí to, ¾e gamemaster si mù¾e stanovit v podstatì cokoli, aby to odpovídalo zápletce.
+
+<h3>SOUKROMÉ LOKÁLNÍ TELEKOMUNIKAÈNÍ MØÍ®KY - PRIVATE LTGS</h3>
+Soukromé LTM (SLTM), jak ji¾ bylo popsáno na str. 169, SRII, v podstatì tvoøí nezávislé, omezené globální møí¾ky, které jsou pro vìt¹inu veøejnosti nedostupné. Vìt¹ina velkých korporací a ka¾dá megakorporace provozují nejménì jednu takovou møí¾ku. Vlády vyspìlých národù udr¾ují pár soukromých møí¾ek spojujícíchí dislokované vojenskýé èi diplomatické jednotky.
+SLTM vládnou zákony a restrikce dané zemìmi, které je provozují a vlastní, co¾ v koneèném dùsledku znamená, ¾e jejich vlastníci do nich mohou nainstallovat v podsatì jakékoli zaøízení proti nepovolenému pøístupu, které se jim zlíví. Proto¾e budování SLTM vy¾aduje nemalé prostøedky, mnoho vlastníkù neváhá pou¾ít IC.
+SLTM jsou velice stabilní systémy a proto se jeich Systémová Hodnocení nemìní.
+Kdy¾ GM tvoøí SLTM, mù¾e se rozhodnout pro Sytémová Hodnocení z oblasti rudých a oran¾ových sbezpeènostních kódù a pro prùnikový faktor "jednoduchý", jak je popsáno v èásti Prùnikový Faktor (Intrusion Difficulty). Systémová hodnocení nìkterých pøíkladových SLTM budou popsána v kapitole Horký místa Matrixu (Matrix Hot Spots).
+
+<h4>VSTUPNÍ BODY (ENTRY POINTS)</h4>
+Korporaèní SLTM pokrývají celou zemìkouli. LTM s kódem NA/UCAS-NE-3617-EBMMHQ odpovídá, podle základních pravidel Shadowrunu,  jednomu vstupnímu bodu na EBM2 SLTM, tedy v møí¾ce která spojuje korporaèní poèítaèe okolo celého svìta.
+Soukromá Telekomunikaèní Møí¾ka mù¾e mít takovýchto vstupních bodù nìkolik v rúzných veøejných møí¾kách. Napøíklad Saeder-Krupp SLTM má vstupní body na adresách Rhine-Ruhr RTM v Nìmecku (DO3-11), a také NA/UCAS-NE-4212-SKRUPP v New Yorské lokální møí¾ce. Oba mají systémové hodnocení rudá-5/8/10/9/10/10, právì proto, ¾e jsou oba souèástí stejné sítì.
+Decker mù¾e získat pøístup k SLTM pomocí kteréhokoli vstupního bodu, nebo mù¾e projít pøes hostitele, který je k SLTM pøímo pøipojen.
+
+<h4>REGULACE (REGULATIONS)</h4> <----------------------- první èást doufám pøelo¾í nìkdo, kdo ovládá èeský shadowrnový zemìpis
+
+V celku mù¾eme øíct, ¾e snahy omezovat SLTM jsou motivované politicky a jsou nejednotné. Napøíklad v zemích kde korporace prakticky vlastní vlády si korporace vyhrazují práva provozovat SLTM, ale zároveò toto právo upírají jiným. Podobmì je tomu napøíklad v Japonsku, kde mají Jponci vlastnìné korporace právo pøistupovat k SLTM, ale zahranièním korporacím to umo¾nìno není. Pøekvapí vùbec nìkoho, ¾e soukromá møí¾ka Aztlanské vlády je jediná, která funguje legálnì v Aztlanu?
+
+<h3>PØÍPOJKY (JACKPOINTS)</h3>
+Pøípojky pøedstavují fyzická místa kde se decker pøipojuje do Matrix. Ka¾dý druh pøípojky má tøi základní vlastnosti - Stopy (Trace),  Pøístup (Access) a Pøenosovou rychlost (Base Bandwidth).
+Stopy urèují míru vystopovatelnosti dané pøípojky. Èím jsou Stopy pøípojky ni¾¹í, tím jednodu¹¹í je pro IC najít její pozici. Stopy provázejí celý deckerùv run.
+Hodnota Pøístupu (Access) pøípojky je modifikátor, který se vztahuje na v¹echny Deckerovy Pøístupové testy (Access tests) v prùbìhu runu.
+Hodnota pøenosové rychlosti urèuje maximální rychlost kterou bude pøípojka komunikovat ani¾ by se omezila hodnota Stopovacího Faktoru (Trace Factor) - viz èást CYBERDECKY, pojednávající o volitelných pravidlech pro pøenosovou rychlost. Jestli¾e deckerova rychlost pøipojení pøesahuje rychlost pøipojení pøípojky, pou¾ijte následující vzorec pro urèení Stopovacího Modifikátoru (Trace Modifier). Nejprve vydìlte deckerovu pøenosovou rychlost, pøenosovou rychlostí pøípojky, zaokrouhlete výsledek dolù. Vynásobte -1. Výsledek je stopovací modifikátor pøenosové rychlosti.
+Napø. Decker s 78Mp na pøípojce s pøenosovou rychlostí 20 má dodateèný stopovací modifikátor -3 [78/20=3.9=>3*(-1)=-3].
+Stopovací modifikátor pøenosové rychlosti se mù¾e v prùbìhu runu mìnit v závislosti na I/O rychlosti, ale nemù¾e nikdy klesnout pod modifikátor rychlosti deckerové ikony (decker's icon bandwidth modifier).
+Gamemaster mù¾e rozhodnout o tom, ¾e v rùzných místech se bude pøenosová rychlost mìnit. Napøíklad pøípojky v levném hotelu, které pou¾ívají dvakrát kradené pøipojení mohou mít rychost pøenosu 10Mp. Naproti tomu optické rozboèovaèe distribuující signál do komplexu vládních kanceláøí mohou dosahovat rychlostí okolo 40 a¾ 50Mp.
+
+Následující text popisuje hodnoty nejbì¾nìj¹ích pøípojek:
+
+<b>Legální pøístup</b>
+stopovací faktor: -2
+pøístup: -2
+pøenosová rychlost: 20Mp
+Legální pøístup je souèástí ka¾dého trideofonu. Je jasné, ¾e trideofon nemusí být vá¹.
+
+<b>Nelegální pøístup</b>
+stopovací faktor: 0
+pøístup: 0
+pøenosová rychlost: 20 mp
+Jedná se o nejbì¾nìj¹í druh pøipojení, pou¾ívaný deckery. Mù¾e to být linka nelegálnì zavedená nìkým od telecomu, nebo skøíòka s útøednou pøipojená pøímo na kabely datového vedení atd.
+
+<b>Satelitní pøípojka</b>
+stopovací faktor: viz pozdìji
+pøístup: +2
+pøenosová rychlost: 50Mp
+Více podrobností bude probráno v kapitole Satelitní pøípojka (Satelite Link)
+
+<b>Workstation</b>
+stopovací faktor: -4
+pøístup: -4
+pøenosová rychlost: 50Mp
+Deck pøipojený pøímo na hostitele nahrazuje pùvodní terminál. Je sice mo¾né takové spojení nalézt, ale není to úplnì jednoduché dostat se do decku na jeho konci.
+
+<b>Pøidru¾ené zaøízení a periferie</b>
+stopovací faktor: +4
+pøístup: +4
+pøenosová rychlost: 20
+Periferie jsou zaøízení, které mohou být pøi tro¹e pøedstavivost vnímány jako klasická zadní vrátka. Je obecnì známo, ¾e bezpeèáci korporací ke ka¾dému teminálu na møí¾ku postaví hustì se tváøícího hlídaèe s obrovskou bouchaèkou, ale systémový server (hostitel) vìt¹inou provozuje i jiná zaøízení, napøíklad automatickou výrobní linku, bezpeènostní terminál a prodejní automat - to v¹echno jsou místa, která ¹ikovnému deckerovi umo¾ní se pøipojit a nakopat systému koule.
+Periferie jsou ¹patnì vystopovatelné, proto¾e bì¾né IC prohledává komunikaèní spojení a ostatní linky nebude prohledávat, dokud u¾ nezbyde jiná mo¾nost. Nicménì z deckerovi strany je tu malý problém, a tím je to, ¾e by mìl mít dost zku¹eností s programováním a manipulacemi s kódy, proto¾e vìt¹ina systémù není jaksi zvyklá pøijímat pøíkazy od automatu na sodovky.
+
+<b>Pøístup ke konzoli - mínìno asi k serveru</b>
+stopovací faktor: -6
+pøístup: viz text
+pøenosová rychlost: neomezená
+Konozolový pøístupový bod mù¾e být tøeba v panelu nìjakého zaøízení, nebo to také mù¾e být worstation pøipojená s consolovými právy. Konsolová práva znamenají automaticky práva sysopa, nebo jinak prostì root.
+Pro IC je velice jednoduché najít takovéto pøístupy, ale ty zase naopak umo¾nují velice snadný pøístup deckerovi. Decker sna¾ící se dostad dos szstém s právy root má polovièní pøístupové hodnocení (Access Rating) a také hodnotou zabezpeèení (security value) pro v¹echny pøístupové testy. Navíc mù¾e vyu¾ít celou pøenosovou rychlost bez dodateèného sní¾ení stopovacího faktoru pøípojného místa.
+Ka¾dopádnì získat konzolový pøístup vy¾aduje velice ¹ikovného deckera, nebo velice schopný team, kdetý deckera dostane do serverovny a udr¾í jej ¾ivého dost dlouho na to, aby dokonèil svùj biznis.
+
+<h2>MØÍ®KOVÉ POÈÍTADLO PROBLÉMÙ (GRID SECURITY TALLY)</h2>
+Kdy¾ decker prochází jednotlivými Lokálními Telekomunikaèními møí¾kami, nemá to vliv na celkovou hodnotu jeho poèítadla problémù. Napøíklad pøipojí-li se decker v UCAS-SEA-2206, kde po nìkolika nezdaøených akcích obdr¾í dva body na poèítadle a potom projde do UCAS-SEA-4206, kde dostane dal¹í bodík, bude mít celková hodnota na poèítadle stále hodnotu 4 i kdy¾ je o chvíli pozdìji pøipojený v cenrálním systému UCAS-SEA. Kdy¾ se v¹ak decker pøipojí k jiné Regionální telefonní Møí¾ce, poèítají se joho budoucí problémy znovu.
+
+<h3>SOUKROMÉ MØÍ®KY A OÈÍTADLO PROBLÉMÙ </h3>
+Proto¾e na soukromých møí¾kách vìt¹inou bì¾í velice kvalitní bezpeènostní rutiny, pøená¹í se hodnota poèítadla problémù z Regionální Møí¾ky spolu s deckerem do Møí¾ky Soukromé. Defacto to znamená, ¾e decker z minulého pøíkladu, který má ji¾ nìjaké vroubky mù¾e ihned po svém nalogování do soukromé møí¾ky spustit nìjaký o¹klivý obraný program.
+
+<h1> SYSTÉMOVÉ OPERACE NA MØÍ®CE (SYSTEM OPERATIONS ON GRIDS)</h1>
+Krom operací popsaných ní¾e, mù¾e decker v¾dy provést Záchrané Odpojení (Graceful Logoff) - viz pozdìji v kapitole Systémové operace. 
+
+<h2>Z PØÍPOJKY (FROM A JACKPOINT)</h2>
+Deckeøi, kteøí se pøipojují z legální pøípojky pøes trideo mohou vykonat pouze operaci PøipojSe (LogON) k místní Lokální Møí¾ce. Teprve potom musí najít møí¾ku/hostitele se kterým chtìjí manipulovat, pokud neznají její pøesnou polohu. Decker vyu¾ívající pøipojení z Workstation nebo z upravené Periferie nebo dokonce Konzolový pøístup mohou provést jedinì akci PøipojSe (LogOn) k mateøskému hostiteli, který ovládá zaøízení ke kterému jsou pøipojeni.
+
+<h2>NA LOKÁLNÍ MØÍ®CE (ON LTG)</h2>
+V pøípadì, ¾e je decker u¾ pøipojen k Lokální Møí¾ce mù¾e se pøesunout na její mateøskou regionální møí¾ku pomocí operace PøipojSe na RTM (LogON to RTG), nebo se mù¾e pokusit pøipojit se k hostitelùm pøipojeným na Lokální Møí¾ce pomoí pøíkazu PøipojSe k Hostiteli (LogON to Host). Jestli¾e je k Lokální Møí¾ce pøipojena i møí¾ka soukromá, mù¾e se decker pokusit vlámat se na ni.
+Decker se také mù¾e pokusit Pøesmìrovat Datové toky (Redirect Datatrail) a Pozmìnit význam operací (Retrain operations) probíhajících na Lokální Møí¾ce.
+Pamatujte na to, ¾e pokud se decker loguje do Soukromé Møí¾ky, nese si ssebou poèítadlo problémù, které se mù¾e nejenom dále zvy¹ovat, ale také hned po vstupu mù¾e zpùsobit nemilá pøekvapení.
+
+<h2>NA REGIONÁLNÍ MØÍ®CE (ON RTG)</h2>
+Je-li decker jednou pøipojen k Regionální Møí¾ce, mù¾e se z ní (pomocí PøipojSe) dostat do jiné Regionální Møí¾ky nebo mù¾e provádìt tzv. Dálkové Hovory (long-distance call), kterými mù¾e cestovat po celé møí¾ce do jiných èástí svìta. Stejnìtak se decker mù¾e pøipojovat na Lokální Møí¾ky umístìné na Regionální.
+Dal¹í operace, které decker mù¾e na Regionální Møí¾ce provádìt jsou tyto:
+	Locate Access Node
+	Make Comcall
+	Redirect Datatrail			<------------------------------ doplnit pozdìji
+	Retrain
+	Tap Comcall
+
+<h2>NA SOUKROMÉ MØÍ®CE (ON PLTG)</h2>
+Decker pøipojený k soukromé møí¾ce mù¾e provádìt jakékoli systémové operace, které mù¾e provádìt na veøejných lokálních a regionálních møí¾kách.
+
+<h1>SATELITNÍ PØIPOJENÍ (SATELLITE LINKS)</h1>
+Jestli¾e decker pou¾ívá satelit pro pøímou komunikaci s Matrix vymìní vysoké Pøístupové (Access) cílové èíslo za èásteènou imunitu proti Stopovacímu IC (Trace IC). Spo¾dìní signálu mezi deckerovým strojem a satelitem sni¾uje Reakci (Reaction) o -2.
+Stopovací IC sice mù¾e naprosto pøesnì najít pozici satelitu, ale není schopno najít místo, odkud se decker k satelitu fyzicky pøipojuje, tak¾e není mo¾né podniknout fyzické kroky proti útoèícímu deckerovi. Ostatní efekty úspì¹ného stopování jsou poøád platné (viz kapitola Stopovací IC - TRACE IC)
+Aby mohl decker pou¾ívat satelitní pøipojení musí být jeho stroj vybaven satelitním rozhraním (viz kapitola Kyberdecky). Speciálníí komunikaèní software umo¾òuje deckerovi najít aktuální plohu komunikaèního satelitu. Základní èas na nalezení satelitu a vytvoøení spojení je 3 minuty. Proto, aby se dílo zdaøilo, musí decker podstoupit test Poèítaèových dovedností proti cílovému èíslu, je¾ odpovídá podmínkám pokusu o spojení, jak je popsáno v tabulce Cílová Èísla pro Pøipojení k Satelitu.
+Jetli¾e není dosa¾en ¾ádný úspìch, deckerovi se nepodaøilo najít ¾ádný satelit na který bi se dal zamìøit pøena¹eè signálu (transponder). Decker se mù¾e o spojení pokusit znovu cca ka¾dých pìt minut, nebo podle aktuální situace.
+
+Cílová Èísla pro Pøipojení k Satelitu
+=========================
+PODMÍNKY...................................................................CÍLOVÉ ÈÍSLO
+otevøená krajina, èistý výhled na obzor........................2
+otevøená krajina, nìjaké pøeká¾ky..................................3
+otevøená krajina, hory nebo hustý les............................6
+pøímìstská krajina...................................................................3
+lehèí zástavba............................................................................6
+hustá zástavba..........................................................................8
+¹patné poèasí...........................................................................+2
+
+<h2>DECKOVÁNÍ SATELITU (DECKING THE SATELITE)</h2>
+Pro potøeby hry je satelit pojímán jako Lokální Møí¾ka s hodnocením Oran¾ová-Prùmìrná, nebo Oran¾ová-Tì¾ká a nikdy se nesni¾ují jejich Hodnocení Subsytémù (Subsystem Rating). Korporaèní a vojenské satelity jsou hodnoceny Rudá-Tì¾ká.
+Jakmile decker najde satelit, mù¾e se pokusit PøipojitSe. Ze satelitu mù¾e decker provádìt PøipojitSe k Regionálním Møí¾kám na celé zemìkouli. Stejnìtak se mù¾e pøipojovat k vìt¹inì systémù, je¾ krou¾í po nízkých obì¾ných drahách okolo Zemì, pokud umo¾òují patøiènou sí»ovou komunikaci. A pro deckery se sebevra¾ednými tendencemi, Zurich-Orbital nepodporuje standardní satelitní komunikaèní protokol, tak¾e není mo¾né se jejím prostøednictvím dostat do nejchránìnìj¹ích a nejzaledovanìj¹ích míst svìta.
+Poèítadla problémù, je¾ vzniknou na satelitu se spolu s deckerem pøená¹ejí do Regionální møí¾ky.
+
+<h1>HOSTITELÉ (HOSTS)</h1>
+Hostitelské systémy slou¾í jako poèítaèové instalace na kterých probíhá vìt¹ina výpoètù a datových tokù Probuzeného Svìta. Ka¾dý den jimi proudí miliardy nuyenù a nevyèíslitelné mno¾ství megapulzù. Hostitelské systémy slou¾í jako jakési trezory kde jsou deponována rùzná tajemství - rodiné støíbro výzkumnì-vývojových center, skrytá ¹pína z pozanechtù korporací, tajné identity a pravá jména...
+
+<h2>BEZPEÈNOSTNÍ KÓDY (SECURITY CODES)</h2> <------------ ZKONTROLOVAT TERMINOLOGII
+Bezpeènostní kódy vìt¹inou vypovídají cosi o tom, jaká bezpeènostní opatøení jsou v systému installovaná. Bezpeènostní opatøení zase nìkdy opovídají hodnotì dat, je¾ chrání, nicménì daleko èastìji spí¹e vypovídají o paranoidních pøedstavách svých majitelù.
+
+<h3>MODRÝ HOSTITEL (BLUE HOSTS)</h3>
+Modrý hostitel pøedstavuje vìt¹inou nízce zabezpeèené veøejné slu¾by, jako jsou napøíklad knihovny, newsfeeds (originálnì newsfax), rùzné seznamy, soukromé stránky atd.. Je naproto jedno kdo takovéto slu¾by zøizuje a co obsahují, mù¾e to být stejnì tak vláda, jako malá a chudá korporace nebo i soukromá osoba.
+Ka¾dý ¹òupal chudáèek s levným deckem a trochou èasu pravdìpodobnì napadne tako slabì zabezpeèený systém. Je pravdìpodobné, ¾e takovýto hostitel, díky svému nedostateènému zabezpeèení ponese stopy Matrixového vandalozmu, virové grafitti, obscénosti, fragmenty dat je¾ si zde nìkdo odlo¾i, aby sám u¹etøil místo, pøesmìrování na nechtìná místa...
+
+<h3>ZELENÝ HOSTITEL (GREEN HOSTS)</h3>
+Zelení hostitelé jsou prùmìrem matrix, ale to je¹tì neznamená, ¾e jsou snadnou koøistí. Mo¾ná ¾e jejich bezpeènostní politika je tro¹ku více tolerantní k nezvaným hostùm ne¾ oran¾ové nebo rudé systémy, ale v jádru mù¾e být nainstallovaný v podstatì jakýkoli IC.
+Zelení hostitelé vìt¹inou obsahují veøejné databáze, které jsou poskytovány za minimální poplatky. Èasto jsou to také otevøené ¹kolní sítì (i kdy¾ ne ty, kde opravu probíhá vývoj a výzkum) a zelené kódy bezpeènosti mají také corporaèní a vládní poèítaèové systémy urèené ke ka¾dodení práci.
+
+<h3>ORAN®OVÝ HOSTITEL (ORANGE HOSTS)</h3>
+Oran¾ové bezpeènostní kódy nále¾í systémùm, které jsou obecnì ozbaèovány za bezpeèné. Nejsou to ¾ádné zabijácké systémy, ale obsahují ji¾ standardní "tajná" data, nebo se jedná o èásti systému, které ovládají nìjaké dùle¾itìj¹í, ale ne ¾ivotnì nutné, èásti výroby, nebo procesy samotného hostitele. Oran¾ové hostitelské systémy jsou také bì¾nì vyu¾ívány støedním managementem korporací pøi kanceláøské práci.
+
+<h3>RUDÝ HOSTITEL (RED HOSTS)</h3>
+Rudý hostitel je maximum zabezpeèení, které mù¾e být legálnì provozováno v podstatì kýmkoli, kdo si jej mù¾e dovolit. Obsahuje data typu "pøísnì tajné", ¾ivotnì dùle¾ié údaje pro fungování nìèeho dùle¾itého (elektické rozvody, virové laboratoøe, nemocnice...). Opatøení proti vniknutí bývají vìt¹inou smrtící a jednají bez výstrahy. Stejnì taký jsou i bì¾ní u¾ivatelé tìchto systémù.
+
+
+
+<h2>OBTÍ®NOST PRÙNIKU (INTRUSION DIFFICULTY)</h2>
+Systémové hodnocení hostitele - Bezpeènostní Hodnocení (security valie) a Hodnocení Subsystémù (subsystem rating) - jsou zalo¾eny na míøe takzvané Obtí¾nosti Prùniku (Intrusion Difficulty). Matrix 2.0 hodnotí Obtí¾nost Prùniku do systému tøemi stupni - snadné, prùmìrné a obtí¾né. Obecnì je Obtí¾nost Prùniku zalo¾ena na u¾ivatelské pøítulnosti systému (user-friendliness) a na mno¾ství u¾ivatelù kteøí ka¾dodennì pøistupùjí k systému.
+
+<h3>SNADNÉ SYSTÉMY (EASY SYSTEMS)</h3>
+Obecnì lze øíct, ¾e se jedná o systémy, které zdílejí svùj výpoèetní výkon mezi mnoho rùzných u¾ivatelù a úøadoven. Tyto systémy zpracovávají veliké mno¾ství datových tokù za den a proto ji¾ nezbývá tolik zdrojù na systémové zabezpeèení. Typickým pøíladem snadných systémù jsou vysoce centralizované servery korporací, výukové stroje a levné ma¹iny starající se o drobné zále¾itosti.
+
+<h3>PRÙMÌRNÉ SYSTÉMY (AVERAGE SYSTEMS)</h3>
+Obecnì jsou to stroje, které poskytují své prostøedky daleko men¹í skupinì u¾ivatelù pomocí daleko bezpeènìj¹ích procesù a kanálù. Typický prùmìrný systém obstarává jedno odìdlení podniku, men¹í výzkumnou laboratoø a pod. Prosperující men¹í spoleènosti pou¾ívají bì¾nì výhod prùmìrných systémù.
+
+<h3>OBTÍ®NÉ SYSTÉMY (HARD SYSTEMS)</h3>
+Systémy vysoké obtí¾nosti jsou ty, k nim¾ mají pøístup jen velice peèlivì vybraní u¾ivatelé. Typicky se jedná o systémy bankovních transakcí, vládní exekutivu, vojenské systémy, systémy tajných slu¾eb a kriticky dùle¾ité civilní slu¾by jakými jsou napøíklad vzdu¹ná doprava, poyemní kontrola dopravy, lokální zpráva oblasti atd...
+
+<h2>SYSTÉMOVÉ HODNOCENÍ (SYSTEM RATINGS)</h2>
+Gamemaster nastaví Systémová Hodncení podle míry Obtí¾nosti Prùniku. Mù¾e pou¾ít hod kostakmi nebo také jednat vpodstatì libovolnì :)
+
+<h3>NÁHODNÉ GENEROVÁNÍ (RANDOM GENERATION)</h3>
+GM prostì hodí nk6 podle tabulky Náhodného Hodnocení Hostitelského Systému (kdy 1k3 znamená 1k6/2). Hodnoty v tabulce poèítají s prùmìrným deckerem se v¹ím na 4, tak¾e pokud je decker mocnìj¹í, doporuèuje se spí¹e pou¾ít Metodu Pøidìlených Èísel (Assigned Numbers Method) viz ní¾e.
+
+Tabulka Náhodného Hodnocení Hostitelského Systému
+=======================================
+obtí¾nost prùniku ...................... hodnota zabezpeèení .......................... hodnocení subsystému
+snadné.........................................................1k3 + 3....................................................1k3 + 7
+prùmìrné.....................................................1k3 + 6....................................................2k3 + 9
+obtí¾né..........................................................2k3 + 6....................................................1k6 + 12
+
+<i>
+GM generuje hostitele, který obsahuje dùkaz o tom, ¾e korporace obchoduje na èerném trhu. Rozhodne se, ¾e tato informace bude v pamìti místní poboèky Aztechnology. Jedná se o citlivá data a AZT je notoricky známa svou paranoiou, co se deckerù týèe. Tak¾e bezpeènostní kód bude RUDÁ. Systém musí slou¾it vìt¹ímu mno¾ství u¾ivatelù, tak¾e se bude jednat o PRÙMÌRNÝ systém. 
+GM hodí 1k6 na hodnotu zabezpeèení. Výsledek je tøi/2 je (zaokrouhleno nahoru) 2, to nám dává hodnocení zabezpeèení 8 (2+6).
+Teï si je¹tì hodí pìtkrát za jednotlivé podsystémy pro pùmìrného hostitele (2k6+9). Výsledky jsou 11, 15, 13, 13, 12. Tak¾e koneèné hodnocení astlanského systému bude:
+
+Bezpeènostní kód: RUDÁ-8
+Pøístup (access): 11
+Ovládání (control): 15
+Obsah (index): 13						<----------------------------- kontrola terminologie
+Soubory (files): 13
+Periferie (slave): 12
+nebo taky Red-8/11/15/13/13/12
+
+Naprosto stra¹livé pro zaèínajícího deckera s Poèítaèovými dovednostmi na ¹estce a levným deckem. Pijánko pro ostøíleného veterána Matrixových biek na konzoli Fairlight. Stejnì tak, ale mù¾e zatopit spoustì deckerù nìkde mezi tím.
+</i>
+
+<h3>METODA PØIDÌLENÝCH ÈÍSEL (ASSIGNED NUMBER)</h3>
+Gm prostì jen mù¾e pøidìlit konkrétnímu sytému konkrétní honoty, tak aby byl systém výzvou i pro ka¾dého deckera za daných podmínek.
+
+obtí¾nost prùniku............................hodnota zabezpeèení..................hodnocení subsystémù
+sndané............................................................4 a¾ 6 ................................................... 8 a¾ 10
+prùmìrné........................................................7 a¾ 9 .................................................11 a¾ 15
+obtí¾né.............................................................8 a¾ 12 ..............................................13 a¾ 18

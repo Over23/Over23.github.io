@@ -1,0 +1,1018 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0067)http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;n=deb9 -->
+<html lang="cs"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="googlebot" content="noarchive">
+<link rel="apple-touch-icon" href="http://i.nyx.cz/design/logo.gif">
+<link id="favicon" type="image/png" rel="shortcut icon" href="http://i.nyx.cz/design/logoicon.png">
+<title>[nyx] osobní stránka - OVERDRIVE</title><link rel="alternate" type="application/atom+xml" title="nyx.cz (diskuse, Atom 1.0)" href="http://www.nyx.cz/code/atom.php?type=blog;user=OVERDRIVE"><style type="text/css" media="screen,projection" title="default style">
+@import url("skins/dark/nc.css");
+</style></head>
+
+<body class="l-user-1 d-www p-2cinfo lang-cs fixed  premium  adless  history-in-menu  wr-pos  wr-neg">
+<script> document.domain = 'nyx.cz'; var orig_title = document.title; </script><script src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/cs-big.jgz" type="text/javascript"></script><script>
+var button_type  = 'button';
+var nyx_nick     = 'OVERDRIVE';
+var nyx_session  = '8eca572ce2a1239eec5ddc616e071a92';
+var nyx_imgsec   = '8ec';
+var icon_path    = "http://i.nyx.cz/";
+$(document).ready(function(){ $("textarea").autoResize({ limit: 500, extraSpace: 30 }).not(":empty").trigger("keyup"); });
+$(document).ready(function(){$("#qsearch_box").DefaultValue("hledat...");$(".generate-embed[data-embed-type]").click(function(){ $(this).replaceWith(generate_embed($(this).attr("data-embed-type"), $(this).attr("data-embed-value"))); });$("#qsearch_box").keydown(function(event){diff_submit(event,"search_submit")});});
+</script>
+<script>
+$(document).ready(function(){
+   $("#infoapps").sortable({
+         axis        : "y",
+         containment : "parent",
+         handle: "h2.s",
+         tolerance: "pointer",
+         update      : function(element, ui) {
+            $.ajax({
+            type: "POST",
+            url: "ajax_handler.php",
+            data: $(this).sortable("serialize") + "&type=info_sort"
+            })
+         },
+         start: function(element, ui) {
+            $(document.body).addClass("drag");
+            $("#infoapps").sortable("refreshPositions");
+         },
+         stop: function(element, ui) {
+            $(document.body).removeClass("drag");
+         }
+     });
+});
+
+</script><script>
+if (Orbited) {
+   TCPSocket = Orbited.TCPSocket;
+   Orbited.settings.port        = comet_get_port(443,443);
+   Orbited.settings.hostname    = comet_get_domain('o', 1, 10) + '.nyx.cz';
+   Orbited.settings.protocol    = 'http';
+
+   var resume_comet = 1;
+   var orbited_key_prefix = '/nyx';
+
+   var snap_title = 'přichytit do panelu';
+   var minimize_title  = 'na lištu';
+   var close_title  = 'zavřít';
+   var reply_title  = 'odpovědět...';
+   var comet_popups = '1';
+   var comet_popups_reply  = '1';
+   var comet_popups_thumbs = '1';
+
+   if ($.browser.opera) {
+      Orbited.settings.streaming = false;
+   }
+
+   $(document).ready(function(){
+      comet_start(nyx_nick, nyx_session);
+
+      // resume open tabs, set footer as fixed
+      // should be in stomp.onmessageframe, but let's pretend errors don't happen :-)
+      if (comet_popups == 1) {
+         resume_comet_tabs();
+         comet_fix_footer();
+      }
+   });
+
+   $(window).bind("beforeunload", function(e){
+      if (stomp.reset) {
+         stomp.reset();
+      }
+   });
+}
+
+var escape_count_oneshot = oneshot();
+var escape_count = 0;
+$(document).keyup(function(event){
+   if (event.keyCode == 27) {
+      escape_count++;
+      escape_count_oneshot(reset_escape_count, 3000);
+
+      if (escape_count == 3) {
+         reset_escape_count();
+         $("#footer_left a.mail-tab").remove();
+         comet_fix_footer();
+
+         comet_mail_tab_save_state("*", 0);
+      } else {
+         blinkingTitleStop();
+         $("div#growl div.b").hide();
+         $("#footer_left a.mail-tab").removeClass("new");
+
+         comet_mail_tab_save_state("*", 1);
+
+         close_top_float();
+      }
+   }
+});
+
+function resume_comet_tabs () {
+   
+   resume_comet     = 0;
+}
+</script>
+
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+<div id="dialog" style="display: none"></div><ul class="m l1"><li class="i1"><a href="http://www.nyx.cz/index.php?l=gate;n=0461"><span>úvod</span></a></li><li class="i2"><a href="http://www.nyx.cz/index.php?l=mail;n=0461"><span>pošta</span></a></li><li class="i3"><a href="http://www.nyx.cz/index.php?l=topics;n=0461"><span>témata</span></a></li><li class="i4"><a href="http://www.nyx.cz/index.php?l=events;l2=4;n=0461"><span>události</span></a></li><li class="i5"><a href="http://www.nyx.cz/index.php?l=market;filters=clear;n=0461"><span>tržiště</span></a></li><li class="i6"><a href="http://www.nyx.cz/index.php?l=notepad;n=0461"><span>blok</span></a></li><li class="i7"><a href="http://www.nyx.cz/index.php?l=people;n=0461"><span>lidé</span></a></li><li class="i8 a"><a href="http://www.nyx.cz/index.php?l=user;n=0461"><span>osobní</span></a></li><li class="i9"><a href="http://www.nyx.cz/index.php?l=book;n=0461"><span>sledované</span></a></li><li class="i10"><a href="http://www.nyx.cz/index.php?l=book;l2=2;n=0461"><span>historie</span></a></li><li class="i11"><a href="http://www.nyx.cz/index.php?l=last;n=0461"><span>poslední</span></a></li><li class="i2 r img"><a href="http://www.nyx.cz/index.php?l=logout;imgsec=8ec;n=0461"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/key_delete.png" title="odhl&aacute;sit"></a></li><li class="i1 r img"><a href="http://www.nyx.cz/index.php?l=headexec;help=1;imgsec=8ec;n=0461"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/help.png" title="n&aacute;pověda"></a></li></ul><form id="header_form" action="http://www.nyx.cz/index.php?l=headexec;n=0461" method="post"><div class="header"><div class="i"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/OVERDRIVE.gif" class="i" alt="" title="OVERDRIVE"></div><div class="nick">OVERDRIVE</div><div class="time"><span class="time long">11:28:11</span></div><div class="modes"><select name="status" size="1" onchange="javascript:stswitch()"><option value="4" selected="">AKTIVNÍ</option><option value="6">NERUŠIT</option><option value="3">NEVIDITELNÝ</option><option value="42">IN LOVE</option><option value="51">UNDERGROUND</option><option value="52">RAISON D’ÊTRE</option><option value="53">GENTLEMEN LOSER</option><option value="0"><option value="99">NASTAVIT</option></select></div><input type="hidden" name="return_url" value=""><div class="friends"><select name="pratele" id="pratele" onchange="javascript:prswitch(this.value, &#39;&#39;)"><option value="0">36/1493</option><option value="ACIDQA" style="opacity:0.98">ACIDQA - (00:37)</option><option value="ALRAUNE" style="opacity:0.93">ALRAUNE - (02:16)</option><option value="ANICHQA" style="opacity:0.26">ANICHQA - (24:47)</option><option value="BARCIA" style="opacity:0.59">BARCIA - (13:32)</option><option value="BOTA01" style="opacity:0.61">BOTA01 - (13:04)</option><option value="BRANA" style="opacity:0.56">BRANA - (14:32)</option><option value="CROME" style="opacity:0.87">CROME - (04:15)</option><option value="D13" style="opacity:0.39">D13 - (20:14)</option><option value="DAVE_PAGE" style="opacity:0.66">DAVE_PAGE - (11:21)</option><option value="DIKY" style="opacity:0.86">DIKY - (04:42)</option><option value="DISPARITY" style="opacity:0.93">DISPARITY - (02:12)</option><option value="DJIABLIQ" style="opacity:0.97">DJIABLIQ - (01:09)</option><option value="EFFKA" style="opacity:0.98">EFFKA - (00:40)</option><option value="FACEO" style="opacity:0.91">FACEO - (03:06)</option><option value="GAF" style="opacity:0.19">GAF - (26:56)</option><option value="GREATDRAKE" style="opacity:0.86">GREATDRAKE - (04:48)</option><option value="HIPPO42" style="opacity:0.22">HIPPO42 - (26:04)</option><option value="IKI" style="opacity:1">IKI - (00:00)</option><option value="JULYZ" style="opacity:0.95">JULYZ - (01:36)</option><option value="MIAROSSO" style="opacity:0.36">MIAROSSO - (21:16)</option><option value="MIHALAKH" style="opacity:0.66">MIHALAKH - (11:17)</option><option value="MINON" style="opacity:0.45">MINON - (18:24)</option><option value="MRQ" style="opacity:0.58">MRQ - (13:59)</option><option value="NESERMI" style="opacity:0.99">NESERMI - (00:29)</option><option value="PUEBLO" style="opacity:0.65">PUEBLO - (11:41)</option><option value="QIWAS" style="opacity:0.65">QIWAS - (11:47)</option><option value="SARRI" style="opacity:0.89">SARRI - (03:41)</option><option value="SHI" style="opacity:0.95">SHI - (01:47)</option><option value="SOMBRA" style="opacity:0.37">SOMBRA - (21:00)</option><option value="SORBAK" style="opacity:1">SORBAK - (00:05)</option><option value="TRAMIN" style="opacity:0.44">TRAMIN - (18:44)</option><option value="TRYSKOMYS" style="opacity:0.73">TRYSKOMYS - (08:54)</option><option value="URZA" style="opacity:0.69">URZA - (10:24)</option><option value="WATTEVILLE" style="opacity:0.89">WATTEVILLE - (03:40)</option><option value="WOCOMONO" style="opacity:0.84">WOCOMONO - (05:26)</option><option value="XCHAOS" style="opacity:0.9">XCHAOS - (03:27)</option></select></div><div class="search_box"><input type="text" name="search_box" size="35" id="qsearch_box" onclick="search_help()" value="" class="default-value"><button type="submit" id="search_submit" style="display: none" name="search_submit" value="hledat"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/zoom.png" alt=""> hledat</button></div></div></form><ul class="m l2"><li class="i1 a"><a href="http://www.nyx.cz/index.php?l=user;l2=1;n=0461"><span>osobní</span></a></li><li class="i2"><a href="http://www.nyx.cz/index.php?l=user;l2=2;n=0461"><span>nastavení</span></a></li><li class="i3"><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;n=0461"><span>blog</span></a></li><li class="i4"><a href="http://www.nyx.cz/index.php?l=user;section=friend_of;n=0461"><span>komentáře</span></a></li><li class="i5"><a href="http://www.nyx.cz/index.php?l=people;l2=3;n=0461"><span>přátelé</span></a></li><li class="i6"><a href="http://www.nyx.cz/index.php?l=user;l2=14;n=0461"><span>soubory</span></a></li></ul><div class="l2c"><div class="l2cn"><div class="b vcard" id="hcard-OVERDRIVE"><div class="bc"><table class="ch"><tbody><tr class="add-content"><td colspan="2"><a href="http://www.nyx.cz/index.php?l=user;app=new;n=0461">přidat něco do infa</a></td></tr><tr class="add-content"><td colspan="2"><a href="http://www.nyx.cz/index.php?l=user;blog=new;n=0461">přidat nový blog</a></td></tr><tr class="add-content"><td colspan="2"><a href="http://www.nyx.cz/index.php?l=galerie;l2=1;n=0461">nahraj své obrázky</a></td></tr><tr><td width="150px"><td width="150px"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/OVERDRIVE.gif" class="i" alt="" title="OVERDRIVE" onclick="sm(&#39;OVERDRIVE&#39;,&#39;&#39;, &#39;8ec&#39;)"></td></tr><tr><td>uživatelské číslo</td><td>1364</td></tr><tr><td>uživatelské jméno</td><td><span class="fn nickname">OVERDRIVE</span><input type="hidden" id="nick" name="id" value="OVERDRIVE"></td></tr><tr><td>bydliste</td><td>Praha, Zizkov</td></tr><tr><td>email</td><td><a href="mailto:tpetru@gmail.com" class="email">tpetru@gmail.com</a></td></tr><tr><td>www</td><td><a href="http://overdrive.omnicorp.biz/" class="url" rel="nofollow">[link]</a></td></tr><tr><td>blog</td><td><a href="http://www.google.com/profiles/106402202976952899396" class="url" rel="nofollow">[link]</a></td></tr><tr><td>blog</td><td><a href="http://petru.blog.idnes.cz/" class="url" rel="nofollow">[link]</a></td></tr><tr><td>jabber</td><td><a href="xmpp:croctua@njs.netlab.cz">croctua@njs.netlab.cz</a></td></tr><tr><td>icq</td><td>57279454</td></tr><tr><td>skype</td><td>tom.petru.aveco [pracovni, od 9-17:30]</td></tr><tr><td>skype</td><td>smutny.vlk [osobni, weekendy, vecer]</td></tr><tr><td>prace</td><td>http://aveco.com</td></tr><tr><td>myspace</td><td><a href="http://www.myspace.com/overdrive_idoru" class="url" rel="nofollow">[link]</a></td></tr><tr><td>facebook</td><td><a href="http://www.facebook.com/overdrive23" class="url" rel="nofollow">[link]</a></td></tr><tr><td>last.fm</td><td><a href="http://www.last.fm/user/overdrive23" class="url" rel="nofollow">[link]</a></td></tr><tr><td>flickr</td><td><a href="http://www.flickr.com/photos/overdrive_cz/" class="url" rel="nofollow">[link]</a></td></tr><tr><td>del.icio.us</td><td><a href="http://delicious.com/overdrive23" class="url" rel="nofollow">[link]</a></td></tr><tr class="add-content"><td colspan="2"><a href="http://www.nyx.cz/index.php?l=user;section=contacts;n=0461">přidat/změnit kontaktní údaje</a></td></tr></tbody></table></div></div><form action="http://www.nyx.cz/index.php?l=userexec;n=0461" method="post" name="user_pref"><div class="b " id="info_private"><div class="bc"><table class="ch"><tbody><tr><td width="50%"><a href="http://www.nyx.cz/index.php?l=user;section=visits;n=0461">poslední návštěvy</a></td><td><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/DJIABLIQ.gif" class="is" alt="" title="DJIABLIQ" onclick="sm(&#39;DJIABLIQ&#39;,&#39;&#39;, &#39;8ec&#39;)"> <img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/NYX.gif" class="is" alt="" title="NYX" onclick="sm(&#39;NYX&#39;,&#39;&#39;, &#39;8ec&#39;)"> <img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/MELOWN.gif" class="is" alt="" title="MELOWN" onclick="sm(&#39;MELOWN&#39;,&#39;&#39;, &#39;8ec&#39;)"> <img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/JADEITT.gif" class="is" alt="" title="JADEITT" onclick="sm(&#39;JADEITT&#39;,&#39;&#39;, &#39;8ec&#39;)"> <img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/BGDNY.gif" class="is" alt="" title="BGDNY" onclick="sm(&#39;BGDNY&#39;,&#39;&#39;, &#39;8ec&#39;)"> <br><a href="http://www.nyx.cz/index.php?l=user;section=visits;n=0461"> -&gt; posledních 50</a></td></tr><tr><td><a href="http://www.nyx.cz/index.php?l=user;section=invited;id=OVERDRIVE;n=0461">registrace</a></td><td><a href="http://www.nyx.cz/index.php?l=user;section=invited;id=OVERDRIVE;n=0461"><span class="time date">14:23:42 23.11.2001</span></a></td></tr><tr><td><a href="http://www.nyx.cz/index.php?l=user;section=logins;id=OVERDRIVE;n=0461">poslední přihlášení</a></td><td><a href="http://www.nyx.cz/index.php?l=user;section=logins;id=OVERDRIVE;n=0461"><span class="time date">11:27:11 29.9.2010</span><br> -&gt; posledních 50</a></td></tr><tr><td><a href="http://www.nyx.cz/index.php?l=user;section=references;id=OVERDRIVE;n=0461">reference</a></td><td><a href="http://www.nyx.cz/index.php?l=user;section=references;id=OVERDRIVE;n=0461">1 pozitivní<br>0 negativních</a></td></tr><tr><td><a href="http://www.nyx.cz/index.php?l=user;section=invited;id=OVERDRIVE;n=0461">pozvaní lidé</a></td><td><a href="http://www.nyx.cz/index.php?l=user;section=invited;id=OVERDRIVE;n=0461">28</a></td></tr><tr><td><a href="http://www.nyx.cz/index.php?l=user;section=book;id=OVERDRIVE;n=0461">sledovaných klubů</a></td><td><a href="http://www.nyx.cz/index.php?l=user;section=book;id=OVERDRIVE;n=0461">184</a></td></tr></tbody></table></div></div></form><form name="userexec" method="post" action="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;n=0461"></form></div><div class="l2cc"><div class="b navbar" id="upper_navbar"><div class="bc text"><input type="hidden" name="max_id" value="9595"><input type="hidden" name="min_id" value="7167"><input type="hidden" name="position" value=""><input type="hidden" name="wu_submit" value="1"><button type="submit" name="nav" value="&lt;&lt;">&lt;&lt;</button> <button type="submit" name="nav" value="&lt;">&lt;</button> <button type="submit" name="nav" value="&gt;">&gt;</button> <button type="submit" name="nav" value="&gt;&gt;">&gt;&gt;</button></div></div></div><div class="l2cc ui-sortable" id="infoapps"><div class="b " id="pref_last_blog"><h2 class="s">Za predpokladu, ze si zvolite svet jako misto, ktere se vas,hluboce...dotyka : by Overdrive <div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9595;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9595;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9595;n=0461">Za predpokladu, ze si zvolite svet jako misto, ktere se vas,hluboce...dotyka : by Overdrive </a></h3><br>
+goes viral... bude na obou blozich, linkne se na twitter a na facebook. blog, ktery popira sam sebe, protoze neprinasi nic moc noveho, jen upozornuje na to, ze autor vidi cerne [a nekdy rude] zbytecne toky dat a informaci...<br>
+<br>
+<br>
+Mam dojem, ze posledni dobou vsichni komentuji, ze blogerina se hrouti, mam dojem, ze hodne lidi zacina mluvit o sumu [noizz] na webu, o okamzitych vytryscich inspiraci, ktere nikam nevedou, o formalni dokonalosti nebo formalni invenci mnoha projektu, ktere konci nezivotne. formalni cviceni, texty bez kouli. neco na co se clovek rychle podiva, pokud jsou tam vtipne obrazky, tak i nekam prelinkuje, ale nakonec mu to nic moc neda.<br>
+<br>
+stejne tak comixy, knihy, fotky... nejen web zachvatila dalsi vlna informacni exploze.<br>
+diky zjednodusujicim technologiim muze dnes kazdy vsechno. staci si maximalne precist manual, kdyz uz je to neco slozitejsiho.<br>
+byvaly doby, kdy napsat text vyzadovalo pozorovani, uvazovani, kombinace a invenci. dnes vidim dobu, kdy pro napsani textu staci nalada [jako ta moje ted].<br>
+uvazuju, ze si koupim nejaky ultramalicky, ultraprenosny "notebook" nebo jak se tomu dnes rika. neco, cemu baterky vydrzi hodiny a hodiny. v kombinaci s datovym tarifem v telefonu a fotaku vlastne budu stale pripojeny.<br>
+Co mi to ale da? budu cist facebook, budu cist kratke noticky twitteru, obvykle nehorazne vtipne a stejne dobre zapomenutelne?<br>
+rozpouta jeste dnes vubec neco debatu?<br>
+Nemuzu najit nic, co by upoutalo mou pozornost. ano pravda, mam "extremly short attention span", prijimam informace rychle a na preskacku. ale tak to bylo vzdycky. a presto driv jsem mel dojem, ze existuje nejaka komunita, komunikace a predevsim invence, co me zaujme ted, kdyz muzu byt neustale online?<br>
+vzdy jsem pouzival sve ctenare a prispevatele do ruznych auditorii za jakysi filtr, ktery my umoznil sledovat, co koho zaujalo. samozrejme bylo nezbytne nutne, aby to byl filtr lidi s podobnymi zajmy.<br>
+zestarli? odesli? zmenily se jejich zajmy?<br>
+ano, jsme uz konecne generace otcu, matek, zenichu a nevest. mame praci nebo zivorime na malych projektech, na okraji velkych korporacnich, bezohlednych a presne cilenych kampani.<br>
+tohle si predstavoval shadowrun a jiny cyberpunk? zrejme ano. taky se tam vzdycky mluvilo o lidech a post lidech do triceti.<br>
+vsimnete si romanu, ktere dnes ctete. kolik z postav v nich je mladsich nez ctenar?<br>
+tak tedy dobre, uznejme, ze nase generace, prvni z BBSek uz netahne technicky rozvoj, ze jsme zaklady, na nich uz se stavi.<br>
+co dal?<br>
+jak budeme vychovavat sve deti? na knihach a muzice ze 70. az 90. let? Na te vlne okouzleni, ktera probehla informacni spolecnosti? Budeme cekat, az nam nekdo "demokraticky" vyfiltruje  to co zajima vetsinu? co to asi je?<br>
+No jasne, je to nasili, sex, pozdeji drogy.<br>
+Pohotovy ctenar si mozna vsima, ze mirim k vezim ze slonoviny, kterych se nedotyka sum informacniho more, nedotykaji se ho zvednute prsty ikonek, ktere mackaji uzivatele facebooku. Libi, nelibi.<br>
+Proc?<br>
+Protoze v male komunite je daleko lepsi, i kdyz namahavejsi, predavat informaci komplexnej, nez jen pouhym nalinkovanim... ano mluvim o diskuzi, debate, sdileni. Naproti tomu je ve velke komunite zrejme, ze nejvice hodnocene prispevky, linky a data se budou tykat zakladnich potreb lidi. Sex, nasili, mozno zamenit za politiku a penize.<br>
+Tak jen takove podotknuti, abych ukazal, ze mozna vim, jak z tohohle celeho textu vytezit nejake vychodisko a nejakou cestu: "Nejsme mrtvi. Rikejte si to mezi radky, ktere napisete, mezi policky filmu, ktery natocite. Opakujte to mezi beaty a do ploch huby, kterou slozite a hrajete." Ale jedine tehdy to bude fungovat, dokud budete vytvaret pridanou hodnotu. Dokud opravdu budeme, budete, psat, cist a komunikovat.<br>
+Ja vim, boli to. Tolik projektu uz mi umrelo na tom, ze potrebovali aktivitu dalsich lidi. Ruzne preklady, ruzne informacni hry, vtipky.<br>
+Znam ten straslivy pocit zklamani, kdyz clovek dava a nikdo si nebere, kdyz hraje na schovavanou sam, nikdo jej nehleda. Tomu presne nevim jak zabranit, snad krom udrzovani kontaktu a sdileni dat. Sirit, predavat a pridavat, podle osobniho vkusu. Premyslet, nez otevreme hubu je mozna taky dobre [ne, ze bych to udelal, nez jsem napsal tenhle text]. Dnes uz nikoho nezajimaji twitterove vtipky, jednovetna vyjadreni plna dokonaleho humoru. Pripomina to pernikova rana, kdy vsecko je tak jasne, vsemu se lze smat, ale co uz z toho.<br>
+Clovek je kolaz vseho co prijima. LoL, ROFL v kolazi 1000x dokola? Jaky to ma smysl.<br>
+<br>
+Hrat si se systemy, ktere uz funguji: dalsi mozna meta. Kdysi to byvalo v mode. Takovy low-level hack. Dneska je bezny clickjacking a phishing, kdysi nase hry, ale to uz je opravdu vsechno, co se da pouzit? Zvyraznujte lidi, kteri tohle delaji a sami hledejte.<br>
+<br>
+Poeticky terrorismus, anarchie dada, odrhovacka z radia zpivana pozpatku.<br>
+<br>
+Ptejte se, kde veci zacinaji, kde konci, to umi komentovat kazdy.<br>
+<br>
+Pisu porad o vas, myslim tim nas. Odpustte nepripravenost textu a jeho neucesanost. Je to vlastne jen takovy radikalnejsi povzdech za dobou, kdy vznikaly ziny, kdy blog se vyplatilo cist, protoze v nem byl napad nebo aspon vtipny komentar, ci zajimavy popis cest. Piratstvi na disketach a co soubor na disku, to myslenka nebo jeji thread.<br>
+Mame hypertext, snadno dostupne multimedia, moznost snadno kombinovat a co je produktem: seda masa.<br>
+<br>
+Navrhuji tedy dve reseni:<br>
+a] Piste, tocte videa, delejte muziku. Ale jen podle sveho nejlepsiho svedomi a vedomi, nepoustejte ven sva cviceni (Jak rika Truce "prvni dobrou"). Pracujte na veci, dokud se vam nebude hnusit nebo dokud nebude dokonala. pomahejte tem, kdo za neco stoji, snazte se je na vlastnich zadech dostat nahoru, mluvte o nich, piste o nich, delejte s nimi rozhovory na kameru, rozvijejte jejich pravdy a odkazujte na ne zpetne. podryvejte jejich autoritu. spinte je. honte je ke zodpovednosti za to co tvrdi a delaji. bijte jejich pravdu argumentem.<br>
+Pomahejte filtrovat.<br>
+<br>
+b] pridejte se k cirkvi uctivacu sede masy. relinkujte co nejvic vtipnych hlasek, piste kratke komentare o banalite vsedniho dne. co nejcastej si mente status s bezvyznamnym poselstvim, jako je napriklad "Verim v boha". Zachovavejte obeh informaci, ktere jste sami necetli vic nez zbezne. Berte vsechno co vam kdo da a at uz se vas to tyka ci ne, sirte to.<br>
+Kometujte co nejvic uz hotove veci ve stylu libi nelibi nebo LOL a ROFL.<br>
+<br>
+<br>
+Cely text, dluzno podotknout, je urychlena reakce na 2 texty, ktere vyplyuly z more stiznosti:<br>
+<br>
+The truth is that working the attention economy is hard in 2010 because there is so much noise and so many things vying for your attention. I actually feel a glimmer of pride because I’ve gotten my Google Reader down to under 600 unread items for the first time in six months. I think of it as the Manfred Macx problems, from Charlie Stross’ ACCELERANDO – Macx had to absorb a megabyte of text and a few gigs of AV a day just to stay current. This is why the web is still rammed with curatorial sites, from BoingBoing on down. The difference between them and this site is simply that this is my research store, accessible from anywhere with an internet connection (which, for me, is anywhere aside from rural Kent, apparently, where I think I have to sacrifice a hare to get bendwidth). ~http://www.warrenellis.com/?p=10565<br>
+<br>
+<br>
+a tenhle, zvlaste pesimisticky, v cestine: <a href="http://date-of-hate.posterous.com/net-gnosis-swan-song" rel="nofollow" class="odkaz">http://date-of-hate.posterous.com/net-gnosis-swan-song</a><br>
+<br>
+ <input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">15:49:26 16.9.2010</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9595;n=0461">2 komentářů</a></p></div></div><div class="b " id="pref_last_blog"><h2 class="s">O intelektuální práci a komunikaci (3. přepracovaná verze - určená pro overdrive23.posterous.com)<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9526;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9526;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9526;n=0461">O intelektuální práci a komunikaci (3. přepracovaná verze - určená pro overdrive23.posterous.com)</a></h3><i>Tak tohle je moje po dlouhé době. Takový úvod obsahuje každý blog, jenž není svým autorem doplňován nijak zvlášť často. Sám mám takové blogy asi nejraději, protože jejich autoři píší jen když na to mají náladu, nebo když mají světu co říct. No jestli mám světu co říct, to zrovna nevím, spíše mám teď tu náladu na psaní.<br>
+<br>
+Rozhodl jsem se, že budu psat i česky i přesto, že o několik příspěvků níže mé rozhodnutí bylo přesně opačné. Přecejen je to pro mne výrazně snazžší a mohu si tak daleko více hrát s jazykem, ačkoliv uznávám, ž epsaní v češtině je pro mne asi tak stejným cvičením mých jazykových a slohových cvičení, jako když píšu v angličtině. Jen mi je ta čeština prostě blíž a přirozenější. Neříkám že se angličtiny na tomhle blogu zříkám úplně a je možné, že nakonec bude blog směsicí obou jazyků, jakousi makarónštinou, no snad ne hotentotštinou. Textykteré sem budu psát nejsou dopředu promyšlené a může se tedy stát, že je budu ještě po prvním zveřejnění upravovat nebo doplňovat, takže to tu berte jako jakýsi skicář a poznámkový blog - blok, zároveň jako přípravnu textů,které budu chtít později někde zveřejnit v nějaké vážnější podobě, například tiskem. Pokusím se i nadále zachovat logiku tagovaných textů, jen nevím, jaký tag dám zrovna tomu, o čem budu psát o pár řádků níž. Asi tomu budu říkat úvaha. Tak tedy tag úvaha, přidávám také tag intelektuál, komunikace a vztahy.<br>
+<br>
+Velice se mi lébí možnost posílat sem emaily, které se pak zveřejní. Člověk pohodlný, kterým já bezesporu jsem, se nemusí zabývat přílišnými problémy s formátováním, to za něj vyřeší blog automaticky. Trochu té kurzívy, nějaké ty odstavce a je hotovo. Zároveň je to velmi pohodlný způsob,když člověk píše kudy chodí a pak jen stránky svého bloku odesílá tam, kde se mu náhodou podaří chytit signál Sítě Sítí.</i><br>
+<br>
+<br>
+Hraji EELS, je mi trochu Smutno, posledních pár dní si se Sofi moc 
+nerozumíme, já potřebuji klid a ona svobodu. Ona něco hledá, já mám 
+tvůrčí náladu a potřebuji diskuzního partnera, kterým ona nechce být.<br>
+<br>
+Chybí mi inteligentní bytost, která by dokázala reagovat na to, co se mi 
+honí v hlavě a nevkládat do toho emoce. Nebo naopak, pokud se má 
+jednat o emociální hru, aby ten diskuzní partner dokázal pochopit, že je 
+to hra, psychodrama, které musí procítit, aby mělo smysl, ale asi jako 
+když něco běží ve virtuální mašině VMware, prostě oddělit realitu a city s ní 
+spojené od toho, co se probírá, vytvořit si virtuální prostor, arénu, 
+pro emoce a pro pocity. Udělat kopii sebe sama a tu potom používat jako postavu ve hře.<br>
+<br>
+Takhle nějak to podle mého mají lidé, kteří dělají sporty nebo sledují 
+televizi.<br> 
+Jejich koníček se jim stane jakousi arénou citů, jakousi bezpečnou polstrovanou celou. Vždyť přece všechny ty 
+nadávky a pokřiky, fandění, vždyť to se týká jenom hry a nemůže to být 
+bráno vážně mimo ni. Vždyť přece každý ví, že Esmeralda není v životě 
+nešťastná a slepá, je to jen herečka a její role. Virtuální místo pro city, pocity, děje a imaginární lásky i nelásky. <br>
+Pro mě je tímhle virtuálním prostorem například hraní "her na hrdiny" (v angličtině je to pojmenování daleko přiléhavější, tedy Role Play Games). Můžu do Hry (RPG) vkládat spousty zajímavých idejí, můžu zkoušet různé kombinace předmětů, podmětů a přísudků, vytvářet imaginární příběhy a virtuální emoce. To, že se jedná o společenskou hru, která vyžaduje spolupráci s ostatními, kteří se spolu se mnou noří do virtuálních prostorů mi umožňuje nezaplétat se, nenechat se strhnout a padnout do nějakých smyček sebe samého. Musí to být sdělitelné a do jisté míry zábavné, musím reagovat na to, co ti ostatní udělají, což doplňuje mé úvahy o to co nejsem já, co si sám nedokážu představit a vymyslet. <br>
+<br>
+Toužím znovu začít hrát, protože mi to umožňuje přemýšlet a tvořit i díky zpětné vazbě. Důležitý je dialog, schopnost nejen vyprávět, ale také komunikovat a hrát. Nestačí pouze studovat problém a téma, ale je potřeba je také předat, okořenit a zahrát, aby tak vznikl příběh,který ostatní budou chtít prožít a stát se tak jeho součástí. <br>
+<br>
+Moje žena teď nechápe nebo nechce chápat něco, co je jí jinak naprosto 
+přirozené, tedy to, že by mohlo jít diskutovat například o emocích bez 
+emocí. Vždyť přece režisér filmu o znásilnění nemusí sám znásilnit, aby 
+mohl ve svém díle s pocity a událostmi pracovat. A samozřejmě ani herci 
+v rolích násilníka a oběti nepodléhají své roli tak, že by je jejich 
+práce poznačila na celý život. To ve mě vyvolává zmatek a rozčiluje mě to. Znamená to, že jsem něco přehlédl, něco pro vztah velice důležitého, něco, kde ztrácíme rovnováhu. <br>
+<br>
+Že by snad má témata byla příliš složitá? Ale to snad ne, vždyť pokud by 
+naše inteligence byly schopné manipulovat pouze s lehkými tématy, pouze 
+z nich tvořit látku snů, tak tehdy bychom právě byli nuceni prožít to 
+těžké na vlastní kůži, abychom byli intelektuály (a musím říct, že i já i má žena sami sebe vnímáme jako intelektuály velmi rádi a snad ne zcestně).<br>
+<br>
+Ne, intelektuál není někdo proto, že si pořídí brýle s černou plastovou obroučkou, nestačí 
+nosit u sebe blok a občas si do něj udělat poznámku, tak jako to dělám i já i ona každodenně. Ten blok a poznámka 
+už důležité v pravdě jsou, ale ta poznámka by neměla obsahovat pózu, jak 
+tomu často zřejmě je (a stává se to i mě samému), neměl by to být text, terý je (byť nevědomky) určen 
+k tomu, aby na někoho zapůsobil (v takový moment je text nepřirozený a neupřimný). To co si píšeme do bloků by mělo. podle mého, být spíše něco důležitého, co mě samému se převaluje v srdci, nebo co mi tiše šeptá 
+"všímej si mě" kdesi za hranicí každodennosti v mozku. A právě takové poznámky v 
+bloku, ty je nutné měnit v souvislé texty, v kontemplaci se dotýkat toho, na co odkazují, probírat je a měnit ve výsledek. Teprve až se člověk dostane do tohohle požehnaného stavu, kdy sám sebe vůlí donutí, zpracovávat to, co obsahuje jeho blok, ty náhlá vnuknutí, ty střípky, které člověku zůstanou z chvil, kdy zahlédne něco většího, celkový obraz, nebo snad něco důležitého.<br>
+<br>
+Mluvím tady o tom, když člověk promění své poznámky a své myšlení a cítění, za pomoci vůle v intelektuální činost, 
+práci, tehdy se může člověk nazývat intelektuálem i když brýle vůbec nepotřebuje a nerad posedává v kavárnách.<br>
+<br>
+Zároveň je to, o čem tady píšu, tedy poznámky přeměněné v souvislý text, intelektuální 
+činnost, hluboce uspokojivé, byť mizerně placené zaměstnání. Dělal jsem v životě mnoho prací, ale tahle konkrétní, tedy proměňovat poznámky a střípky myšlenek v něco smysluplnějšího, co už slouží mě samému, abych si uvědomoval svět v jeho celistvosti a komplexních krajkách vazeb mezi ději a předměty, tak tahle práce je mým skutečným povoláním: Píšu pro radost, pro hluboké uspokojení z pochopení.<br>
+<br>
+<i>(Vlastně i teď píšu z toho důvodu. Pomáhá mi to uvědomit si, kde dělám v životě a vztahu chybu. Text o intelektuální práci a poruše komunikace mezi dvěma partnery, to je moje katarze i můj krok k pochopení.)</i><br>
+<br>
+Poznámky a krátké komentáře jsou jen jakýmsi mezikrokem. Ty často znamenají pouze to, že mne něco zaujalo, buď v souvislostech, které jsou tak komplexní, že nebylo v daný moment možné je plně zachytit (vznikla tedy jen rychlá skica), nebo jsem si něco poznamenal proto, abych se zbavil něčeho, čím už jsem se nechtěl cítit obtěžkán. Vystříknout pryč ty kapky semene ideí.<br>
+<br>
+Osobně se cítím povinován tímto řemeslem intelektuální práce, bez jakéhokoliv nároku na honorář v podobě přijetí ze strany nějakého čtenářstva či jiného publika, byť je mi samozřejmě příjemné, když má můj projev svého příjemce. Je mi nadevše drahá má schopnost psát a vyjadřovat tak své poznání světa, který uchopuji a kterým kráčím. Potřebuji psát, snad nejvíc právě když mne nikdo neslyší jak mluvím. Intelektuální práce jsou mé schody do nebe. Prvním schůdkem je uvědomování si reality, pozorné vnímání. Další schod jsou poznámky k emocím a pozorovaným dějům, rychlé náčrtky tužkou, které, kdybych byl malíř (což nejsem ani v nejmenším) by mi umožnili nezapomenout (nebo zapomenout). A pak, konečně hurá, několik dlouhými skoky, myšlenkovými obraty a vazbami, nápady, je mi dáno vystoupit z mezzaninu do prvního poschodí, kdy je myšlenka najednou ucelená, krásně tvarovaná, jako ženské boky a už jen její dokončování mne přivádí k ůžasu nad její krásou (zde závidím vždy figurálnímu sochaři).<br>
+<br>
+Intelektuální práce je, stejně jako čtení (které je jejím opakem) jistým 
+druhem hlubokého sebeuspokojování, namnohdy katarze, jindy hra, jindy 
+komunikační prostředek.<br>
+<br>
+Výše jsem napsal, že by nemělo být cílem psaní jen psát pro jiné, snažit 
+se oslovit a někoho ovlivnit, okouzlit. Za touto myšlenkou si stojím, ale stejně 
+tak není zřejmě rozumné pouze psát do šuplíku, protože tím se člověk 
+ochuzuje o názory, a o tolik cenou komunikaci. Intelektuál sám se snadno 
+může ztratit ve svém vytržení, ve svém hledání. Může snadno zastavit 
+svůj pokrok tím, že jeho pravda a názor není konfrontován s realitou, 
+názorem a pravdou někoho jiného, verifikován. Intelektuál, stejně jako člověk obecně, 
+je zoon politicon, tedy člověk společenský.<br>
+<br>
+Podobně, jako homosexuálové mají zúžené pole své aktivity, v daném případě sexuality, díky tomu, že 
+homosexuálové jsou poměrně úzká skupina, menšina, tak i intelektuál má 
+zůžené své zázemí komunikačních partnerů. Je jasné proč tomu tak je. <br>
+Intelektuální práce potřebuje minimálně stejně inteligentní odpověď. <br>
+Nejedná se o nějaké povyšování či nějaké elitářství (byť věž ze slonoviny nás snad nikdy nepřestane lákat), ale je zřejmé, že 
+pokud se někdo bude chtít bavit na nějaké téma, které je mu blízké a 
+věnuje se mu se vší láskou, nebude rád, když mu bude komunikačním partnerem někdo, 
+kdo o tématu nic neví a třeba se ani není ochoten či schopen učit. <br>
+Taková marnost je krásně definována příslovým "házet perly sviním", aniž 
+by v daný případ bylo nutné brát přísloví pejorativně. <br>
+Cítím proto intelektuální práci jako často osamělou hru pasiáns neměla by se však stát zoufalou onanií. Člověk když 
+například píše, často špatně snáší vyrušování a nemyslím si, že je to jen můj problém. Vždyť tak často můžeme v předmluvách knih číst, že jejich autoři děkují svým blízkým za podporu a trpělivost. Často je psaní (nebo zřejmě i jiná umělecká a intelektuální práce) i činnost sisyfovská, kdy myšlenka, kterou vytlačíme na kopec pochopení, ukáže se nekomunikovatelnou nebo při její verifikaci pochopíme, že nebyla správná, či adekvátně hodnotná.<br>
+<br>
+Tedy tvrdím, že je nezbytně nutné nejen poznámkovat své myšlení, ale 
+zároveň poznámky dovádět do formy pochopeného a propracovaného textu, 
+popřípadě jiné adekvátní formy. Je také zásadní v průběhu celého procesu komunikovat 
+jak myšlenky, tak samotnou práci na nich a jejich závěry. Stejným 
+způsobem může být nakládáno i s emocemi i když tady by asi přílišné zpytování a babrání se v nich, mohlo způsobit neupřímnost cítění a mohlo by tak být na škodu. Pokud již však člověk potřebuje uchopovat a pracovat s emocemi 
+nebo myšlenkami, měl by jeho komunikační partner být schopen tuto činnost 
+vnímat jako ucelený proces, měl by být schopen chápat jakousi hru se skleněnými 
+perlami, kdy každá jednotlivá myšlenka nebo emoce je korálek nebo 
+kamínek, a jen trpělivou prací může vzniknout krásný náhrdelník, 
+korunka, která bude zdobit hlavu či šíji.<br>
+<br>
+Je zajímavé, že žijeme čím dál tím více intelektuální životy, 
+komunikujeme na virtuálních místech, díky internetu se naše emoce a 
+naše myšlenky stále více šíří, ale také odosobňují, ale i přesto mám já osobně 
+dojem, že ubývá komunikačních partnerů, kteří by byli schopní sledovat 
+složitější diskuze nebo obsáhlejší texty. <br>
+Tak schází na úbytě diskuzní skupiny ale i textové blogy. Hypertextové 
+myšlení, skákání z ideje na ideu, vede podle mého mimo jiné k tomu, že 
+jsme snadněji a snadněji emocionálně ovlivnitelní, byť i jen krátkými texty. Rychle zapůsobit a přenechat místo dalším emocím. Reklama a klip. Možná kvůli tomu je stále větší problém najít komunikačního partnera, stejně jako spoluhráče na šach. Jsou totiž myšlenky, které není možné uspěchat, jsou myšlenky, nebo texty, které nejsou dokonalé v celém svém plynutí a jejich hodnota vynikne a vznikne až ve chvíli, kdy jsou přijaty v celistvosti, kdy jsou pochopeny ve smyslu ducha, nikoliv jen litery textu.<br>
+<br>
+Virtualizace myšlení je pro mne vlastně jiným vyjádřením víry v existence trpělivosti, kdy člověk dokáže v klidu sledovat průběh myšlenky a jakoby stát nad ním, čekat, a teprve poté se rozhodovat, vyjadřovat, kritizovat a prociťovat. 
+Trpělivost vnímám jaksi nadřazenou hypertextovému myšlení.<br>
+<br>
+Hledám takového komunikačního partnera.<br>
+<br>
+Doufám, že moje žena je stále něčeho takového schopna. Stále doufám, že existují lidé, kteří jsou 
+schopni poslouchat nejen easy listening pop, ale také vážnou hudbu. Stále doufám, že existují lidé, kteří si dokáží užít koncert i když v jeho průběhu jeden z muzikantů zahraje falešný tón. Velice doufám, že stále existují lidé, kteří rádi čtou stejnou knihu jako jejich partner nebo přítel, aby si o ní mohli společně popovídat a tím umocní svůj zážitek z ní. Nebo je už něco takového starosvětská zábava, které se nikdo nevěnuje a připadal bych dnešním mladým, šestnácti až dvacetiletým jako nepřekonatelný zpátečník?<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">3:45:24 2.8.2010</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9526;n=0461">1 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Bůh, víra a rituál z pohledu soudobého intelektuála (Část první, oprava třetí)<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9525;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9525;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9525;n=0461">Bůh, víra a rituál z pohledu soudobého intelektuála (Část první, oprava třetí)</a></h3>== <i>Text je urcen pro casopis A2, bude jich cela serie, tady je zatim jen pro kategorii lidi, ktere mam v pratelich pod subtagem pritel, az a jestli, bude text vydan v casopisu, zverejnim jej uplne, ale nevim, zda bych tim neporusil podminky a neznesnadnil moznost vidani, Papirova podoba pro mne ma vyznam predevsim v tom, ze ackoliv je A2 jakysi zachodovy papir pro intelektualy, cemuz odpovida i format novin s mekkym papirem, tak je precejen tistene slovo snadneji ctive, nez slovo elektronicke. Navic papir, nez je pouzit na zachode, tak precejen voni, papirem a tiskarskou barvou</i> ==<br>
+<br>
+Tento text by měl být jakýmsi úvodem pro sérii článků na téma Bůh, <br>
+božství, víra a rituál jejichž základem jsou rozhovory s lidmi, kteří <br>
+byli i nebyli vychováni v nábožensky založených rodinách, kteří hledají <br>
+svůj postoj a pohled na božství v každodenním životě, kteří se snaží <br>
+pochopit, přijímat, ale také se zbavit a odmítat.<br>
+<br>
+V žádném případě si nekladu za cíl najít jedinou pravdu, nebo snad <br>
+někoho o čemkoliv přesvědčovat, mým cílem je spíše poznání a pochopení <br>
+toho, jak víra prostupuje našimi životy a zda je pro každodennost <br>
+důležitá nebo není.<br>
+<br>
+Sám jsem byl vychován v rodině intelektuálů, kteří nepřikládali víře a <br>
+bohu (budu úmyslně psát s malým b, protože v mém pojetí se budou <br>
+myšlenky týkat nejen Boha jediného) zásadní význam ve smyslu nutnosti <br>
+každodenní kontemplace. Prošel jsem ve svém nedlouhém životě několika <br>
+stádii vnímání celého problému, které počínají u naprosté nevzdělanosti <br>
+a ignorování celého tématu, pokračovaly přes jistou znalost a odmítání a <br>
+v současné době se snažím o sebevzdělání a uchopení celé problematiky z <br>
+pozice eklektického nadhledu, snažím se o jakýsi meta pohled. Dlužno <br>
+podotknout, že mé vzdělání v problematice religiózní není v žádném <br>
+případě systematické, ani náhodou jednostranné a také v žádném případě <br>
+dokončené.<br>
+<br>
+Proč takovéhle přiznání k nevzdělanosti a de facto ignorancii? <br>
+Nu především proto, že mé texty mají vyvolat debatu, mají mne samého - a <br>
+nejen mne - přivést k dalšímu poznání a poznávání, a také proto, že <br>
+běžný čtenář mého textu bude velice pravděpodobně ve stejné pozici, tedy <br>
+v pozici částečně vzdělaného, částečně si problém uvědomujícího a zcela <br>
+jistě se vyvíjejícího inteligentního jedince, který svůj zájem upírá i <br>
+na mnoho dalších jiných témat, která se mu stávají každodenností. Díky <br>
+takovému přiznání se mi možná podaří omluvit nedostatky v mích úvahách, <br>
+stejně jako se možná podaří přiblížit čtenáři můj názor na základě <br>
+jistého sblížení se s autorem.<br>
+<br>
+Tak tedy věnujme se již tématu.<br>
+<br>
+Jak již jsem předeslal, vyrostl jsem v rodině, pro níž víra nebyla něčím <br>
+odtažitým ani odmítaným, nebyla to v žádném případě rodina ateistů, <br>
+kteří by programově zavrhovali cokoliv s ní spojeného, vždyť to asi ani <br>
+nebylo možné, když matka vystudovala dějiny umění a nevlastní otec <br>
+pochází z prostředí katolické střední třídy, kteréžto vliv byl ale <br>
+překryt jeho technickým a pragmatickým technickým uvažováním.<br>
+<br>
+Kostel pro mne v době raného mládí a dětství byl symbolem výtvarného a <br>
+umělecko-řemeslného vývoje společnosti, kdy baroko bylo maminčinou <br>
+výtvarnou láskou, stejně jako otec obdivoval duchovní hudbu, díky <br>
+hloubce pocitů, které v něm, přes pragmatičnost jeho uvažování, dokázala <br>
+zřejmě vyvolat. Dodržování desatera a základní lidská slušnost i v době, <br>
+kdy šedé dny totality nutily člověka k nepěkným kompromisům, to bylo v <br>
+naší rodině jakési nediskutované pozadí, nosná linka všedního žití a <br>
+mojí výchovy, asi tak stejně základní jako například slušné chování při <br>
+stolování. <br>
+Maminka byla vždy ta, která daleko více četla a zajímala se o kulturu, <br>
+otec zase byl ten, kdo v naší rodině zastupoval onu každodenní <br>
+přízemnost, avšak bez pejorativního nádechu toho vyjádření.<br>
+<br>
+Vánoce a velikonoce se slavily bez přidané hodnoty věrouky či modliteb, <br>
+jako svátky volných dní a rodinné pohody, vzájemné komunikace a sdílení. <br>
+Asi jako pusa před spaním, kterou každé dítě dá a dostane od svých <br>
+rodičů než jde spát. <br>
+A právě tahle pusa před spaním je něco, co mladému chlapci zhořkne v <br>
+době puberty, kdy si myslí, že začal rozum brát a začne mít na věci <br>
+vlastní názor. Zcela jistě je to názor nedokonalý a pochopení, stejně <br>
+jako odmítání, se budou někomu staršímu a vzdělanějšímu zdát směšné. <br>
+To se mi stalo i s vírou, stejně jako se základní slušností. To obojí se <br>
+mi stalo polibkem před spaním. <br>
+Začal jsem si na věci dělat vlastní názor, podložený tím, že jsem si <br>
+zvykl hodně číst.<br>
+<br>
+Jak ten názor vypadal, by se dalo vyjádřit jedním momentem, který si z <br>
+dětství pamatuji:<br>
+<br>
+Ležel jsem už několik týdnů v různých knihách, tehdy jsem ještě <br>
+nekouřil, takže mi od nich nic neodvádělo pozornost a já četl dlouhé <br>
+hodiny v kuse. A můj zájem padl, po dočtení nějakého hororu, na dvě <br>
+nádherné staré, mírně ošoupané knihy Nového Zákona, které naše rodina <br>
+zdědila po prababičce, na níž vzpomínám coby na starou ženu, která mne <br>
+nutila pít odporně sladký černý čaj s mlékem. <br>
+Pustil jsem se tedy do čtení jako by byly bývaly Biblické příběhy <br>
+beletrií, na jejíž čtení jsem byl v té době navyklý. <br>
+Přestal jsem po nějakých dvou stech stranách se slzami v očích. Bylo mi <br>
+tehdy asi tak šestnáct let. <br>
+U nedělní snídaně jsem si nechal jednu z knih položenou vedle vánočky z <br>
+máslem a kakaa, abych se o ni mohl opřít v rozhovoru, který jsem si <br>
+napůl připravil. <br>
+Nepamatuji si již přesně, o čem se tehdy přesně mluvilo, jen vím, že <br>
+jsem pohnutým hlasem sděloval svým rodičům, že mi Bible neuvěřitelně <br>
+vadí, protože mám dojem, že Nový Zákon dělá z lidí otroky. Vždyť přece <br>
+všechna ta přikázání a všechna ta nařízení zbavují člověka svobodné <br>
+vůle, svobody konání. Kdo, že má právo říkat mi, jak mám žít, kdo má <br>
+právo říkat takhle obecně, že musím vždy nastavovat druhou tvář. Vždyť <br>
+to přece člověka oslabuje, před jinými.<br>
+<br>
+O několik let později, začal jsem cítit v naší rodině úpadek, který se <br>
+projevoval mimo jiné tím, že moji rodiče začali trávit volný čas <br>
+nakupováním v supermarketech a sledováním odporných televizních seriálů, <br>
+ve kterých po vyřčení přihlouplých vtípků zazní potlesk a smích <br>
+neviditelného publika. Tím jsem velmi trpěl, stejně jako jsem trpěl tím, <br>
+že na gymnáziu nebyli žádní spolužáci, kteří by četli Franze Kafku, <br>
+Egona Hostovského a markýze de Sade. Vždyť oni se učí literaturu tak, že <br>
+si dělají poznámky při výkladu vyučujícího a ty pak prostě papouškují, <br>
+když jsou voláni k tabuli. Jak stupidní. Dlužno podotknout, že tento <br>
+druh přijímání vzdělanosti se mi nikdy nestal blízkým a díky tomu jsem <br>
+zcela jistě v mnoha ohledech naprostým ignorantem. <br>
+I přes tenhle svůj, ne příliš vřelý, vztah ke středoškolskému vzdělání <br>
+jsem nakonec odmaturoval, zachovávajíc si lásku ke čtení a k informačním <br>
+technologiím. Ovládal jsem v té době základ programování, stejně jako <br>
+jsem s radostí a osamoceně četl Williama Shakespeara a Williama Gibsona. <br>
+To, že se o alespoň jednom z nich nejsem schopen s nikým bavit, než snad <br>
+se svou učitelkou literatury a s učitelem angličtiny, a to, že o tom <br>
+druhém ví jen jediný můj spolužák, na to už jsem si tou dobou zvykl.<br>
+<br>
+Po úspěšném složení maturity a přijetí na vysokou školu (obor Informační <br>
+studia a knihovnictví na Slezské Univerzitě v Opavě), jsem se rozhodl, <br>
+že budu sám chvíli stopem cestovat po Evropě a za cíl jsem si vybral <br>
+Španělsko, o němž jsem téměř nic nevěděl a jehož literatura, stejně jako <br>
+jazyk, mi byli velkou neznámou. <br>
+Tehdy se ke mě Biblické příběhy vrátily po delším čase díky tomu, že <br>
+jsem si nevzal dostatečnou zásobu knih, takže jsem nebyl schopen ukojit <br>
+svou závislost na čtení, a s povděkem jsem tedy přijal drobnou Gideonovu <br>
+Bibli, rozdávanou na střední škole zdarma, vázanou v modrých <br>
+plastikových deskách, kterou přivezl kamarád. <br>
+V době siesty a také fiesty, přes po polední horka, jsem polehával v <br>
+opuštěném vesnickém kostelíku a četl si, kterak Ježíš rozdával svým <br>
+učedníkům ryby, kterými nakrmili dav a sliboval jim, že On bude stromem, <br>
+který poskytne blahodárný stín znaveným, stejně jako jeho větve <br>
+poskytnou útočiště ptactvu nebeskému. Venku se tetelil vzduch, kostelík <br>
+voněl vyčichlým kouřem kadidla a bylo tam krásně chladno. Chápal jsem <br>
+jinotaje a představoval jsem si i ono pekelné horko Palestiny, kdy stín <br>
+a klid jsou tak nedosažitelné, stejně jako klid a mír v duši.<br>
+<br>
+Moje tehdejší láska, za kterou jsem se ze Španělska vracel do malebného <br>
+Moravského městečka Mohelnice, byla z katolické rodiny a mne tehdy <br>
+uhodilo do čela strašlivé nepochopení, které jsem uviděl v jejich domě. <br>
+V naší domácnosti byla Bible jen jedna z mnoha knih, které stály v <br>
+policích regálů mezi knihami o umění, detektivkami, filosofií, science <br>
+fiction, Kamasutrou a Uměním Milovat. <br>
+Dům, v Mohelnici, kam jsem přijel, abych byl představen rodičům své <br>
+Velké Lásky byl naopak Domem Písma. Ta kniha tam byla jediná. Nad <br>
+každými dveřmi visel kříž s utrápeným zmučeným filosofem, nikde žádné <br>
+obrazy a plakáty z divadel, na které jsem byl tak zvyklý ze svého <br>
+rodného panelákového bytu a i z domácností mnoha přátel, kde zase bývaly <br>
+tak časté také hudební nástroje, od klavíru až po basovou kytaru. Ta <br>
+Mohelnická domácnost byla cítit vychladlým citem, stejně jako matka té <br>
+ženy, kterou já tak miloval. <br>
+Jaké bylo mé překvapení, když nejmladší člen téhle rodiny dostal ke svým <br>
+třetím narozeninám Obrázkovou Bibli a růženec. Jaké bylo mé překvapení, <br>
+když D., ta již téměř třicetiletá žena kterou jsem obdivoval a bezmezně <br>
+miloval ve svých devatenácti letech, mi vykládala, jak si odtrpěla <br>
+psychiatrické léčení z důvodu anorexie a bulimie, zřejmě způsobené tím, <br>
+že jí matka vtloukala do hlavy, že tančit a poslouchat moderní hudbu, že <br>
+to je proti Jeho vůli a slušné děvče nemůže přece tancem vystavovat na <br>
+odiv své tělo, vždyť takové děvče by nemohlo být považováno za cokoliv <br>
+víc než děvku. <br>
+D. chtěla tančit. Toužila po tom, aby byla přijata na taneční <br>
+konzervatoř (což se jí také o několik let později podařilo v Holandsku). <br>
+D. toužila po tom, aby mohla žít jako jiná, naprosto normální děvčata <br>
+bez neustálého připomínání, že vše co ji zajímá a s čím se stýká je <br>
+hříšné a zlé. <br>
+Vnímal jsem tehdy růženec, jako nějakou strašlivou svazující a škrtící <br>
+šňůru, která dokáže zničit přirozenost děvčete natolik, že se opakovaně <br>
+pokusí o sebevraždu. Rozhodl jsem se nenávidět tu všeobjímající, a <br>
+tolik proklamovanou, lásku. <br>
+Jak mi bylo dobře s Novým Zákonem, jehož krásná podobenství mne <br>
+oslovovala ve Španělském kostelíku, tak jsem od té doby dostával <br>
+záchvaty vzteku při rozhovoru s kýmkoliv, kdo byl ochoten stavět se na <br>
+stranu křesťanství.<br>
+<br>
+Od té doby jsem ušel ve svém intelektuálním vývoji a vzdělání dlouhou <br>
+cestu, ale stále hledám svůj vztah k věcem s bohy spojeným. Potkal jsem <br>
+se s uctívači kde čeho, od zlatých telat, přes laskavé bohyně, potkal <br>
+jsem se s ateisty tak posedlými svojí ideou, že si s ničím nezadali s <br>
+těmi, jejichž víru odmítají. <br>
+Myslím, vím, že za ty roky, které uplynuly od doby, co jsem miloval D., <br>
+diskutoval o Novém Zákonu u nedělní snídaně a četl si o stínu stromu v <br>
+kostelíku ve Španělsku, jsem několikrát sám pocítil dotek něčeho, co by <br>
+mne mohlo přesahovat. Vnímal jsem existenci něčeho tak cizího a jiného, <br>
+jako jsou pro mravence lidské sny o architektuře. <br>
+Jsem také asi nucen uznat, abych měl při psaní čisté svědomí, že mám potřebu věřit, uctívat a vykonávat rituál. <br>
+A stejně tak se cítím povinován, jako intelektuál, bojovat proti církvím, sektám a <br>
+zkostnatělosti pokroucených tradic, proti útlaku.<br>
+<br>
+To čemu se dále v textech hodlám věnovat je právě tento boj a zároveň <br>
+pochopení, přijetí a kontemplace jsoucna. Ať již takového, které mě <br>
+přesahuje, tak i jsoucna každodenního, z něhož v dané momenty vidím jen <br>
+střípky, a teprve při pozdějším pohledu, skládá se mi mozaika celku.<br>
+<br>
+Popsal jsem zde svou cestu, nebo spíše úplný její základ, tři základní <br>
+body, které se týkaly mne a víry, mého osobního vývoje a dotyku s <br>
+náboženstvím. <br>
+Pokusím se v dalších článcích rozebrat k čemu jsem dospěl a kam mířím ve <br>
+studiu religiozity, jako ignorant, nevychovaný v žádné tradici, který si <br>
+sám o sobě rád myslí, že stojí na straně svobody a zdravého rozumu. <br>
+Existuje něco takového jako zdravá výchova k náboženskému cítění, <br>
+existuje něco takového jako zdravá víra? <br>
+Tak právě z těchhle dvou otázek bude dál vycházet série článků, k <br>
+jejichž psaní se chystám a kvůli nimž vedu rozhovory s lidmi ve víře <br>
+vychovanými, vzdělanými, nebo i s lidmi, kteří víru a náboženství <br>
+vášnivě odmítají. <br>
+Rád také přijmu jakékoliv zajímavé a věcné dopisy týkající se tématu na <br>
+emailové adrese tpetru@gmail.com<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">1:21:52 2.8.2010</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9525;n=0461">2 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Jak na šifrovaný email snadno a zdarma [howto]<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9439;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9439;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9439;n=0461">Jak na šifrovaný email snadno a zdarma [howto]</a></h3>kopie ze stránky <a href="http://petru.blog.idnes.cz/" rel="nofollow" class="odkaz">http://petru.blog.idnes.cz</a><br>
+--------------------<br>
+Nebudu zde rozebírat, proč je v dnešní době, kdy jsme všichni vzájemě propojeni různými trubkami a vlákny elektronických komunikačních kanálů, velmi důležité jejich zabezpečení a důvěryhodnost. Na toto téma bylo již napsáno mnohé a není cílem tohohle sloupku, abych někoho o něčem přesvědčoval. Pojměme tenhlo text jako jakési HOWTO, tedy návod, jak dosáhnout toho, aby naše emaily byly chráněny proti komukoliv, kdo by je chtěl nejen neoprávněně číst, ale také pozměňovat.<br>
+ <br>
+Jak na šifrovaný email snadno a zdarmaNebudu zde rozebírat, proč je v dnešní době, kdy jsme všichni vzájemě propojeni různými trubkami a vlákny elektronických komunikačních kanálů, velmi důležité jejich zabezpečení a důvěryhodnost. Na toto téma bylo již napsáno mnohé a není cílem tohohle sloupku, abych někoho o něčem přesvědčoval. Pojměme tenhlo text jako jakési HOWTO, tedy návod, jak dosáhnout toho, aby naše emaily byly chráněny proti komukoliv, kdo by je chtěl nejen neoprávněně číst, ale také pozměňovat. <br>
+<br>
+Dodám jen, že mé řešení, které ctěným čtenářům vysvětlím nám umožní zvýšit bezpečnost vzájemné komunikace mnohonásobně více, než když vhodíte do poštovní schránky klasické pošty (snail mail) dopis v zapečetěné obálce, která přecijen zvyšuje bezpečnost oproti například pohlednici mnohonásobně.<br>
+Moje malé srovnání pohlednice verzus zapečetěná obálka mi vytvořilo oslí můstek pro první poznámku o využitelnosti celé ideje.<br>
+Je samozřejmě pravda, že pohlednice má své nezastupitelné místo v komunikaci dvou lidí a mnohdy bohatě stačí. Není zřejmě nutné posílat pohled z dovolené v Brazilském Riu naší sedumdesátilé babičce ve speciální obálce s pečetí. Babička takovou věc nijak zvlášť neocení a člověk krom hezkého obrázku s milým pozdravem bude muset shánět daleko více proptiet, díky čemuž se, zvláště v Brazílii, zbytečně zapotí více než by musel.<br>
+Tedy pokud chcete jen několika přátelům poslat milé "Ahoj." s obrázkem na zadní straně, klidně můžete použít v neelektronickém světě již zmíněnou pohlednici a přes internet nějaký ten facebook, icq nebo skype. Pokud však rádi své milé drahé polovičce posíláte obsáhlé popisy toho, jak krásně se spolu pomějete, jen co se ukážete doma, a tyhle popisy třeba obsahují i nějaké to slovíčko či obrázek, které rozhodně nechcete, aby si prohlížel nejen pošťák, ale také kdokoliv jiný než ona (on), raději sáhnete po obálce na klasický způsob, nebo po šifrovaném emailu na způsob elektronický.<br>
+ <br>
+Jak si chytřejší z vás mohli všimnout z předchozí věty, nemusí být člověk zrovna tajný agent nebo kriminální živel, aby měl důvod zachovávat soukromí. Vzhledem k tomu, že dnes je stejně snadné zašifrovat email, jako si koupit na poště obálku a známku, jen tuto možnost spousta z vás nezná, a proto nevyužívá, ukáži vám z kterého konce začít. Nemusíte se bát přílišné složitosti, ale zároveň se těm technicky zdatným omlouvám, za možná až přílišné zjednodušení.<br>
+Tak tedy hurá na zalepování obálek.<br>
+Celý můj postup předpokládá, že své emaily posíláte z klienta elektronické pošty, který máte nainstalovaný nejlépe ve vašem počítači. Existují samozřejmě i postupy, kterak tento poněkud nepohodlný předpoklad obejít, ale těm se budu věnovat až nekdy příště (pokud by někdo chtěl, či měl napsaný obecnější článek o tom, jak emaily a soubory obecně šifrovat, bez použití klienta elektronické pošty, rád je zveřejním, či prolinkuji, neváhejte a pište na nikdykde@gmail.com).<br>
+ <br>
+Tak tedy co budeme potřebovat<br>
+----------------------------------<br>
+1) emailovou schránku podporující protokoly POP/IMAP a SMTP a správně nakonfigurovaného poštovního klienta. V mém příkladu budu používat služeb poskytovaných zdarma, tedy služeb <a href="https://gmail.com/" rel="nofollow" class="odkaz">https://gmail.com/</a> v kombinaci s poštovním klientem Thunderbird ( ke stažení zdarma na <a href="http://thunderbird.mozilla.cz/" rel="nofollow" class="odkaz">http://thunderbird.mozilla.cz/</a> ). Samozřejmě můžete využívat komerčně poskytované schránky elektronické pošty a/nebo komeční poštovní klienty o tom náš článek ale není ( možná některý další díl seriálu nebo pošlete již existující návody na nikdykde@gmail.com )<br>
+2) software pro zacházení s elektronickým podpisem a šifrovanými soubory. Opět v našem případě volně ke stažení v podobě GnuPG například tady: <a href="http://www.gnupg.org/" rel="nofollow" class="odkaz">http://www.gnupg.org/</a><br>
+3) plugin Enigmail, který propojí Thunderbird s GnuPG, tak, aby se člověk nemusel již téměř o nic dalšího starat. Volně ke stažení na stránkách projektu <a href="http://enigmail.mozdev.org/" rel="nofollow" class="odkaz">http://enigmail.mozdev.org/</a><br>
+ <br>
+Jak installovat<br>
+----------------<br>
+Stáhněte emailový klient Thunderbird a nainstallujte jej, mělo by to být velmi snadné jak pro Tučňáka, tak i pro Jablka či Okna. Stejně snadno zřejmě většina z vás dokáže stáhnout a nainstalovat GnuPG, snad jen uživatélé 64b Oken budou muset ještě chvíli používat mozek a například <a href="http://google.com/" rel="nofollow" class="odkaz">http://google.com/.</a><br>
+Malinko obtížnější je doplnění pluginu Enigmail do poštovního klienta, ale i to je veskrze hračka pro desetileté dítko. Stačí, když v Thunderbirdu otevřete menu Tools (Nástroje) a v něm vyberete Add-ons (Správce dopňků). Do okénka, které se zjeví, naprosto snadno myší přetáhněte soubor s příponou xpi, který jste získali, když jste úspěšně stáhli Enigmail. Thunderbird si řekne o restartování aplikace a v ten moment již víte, že vše je v pořádku.<br>
+Samozřejmě, krom dolnění Thunderbirdu o plugin musíte celý klient mít nastavený tak, aby dokázal komunikovat s vaší emailovou schránkou. V případě gmailu je hezký návod například tady: <a href="https://mail.google.com/support/bin/topic.py?hl=cs&topic=12806" rel="nofollow" class="odkaz">https://mail.google.com/support/bin/topic.py?hl=cs&amp;topic=12806</a>, ale existují i jiné, třeba s obrázky :)<br>
+Vše jste zvládli a máte tedy Thunderbird -komunikující s emailovou schránkou- doplněný o plug-in Enigmail a kdesi na disku se usadila i maličká utilita GnuPG.<br>
+ <br>
+Jak funguje elektronický klíč<br>
+------------------------------<br>
+Podobně, jako k zámku například od bytu patří klíč fyzický, se zoubky a drážkami, tak i elektronický klíč je jakýsi soubor, který představuje klíč od elektronického zámku. V elektronické podobě jsou ve skutečnosti klíče dva. Jeden, kterým se zamyká a druhým kterým se odemyká.<br>
+Klíč, kterým se zamyká se nazývá klíč veřejný (veřejná část klíče), a to proto, že vlastně chceme, aby poštu pro nás určenou měl možnost kdokoliv zamknout, předtím, než nám ji odešle. Veřejný klíč je jakýsi elektronický ekvivalent obálky, kterou zalepíme a zapečetíme, než dopis odešleme. Veřejný se tomuto klíči říká proto, že jej umisťujeme někam, kde si jej každý může vzít, předtím než jím bude naši poštu zamykat. Nejlepší je umístit veřejný klíč jako odkaz na svém blogu či stránkách, ale je také možné jej v prvním, zatím nešifrovaném emailu, poslat našemu komunikačnímu partneru.<br>
+Veřejný klíč nelze použít k tomu, aby jím zamčené soubory či text byly odemčeny, není tedy potřeba se bát volně jej šířit, ba naopak, to právě musíte udělat, aby celý nápad fungoval.<br>
+Další část klíče je klíč soukromý (privátní), který naopak NESMÍME NIKOMU DÁT a musíme jej vlastnit proto, aby mohly být odemčeny soubory, které byly zamčeny veřejnou částí klíče. Soukromý klíč je opět soubor, nejlépe uložený na USB klíči, externím disku, v paměti foťáku či telefonu a znovu opakuji, že tuto část klíče uchováváme v tajnosti.<br>
+Ano, soukromý klíč je sice chráněn heslem, které by mělo být velmi kvalitní, ale přecijen lepší je, nedávat tajnou část klíče z ruky, člověk pak nemusí doufat a může věřit. Taky nenecháváte klíče od bytu pověšené na klice svojich dveří. O tom, jak vytvořit kvalitní heslo se píše třeba tady, snad odpustíte slovenštinu : <a href="http://blog.synopsi.com/2010-02-08/hesla-nase-kazdodenne." rel="nofollow" class="odkaz">http://blog.synopsi.com/2010-02-08/hesla-nase-kazdodenne.</a><br>
+Mimochodem: elektronický klíč je svázán (pro naše účely) s konkrétní emailovou adresou a nebude jej možné používat pro podepisování a šifrování emailů pro jinou emailovou identitu. Samozřejmě i tato možnost existuje, ale je potom nutné ke klíči vytvořit takzvané podklíče, což je stále snadné, ale v daný moment mimo rozsah základního textu.<br>
+ <br>
+Tak tedy potřebujeme soukromý a veřejný klíč<br>
+--------------------------------------------------<br>
+Plugin Enigmail je velmi přátelský, co se výroby klíčů týče, vždyť právě proto jej používáme. Po nainstalování plugiu a restartu Thunderbirdu by se mela v horní, tzv. nástrojové liště, kde jsou menu, objevit nová položka nadepsaná OpenPGP, když ji rozbalíte, bude v ní k vidění Průvodce nastavením (Setup Wizard). Když na něj kliknete, optá se, zda opravdu chcete, aby vám pomohl nastavit Thunderbird pro šifrování, odopovězte ano. V dalším okně se průvodce zeptá pro které emailové identity chcete vytvořit klíč. Pokud jste pozorně četli, tak již víte, že jeden klíč patří jedné emailové adrese, pokud tento nemá podklíče.<br>
+Vyberte tedy identitu pro kterou chcete klíč používat, v mém případě to bude nikdykde@gmail.com.<br>
+Dále se vás průvodce zeptá, zda chcete podepisovat všechny své emaily z této adresy. Rozhodnutí je jen na vás, ale mé doporučení je zvolit ano. Podepsaný email znamená, že i když jej někdo odchytí někde po cestě a budej jej chtí pozměnit, sice se mu to podaří, ale příjemce, bude díky metodě ověření podpisu (díky pluginu Enigmail prováděna automaticky) vědět, že s emailem není něco v pořádku (podpis nebude ověřen, což znamená, že příjemce nemá váš veřejný klíš, nebo byl email po podepsání nějakým způsobem změněn či poškozen).<br>
+Tedy zvolíme ano, chci podepisovat všechny emaily pro nikdykde@gmail.com.<br>
+Další okno se vás ptá, zda máte veřejné klíče pro většinu lidí s kterými si píšete, pokud ano, zvolte tuto možnost, ale pravděpodobně tomu tak není, takže zvolte "ne, vytvořím si individuálně pravidla pro každého příjemce". Tímto nastavení dáte Thunderbirdu vědět, že sifrovat emaily má pouze v případě, že jej o to explicitně požádáte.<br>
+Následuje dotaz, zda si přejete změnit nastaveni Thunderbirdu, tak aby co nejvíce vyhovovala potřebám šifrování. Možnosti si pročtětě, ale já doporučuji zvolit ano.<br>
+Pokud ještě nemáte žádný pár klíčů, bude vám nabídnuto jeho vygenerování. Zadejte kvalitní heslo klikněte a pokračujte dál v v Průvodci.<br>
+Za nějakou chvíli bude vygenerován úplně nový pár klíčů a od finále nás dělí už jen krok. Malý pro vás a myš, velký pro vaše soukromí.<br>
+Následuje rekapitulace nastavení a samotné generování klíče.<br>
+Jen tak mimochodem, standardní nastavení říká, že klíč bude platný maximálně pět roků od data vzniku, což je užitečné, pokud jej někdy v budoucni ztratíte, zapomenete heslo nebo prostě už nebude z jiného důvodu dál užitečný.<br>
+Poslední okno se vás ptá, zda chcete vytvořit takzvaný revokační certifikát. Zadejte ano a vzniklý soubor uložte na stejně bezpečné místo jako soukromou část klíče, možná bezpečnější. Tento certifikát totiž umožňuje jeho vlastníku, aby zakázal a znefunkčnil právě vygenerovaný klíč, tak, že jej nikdo již nebude moct dál používat (využijete v případě ztráty hesla, ztráty veřejného klíče, nebo kdykoliv, kdy chcete ukončit platnost svého veřejného klíče dříve, než je standardně nastavených pět roků).<br>
+ <br>
+Poslední krok<br>
+--------------<br>
+Nyní máte nastavený Thunderbird, aby podepisoval vaše emaily, na požádání aby je zašifroval.<br>
+Nezapomeňte heslo. soubor .asc, který představuje revokační (likvidační certifikát) uložte na nějaké vhodné místo a projistotu si uložte na stejně tajné a bezpečné místo i svůj soukromý a veřejný klíč, což uděláte tak, že v menu OpenPGP zvolíte tlačítko Správa klíčů (Key Management), na pravé straně zatrhnete zaškrtávátko Zobrazit všechny klíče (Display all keys by default), pravým tlačítkem kliknete na právě vygenerovaný klíč a zvolíte možnost Exportovat klíče do souboru. V následjícím okně nejdříve zvolte pouze klíč veřejný a potom celý procez zopakujte, pročež zvolít klíč soukromý. Oba vzniklé soubory přesuňte na nějaké bezpečné medium a to uschovejte, zajistíte si tak, že v případě ztráty dat na harddisku vašeho počítače, budete moci po nové instalaci software snadno pouze importovat klíče (OpenPGP  - Správa klíčů - Importovat klíč ze souboru).<br>
+Pamatujte, že váš soukromý klíč je vždy na počítači nakonfigurovaném podle tohoto návodu uložen jako soubor, který je sice zaheslovaný vašim jistě velmi kvalitním heslem, ale i tak se snažte nenechat si jej ukrást, asi jako klíče od bytu či auta.<br>
+Pokud o klíč přijdete nebo přejdete o heslo k němu vždy použijte revokační certifikát a vygenerujte si raději nový pár klíčů . (Taky říkáte svému partnerovi, že jste se zrovna něco naučili s počítačem a všechno mu chcete hned ukázat? taky se občas rozcházíte či rozvádíte?)<br>
+ <br>
+Kde vzít a kam uložit veřejné klíče<br>
+-------------------------------------<br>
+Pamatujete, veřejnou částí klíče je email uzamčen a pouze pomocí soukromého klíče s heslem může být odemknut, vždy tedy musíte mít veřejnou část klíče příjemce, pokud chcete zprávu pro něj zašifrovat. Protože ne každý má k dispozici vlastní web čí blog, je možné do první (samozřejmě nešifrované) zprávy přiložit váš veřejný klíč a tak to udělá i druhá strana (vygenerovat soubor s klíčem je možne pomocí nástrojového panelu OpenPGP - Správa klíčů - prvý click na klíč - exportuj klíč do souboru).<br>
+Klíče je možné také přiložit k jinému textu a pomocí kopírování klíče do schránky. Takový text pak jde snadno zkopírovat do souboru odkud může být importován příjemcem.<br>
+Nejužitečnější metodou jak veřejné klíče sdílet je pak v okně Správa klíčů možnost (na pravém tlačítku myši) možnost Nahrát klíč na veřejný server. Veřejné servery jsou navzájem mezi sebou zrcadleny, takže v ideálním případě stačí klíč exportovat napříkladn na "pgp.mit.edu" a za pár dní budou k dostání i na ostatních. Pokud vám nevadí o pár kliků víc, klidně tímhle způsobem exportujte klíče na všechny nabízené servery, máte pak jistotu, že adresát, používající GnuPG/Enigmail, bude snadno schopen klíč získat, dříve než vám odešle první zašifrovaný email.<br>
+Tak, a pokud si chcete celou věc vyzkoušet v praxi, přesvěčte nejakého kamaráda či člena rodiny, aby si vygeneroval své klíče, pro svůj email, podle tohoto návodu, vyměňte si veřejné klíče a zkuste si navzájem poslat zašifrované soubory.<br>
+Pokud vše půjde jak má, právě jste začali používat nejbezpečnější poštovní obálku na Zemi a nemusíte se bát. že si někdo přečte váš obchodní plán (včetně vašich lan administrátorů) nebo to, jak moc se těšíte na svou drahou polovičku, až se vrátíte ze služební cesty po Brazílii.<br>
+Pokud chcete své dovednosti vyzkoušet hned, neváhejte importovat můj klíč z veřejných serverů (hledejte nikdykde@gmail.com), nebo si zkopírujte níže přiložený text, ohraničený zprávami za několika pomlčkami, které říkají, kde začíná a končí veřejný klíč.<br>
+Poslední drobnost. Aby bylo jasné, že nikdo nepoškodil klíče na vaší klíčence nebo je nevyměnil, je nezbytně nutné po importu klíče (OpenPGP - Správa klíčů - import) tento podepsat. Uděláte to tak, že v okně, kde jsou klíče zobrazeny clicknete na klíči pravým tlačítkem a zvolíte podepsat klíč. Použijete k tomu svůj soukromý klíč a své heslo. Teprve potom bude možné mi napsat plně šifrovaný a podepsaný email.<br>
+ <br>
+Úplně nakonec...<br>
+-------------------<br>
+Teď, pokud všechno šlo podle plánu, jste schopní napsat email, který je automaticky podepsaný a pokud před odesíláním emailu vyberete z nástrojového menu OpenPGP možnost Zašifrovat email (Encrypt email) a pokud máte veřejnou část klíče příjemce, budete dotázani na heslo od vašeho kíče a email putuje k příjemci v zalepené obálce s vašim vlastnoručním podpisem, bezpečný tak, že ani všechny součastné počítače dohromady jej nedokáží otevřít nebo zfalšovat (pokud jste zadali opravdu kvalitní heslo).<br>
+Tak snad to nebylo až zas tak složité. Pokud ano, prostě vezte, že budete dál používat pohlednice místo obálek a třeba vám to ani nebude vadit, potom ale návod nebyl určený vám.<br>
+ <br>
+Všem ostatním, komu se postup podaří, blahopřeji a můžete mi poslat zašifrovaný pozdravný email. Pamatujte, že potřebuji váš veřejný klíč, abych mohl odpovědět.<br>
+Carpe Diem.<br>
+ <br>
+-----BEGIN PGP PUBLIC KEY BLOCK-----<br>
+Version: GnuPG v1.4.10 (GNU/Linux)<br>
+ <br>
+mQENBEvrCN8BCADG4QNMEcpaDfBbGtEHNtWOFDgvpPMtEZ7FxTs9/qQ97pHsNAqg<br>
+lkW2WfRUuaQrAFKLSHcDJTgZynDBMld8/mCs5zOdh9mwbcIRSQmS+i3Du4OII+mM<br>
+z6/7ORRGNpBWYmSwFvK5OTDWQfAI/8GW7wcB31UFRKOESpOdZRVxBemqKc2ETn7h<br>
+5XTtPq/ZKzGCPM2xtiYSylTP87qOPoLTOsvuDpJoeoentmsTctrO++qoyhHnIuFX<br>
+sz98RtwKNn6p4yx4a7OpWxyZHKlzRkXd4Keah+Kpcf/l8fk7JmFU91tu7J5c9RTz<br>
+QVsdtjU7b+OzkX6anKIp4AVbZCkSwoF5VdvFABEBAAG0HWNyeXB0Y2F0IDxuaWtk<br>
+eWtkZUBnbWFpbC5jb20+iQE+BBMBAgAoBQJL6wjfAhsjBQkJZgGABgsJCAcDAgYV<br>
+CAIJCgsEFgIDAQIeAQIXgAAKCRClc5I5IKnC/yC1B/9pIz8IoVOelwi11XOhrn8v<br>
+e6FxvPE3XgpiYS63D3wGUQyECJ54TswG4x8H+AWFtp3qgFtMv9iQ9njgeGQAhJjD<br>
+Vtgr2gm+lVr98YdJAt6HOrcyPXxDGZHe2FX17Kn8iE64x6exM0ou5D5AaynP+N+0<br>
+1r/BAYs6J19GzeSwp/f0QjFUkEYBVoDEq97ljkJZqBMkwW4Xa38v6lbflLGzUhlD<br>
+zpr6lPyBZ8MtrpJ3How2f2rPFn6mjpcsh3uBZ5zqADV4wptAz2jhJg9VYCX4FG93<br>
+r52ZUbIzD9en50fMXUR/OibDf8oqsZ5n3VTVuzaA3p//IirlOWNEWmoqayfgM6J2<br>
+uQENBEvrCN8BCADDxN12oumS0OBBHAyt6WETKkYDTh6E6VYO8mOzE3mYTeWoksAL<br>
+egyxMnIkSpluWGoJ0NkBRZy6qh9FJMr55PNhK9srcx0N+3zu0ANYMesYOI0NXj+p<br>
+rwjxQVGqBjlMe2x3/7sxXptCwqcjQwXBspuf1V7BGxp0SRSpPzz+OS2n4wSes+e4<br>
+l7d05XiC7j/Q+LMyHNOgKmkQdCwuZ9hwupehxyQS5BFURPnb3erjD1w0rZzcsLpt<br>
+91rJvrNwI2QmvtV685I6cFYssFAYNa+jlOrfHyQrwoPUSBJPoCTeERA1TUFVSQcL<br>
+vBsS1JJrUe28PcDFaqZRz0FY3pu/OwSbfY1bABEBAAGJASUEGAECAA8FAkvrCN8C<br>
+GwwFCQlmAYAACgkQpXOSOSCpwv/GEgf/V+DI/JYayyQQQRwfFVHqUCghGiBwDchv<br>
+OalgsL0yYTq2K3jnuPSSv6gyXT7NzgTAxYe4pLLqAl2OKja+37ru7by/K8/BPz3k<br>
+T+S4wUB2SRlRLCeerf47RCfTA9KiIc/HVlLgSsd7A3OgO+4j+MLjy9ygUM894wz3<br>
+pKsuvxy+wn64OWS9H1rVehWl8Rv/11a121GNbqp7XuA7VVVOdhnqsTxffXNDZl3e<br>
+GBhcLdbMDPaDFYcSbplcz3+MyhyuLXcTQAHREJLPK4Km+91RUTtXtUpwyDVW6jcH<br>
+b0vTCCy9+p2I7X4wULXegRASNbdh9R5iiCdC159ZuiDeXAG4pTJd3w==<br>
+=Vcli<br>
+-----END PGP PUBLIC KEY BLOCK-----<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">19:47:36 17.5.2010</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9439;n=0461">4 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Rezavý politický řetěz drží u boudy hladové psy války<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9360;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9360;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9360;n=0461">Rezavý politický řetěz drží u boudy hladové psy války</a></h3>Včera jsem usoudil, že by Česká Republika mohla začít zbrojit a pak vyhlásit válku nějakému srandovnímu národu s ještě menší bojeschopností, zato s trošku více fungující ekonomikou. Vzhledem k tomu, že nejbližší -parametrům vyhovující- zemičkou je Slovensko, naznal jsem záhy, že jedině tak úspěšně zakryjeme obraz ekonomicky nesvéprávné politické entity, když predvedem ukázkovou neschopnost vojenskou, pročež se Češi a Slováci vzájemě vyhladí ve slavné bitvě Pod Horú u Salaša.<br>
+<br>
+Slovenským kolegům mé úvahy nepřipadly zvlášť vtipné.<br>
+<br>
+Ve skutečnosti jsem tímhle poněkud hloupoučkým vtípkem komentoval možné řešení Českého státního dluhu, který roste každou vteřinu o nějakých bratru pět tisíc korun a celkově dlužíme světu asi tak bilion a třista miliard korun českých.<br>
+<br>
+Jak se zdá, nejsem však jediný, koho podobná věc napadá a narozdíl od mého politicky nekorektního humoru to jiní myslí, politicky zcela korektně, vážně.<br>
+<br>
+Kdo neví o čem mluvím, nechť si přečte nějaké články na téma Fides a Jobbik, což jsou nacionalistické uskupení s velkou podporou veřejnosti v krachujícím Maďarsku. Jobbik by měl podle výzkumů mít k dispozici az 20% Maďarských voličů a to i přesto, že hodlá například vyhlásit válku Slovensku.<br>
+Dochází vám pointa? Stále ne?<br>
+<br>
+Tak začněme trošku více ze široka ač dost hrubě.<br>
+Berte prosím mou úvahu jako kontextovou detektivku, ne jako přehled světového dění v číslech a datech:<br>
+<br>
+Hroutící se ekonomika USA způsobila celosvětovou řetězovou reakci propadů burzovních statistik, která odhaluje zdraví čí nemoc finančních hospodaření mimo jiné v zemích málo stabilního smluvního golema se špatně vypálenýma nohama, tedy EU. Mluvím nejenom o Řecku, Španělsku, Lotyšsku ale třeba právě také o Maďarsku, kde ekonomický moloch chvilku nenápadně pokulhával (v této fázi se zřejmě nachází Česko), pročež zakopl a upadl. Rozhodčí už počítá k finálnímu KO, obecenstvo zaraženě mumlá z tribuny.<br>
+<br>
+Aténami stejně jako Rigou zachvívají křeče pouličních nepokojů, v Maďarsku se hajluje v černých košilích, v Česku se buduje buransko-mafiásnký socialismus s prasopsí tváří.<br>
+Ve Spojených Státech vidíme první krachující velká města a i přesto všežeroucí pes na americkém vodítku (MMF) chce a může, spekulacemi trhanému Řecku pomoci. Nedostatek politické vůle k takové pomoci je téměř jasně pochopitelný, nikdo z EU (kterému se kupodivu stále častěji říká Evropa) si nepřeje, aby do kolébky civilizace hodil zlatou minci největší konkurent. Co prý by to udělalo s Eurem, zní v kuloarech zastřeně.<br>
+<br>
+Jsem jediný, komu připadá, že rezavějící politický řetěz drží u boudy pěkně nazuřené a hladové psy války?<br>
+<br>
+Přežvikující a chrchlající socialismus-buranismus na jedné straně, holohlavý nacionalismus v "sjednocené" Evropské Unii na straně druhé a hrozící finanční krach na prvních stránkách všech novin. Jsem jediný, komu tahle situace nápadně připomíná situaci před druhou světovou válkou?<br>
+<br>
+Jsem jediný, komu připadá návštěva Putina a Medveděva jako akt potvrzující podané ruce v případě konflitu? Nezní snad zmínky i tytulky o nukleárních zbraních, hvězdných válkách, zbrojeni i odzbrojovani, jako blížící se hluk válečné vřavy? Také i Ty, laskavý čtenáři vidíš, jasně hrozící prsty hlavic a bomb, těch kovových výhrůžek, tichých, rychlých a laserem naváděných smrtí?<br>
+<br>
+Dříve, když státníkům došli peníze, dělali se pogromy na židy, kteří s penězi museli obchodovat a logicky tak potom nějaké měli. Dnes, když dochází peníze, vyvolá se válečný konflikt, ať už je záminkou spadlý panelák nebo boj za svobodu národů, jejichž mentalitě ani náboženství tak úplně nerozumíme.<br>
+<br>
+Tak tedy Tiresias ve mě zvěstuje svetu válku, válku -jak netypicky- s ekonomickým pozadím, válku celosvětovou a téměř určitě ničivou, především na majetku, který se pak dá nádherně znovu zbudovat.<br>
+<br>
+Co na tom, že oběti na životech budou z řad svatebčanů, co na tom, že neonáckové se schovají za někoho odážnějšího, když půjde z tlustejch do tenkejch a co na tom, že socialisti nakonec vlastně budou chudým brát a bohatým dávat (a v rámci sociálních nálad si budou fotit opozici neobo občas nechají zmlátit svobodné lidi vyznávající jiné hodnoty - ano CZECHTEKK 2005 ti Prasopse a bando lhářů NIKDY neodpustíme.). Co na to Francie sladká a hrdý Albion?<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">14:56:16 8.4.2010</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9360;n=0461">1 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Jak jsem potkal 3Jane<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9167;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9167;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9167;n=0461">Jak jsem potkal 3Jane</a></h3><i>Občas sem dám nějaký sen, tak tohle je jeden, který se mi zdál dnes nad ránem a může docela elegantně doplnit diskuzi o tom, jak kdo z nás vnímá pocity ve snech a potažmo lásku, protože já vím určitě, že jsem dnes v noci cítil.<br>
+Byl to jeden ze snů, ze kterých se člověk nechce probudit.</i><br>
+<br>
+<br>
+Stojím na nevysokém pahorku nad zvlněnou krajinou a starší muž za mími zády mi vykládá příběhy, které se ke kopci váží. Něco o nějakém zbojníku, moc jej neposlouchám, můj pohled upoutala vesnice, napůl skrytá za terénní vlnkou porostlou krásně zelenou travou. Chci se tam podívat, láká mne i když z ní vidím pouze černé střechy bez vystupující věže kostelíka.<br>
+Uschlým vřesem scházím rychle do údolí.<br>
+<br>
+Stojím na pustém, ale přátelsky působícím náměstíčku mezi kamenými domy, klepu na starodávné těžké dřevěné veřeje ale není slyšet žádný zvuk.<br>
+Najednou z jedné postranní uličky vytančí v běhu několik postav v kostýmech a maskách podobných těm, které člověk může vidět na Benátském karnevalovém výření. Masky a kostýmy působí mírně neupraveně, jako by je někdo s láskou udělal na koleně.<br>
+Nejdříve mnou zazní ozvěna úleku, strach, ale zachvíli se usmívám a nechám maskovanou šarádu kolem mne tančit a vykřikovat dokud nezachytím modrý pohled jedné maskované, pružné postavy.<br>
+Ostatní tanečníci, okamžitě poznají, že se něco změnilo a s výkřikem a úklonou odtančí do bočních uliček.<br>
+Postava pružnými krůčky přistoupí, a aniž bychom se přestali dotýkat očima s elegantním gestem sejme masku.<br>
+<br>
+Stále ty oči, ale už k nim patří tvář.<br>
+Ležíme na úpatí kopce, louka je prosluněná a voní.<br>
+Modré veliké oči s inteligentní a mírně uštěpačnou jiskrou rámuje tmavá ofina krátce zastřižených vlasů, jež dává protáhlé, hubené tváři, pokryté hvězdičkami pih, tvar trošku podobný lískovému ořechu. <br>
+Inteligentní rty a ostrý nosík.<br>
+Držím ji jako dítě, leží, opřená o mne zády s hlavou položenou v ohbí mého lokte a vykládá mi příběhy.<br>
+<br>
+Její otec byl čech, matka italka. Společně emigrovali do Itálie v době komunismu a ona už se narodila tam. Protože ale zbytek rodiny zůstal v Čechách, rozhodla se, že je poprvé navštíví, ale čeští lidé se jí nelíbí a chtěla se co nejrychlej vrátit, až do téhle chvíle. Říká mi ať odejdu s ní, nebo ať přijedu.<br>
+<br>
+Potom se mi ještě chvilku zdá sen o ztracených knihách, které jsem půjčil příteli, a kterých ztráta mne velmi mrzí, nakonec se probouzím.<br>
+<br>
+První co hledám je tužka a blok, abych si zapsal adresu a jméno, které mi ve snu maličká pihatá tanečnice řekla, ale ještě než dosáhnu na noční stolek, vím, že v předivu snu právě tady zejí obrovské díry.<br>
+Přeju si, aby se mi sen zdál znova a několikrát jej opisuji v různých podobách, abych zachytil co nejvíce pocitů. Pak jdu na snídani...<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">6:58:25 20.1.2010</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9167;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Dobra je kvalitni cerna a karminove cervena, blednou pomalej.<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9089;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9089;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9089;n=0461">Dobra je kvalitni cerna a karminove cervena, blednou pomalej.</a></h3>OVERDRIVE ---  --- 23:46:39 27.12.2009<br>
+tak hejbni zadkem holka.<br>
+zima je, az za nehty zalezlo.<br>
+tek hejbni zadkem, at se vidi,<br>
+dobro, zlo.<br>
+<br>
+OVERDRIVE ---  --- 19:19:29 26.12.2009<br>
+<br>
+Nevim parim litani po svete, tvrdy drogy, alkohol, hudebni programy a blok a tuzku.<br>
+Myslim, ze mam v Praze kolem postele asi tak 30 taliru s nedojedenym jidlem s tipnutejma vajlama, nekolik hromad knih, naky spinavy veci, trcici z ruznejch batohu a tasek, ktery ani nevybaluju. Chodim kupovat heroin od cikanu na ulicich a v parcich, taky pokazde kdyz nejakeho potkam, sleham si to v praci na hajzlu. Pak se jdu projit kolem Vltavy, koukam na labute, chodim do nahodnych ulicek a snazim se nepotkavat lidi. Doma otevru prvni lahev, co stoji nejbliz posteli a piju, dokud v ni neco je. Posloucham muziku. Obcas nekym mluvim, ale cim dal min, nejak neni co rict, vsecko staci napsat, je to pohodlnejsi, clovek si nemusi myslet, ze si o tom nekdo neco vubec mysli, u mluveni ocekavam odezvu, ktera je vzacna, kazdy vypravi sve pribehy. Ja na to mam auditko. Hraju takovou hru, menuje se to ruska ruleta. Hraju ji s nozem, tupejma rezavejma jehlama, alkoholem, s ulicema, zimou, cigaretama. Ani mi neni spatne, jen se vetsinu casu strasne nudim nebo naopak jsem v naprostem stresu a klepou se mi z nej ruce.<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/zas_ja_a_duchove_s.JPG" width="300"><br>
+<br>
+Shadowrun na zivo a porad dal, po spirale.<br>
+Uvazoval jsem, ze vlastne neni moc nikdo, pro koho bych neco delal a spolecneske hry me moc nebavi, neumim ubijet cas, kdyz to neni na hrane, nezajima me to. To vsechno stale vice devalvovalo me pokusy o to neco tvorit, ten nezajem a stasliva nuda, kterou oprovrhuju az na hranici nenavisti, nebo az za hranici rozlisovaci schopnosti zajmu. A je to vesely?<br>
+Nakonec jsem zjistil, ze mi nevadi trpet samomluvou, nevadi mi psat i kdyz nikdo neodepisuje, nevadi mi psat po zdech, nevadi mi delat muziku, kterou nechci nikdy nikomu pustit...<br>
+Uvazuju nad nejakou rychlou sebevrazdou, ale pripadne mi to hrozne zbytecny a hloupy, tak proste padam dolu ze schodu, usinam u rek a je mi to tak celkove vlastne prijemny protoze to porad zdaleka neni nejnizsi energeticka hodnota. Jen me nejak nebavi hrat hry, snad krom sachu a fotbalku a daleko vic me bavi premyslet o mrtvych vecech, studene vode, roztatem snehu, hranici zkusenosti, bolesti, manipulaci, inteligenci.... nahodne prehazovat a promychavat vsechno tohle.<br>
+Aha, zivotni pribeh poslednich nekolika mesicu... a zacalo to dotaze, zda si nekdo nechce zahrat nejakou hru.<br>
+He co treba ruskou ruletu, az se ucho utrhne? Hraje este nekdo?<br>
+<br>
+OVERDRIVE ---  --- 1:16:30 27.12.2009<br>
+Starostí o zítřky má hlava nešediví<br>
+Srdce mé kdys jen kvítek zimomřivý<br>
+Dnes láskou rozkvetlo a krása jitřivá<br>
+Mým tělem prochvívá a duši moji živí<br>
+[Sehábí Asterábádí]<br>
+<br>
+<br>
+libi... chci. zustava jen zitrek, z ktereho mi hlava nesedivi... a skorapka, porad nerozbita... a kosti psum a zimu s cervenym svarakem pod houni... hmm, ano, tesim se vlastne ze zivota, sice nevim proc u toho zakopavam, kdyz prichazi Buh bejva mi hrozna zima, ale zas zacina snezit vzdycky... zajimavy sledovat profil zenskeho obliceje, krivku krku, bradu... chtelo by to nadro, to je snad jasny, taky to svareny vino,... prestava mi chutnat whiskey a nikdy jsem nemel v zime rad bily, keryho mam par pekne drahejch flasek,.. zajimalo by me, jestli mu pomuze skorice, hrebicek, kardamon a pomerancova kura... he, jedna z tech flasek je snad pry jedna z poslednich 100 ;]<br>
+mam chut na urazky a rvacku, jenze zyvu nudou, tim to vsechno je.<br>
+barvy vzdycky vyrudnou a zustane jen porozumeni nebo nedorozumeni, kdyz jej clovek nepovysi nebo neprejde sere si do bot.<br>
+dobra je kvalitni cerna a karminove cervena, blednou pomalej.<br>
+taky mam rad modrou, uz si konecne musim vymalovat pokoj, poskrabany a pocmaradny zdi... hlavne ten strop, stejne do nej cumim skoro porad, modrej bude, skoro cernej a bilejma a zlutejma hvezdama, kosou mesicniho srpku... poradny svetlo, postavit knihovnu. koupit novy nacini, umejt lzicky i ten bordel okolo.<br>
+prepsat ty stohy papirovejch poznamek...<br>
+he predsevzeti po basnicce. nadchnul jsem se pro chymeru, vlastne, zda se mi, ze by mohlo existovat neco, jako chapu co chces rict, ale necham Te to zahrat i s uklonou na zacatku a na konci, pac pak je to prece daleko zajimavejsi.<br>
+nikdy me nebavilo hrat si na neco, asi proto radej hraju si sam sebe a nejak mi obcas chybi napoveda, obcas platici divaci, jindy zas kytice ruzi do satny...<br>
+a jindy, kdyz je mrazivo, zencka a svarak pod spacak a simrajicich kuzi mrtvejch zvirat.<br>
+zasrany letadla, menej mi vnimani casu, jakoby pozpatku, nemuzu spat, inteligence se rozpada do fantasie. podporuje to prazdno z nefunkcni existence tam i tady.<br>
+Bangladesh. CHtel bych videt a dotknout se nejchudsi zemne sevta. Uvidim taxiky, hotel, taky prej peknej bordel, rikal kolega. On uz tam letet nechce.<br>
+Neshanim drogy za hranicema, takze mesic zas budu cistej. A jak se budu chtit vratit, abych videl, ze si tady zas jen budu srat do bot.<br>
+Nebo ne?<br>
+S uklonou, vratim se a vezmu zase batoh, ted se mi to nepodarilo, nebo mozna vymaluju ty zdi, poskrabany nehtama za 3 tydny co jsem tady. Vzdycky to dopadne na Jiriho z Podebrad. Parkrat uz primo na Ruzyni, vzdycky si pustim to cerne co mam, stahnu kapuci nebo dve a nasadim cerny brejle a stejne pres kour z treti cigarety vidim, jak i Japonskej fotakovej turista se s nekym obejme. Chybi tomu zencka, takze pak autobusem nebo taxikem jedu pro vino nebo palenku. Nalozim se do vany, ve kery mi chybej cigarety a uvazuju proc jsem se vlastne vracel.<br>
+Abych zas mel co hledat. Zajimavy, tam daleko nehledam nikdy nic, mozna vykoupeni spanku, mozna dest a mlhu, abych si odpocinul od jasnych obrysu ktere rusi me sneni. Nehledam tam osud, lasku, pratelstvi. Nemam rad pratelstvi a jeho vznik, tak, ze jako jsme spolu nekde a oba tu byt musime, tak teda budem kamaradi.<br>
+Kamarad mi rekl, ze me nestreli do hlavy ani za vsechny prachy, co jsem je nasetril, ze to proste neudela. Pamatuju si, jak jsem ho nenavidel, nebo co to bylo. Asi hnus.<br>
+Jako ze vsech, vlastne tehdy uz jsem nenavidel a to nam bylo trinact?<br>
+Nejdivnejsi a ja jeden z tech normalnich, bastard a hajzl.<br>
+Nemuseli jsme se potkat a stejne to vlastne zustava. Nadavame spolecne, on cim dal optimistictej, porad vic mi pripomina me a ja... porad vic pripominam jeho.<br>
+Letadlo. Batoh zbalenej jako kamarad z musu. Ne ta cesta, co osvobozuje, nuti premyslet a spat po pruchodech. Ne ten druh cesty, kde clovek miluje a kterou.<br>
+Hranice ovladani.<br>
+Kazda zima je mou hranici ovladani. Moji stale hur a hur zapinatelnou kovovou sponou na obojku roku. Kolik zim mas za sebou, prej se kdysi rikalo. Antidepresiva jsou pry jedine co v severskejch zemich clovek dostane u doktora vzdy a snadno.<br>
+<br>
+Jdu se psama. To me bavi. Chrt ma dnes chandru, ja zas naladu na spolecnost. Nejlip s horkym vinem, taky horka vana neni spatnej napad. Ani nevim jak a je jedna rano.<br>
+Ukecana, pleasure recieved by pain. Hedonism.<br>
+V poste neco o navratu do veze. Co si stezuju, neni mi tu zle, maj me radi, Mia me objima, Hiena me objima, nikam se mi nechce, zluty teply svetlo lampy, perina. Hudba.<br>
+Lepsi jak samota.<br>
+Mam zavislost na fetovani. Ne na nejake konkretni droze, i kdyz heroin samozrejme vede i v soutezi s alkoholem. Vsechno dobre prijimam jako cerna dira, strasne moc to chci a delam pro to vsechno, abych mel, a pak zeru. Jak clovek z lagru.<br>
+Kdysi toho vic byvalo pro kundu, ted je toho vic pro me, nebo spis bylo, tak jako v nadpisu auditka. Ze by byl zas cas neco udelat pro kundu, lepsi jak teplej polstar makovyho odvaru a ostre mihani se strepu obrazu alkoholu, vseobjimajici prazdna ran a veceru. Zas nekoho uplne sezeru a necham se sezrat, rika mi moje ja. Ruska ruleta.<br>
+Neumet zit normalne, bez ziletky, na ktery klouze noha.<br>
+Ne nepotrebuju smutek, to se kurva pletes ma mila z veze, potrebuju teplo.<br>
+Inteligence izoluje, nuda zebe, sebezachovny pud zabiji invenci. Chtel bych mit predstavivost jako dobrej basnik, abych to nemusel zazit, nez napisu to co napisu.<br>
+Asi.<br>
+Zmatene. Jdu se psem, chce se mu zvracet asi. Ma chandru a chce jit behat ven. Taky to tak delam. He, on ma taky stenata...<br>
+Dem behat, teda ja se jdu spis klouzat, docela tam mrzne. Jasna noc, uplne bude na Silvestra. Nemam ho rad, pali. Hura ven, melu dokola obrazy co mam v hlave.<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">13:54:50 27.12.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9089;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">jak jsem se utopil<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9073;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9073;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9073;n=0461">jak jsem se utopil</a></h3>v noci jsem v desti usnul u reky. vzbudil jsem se v rozpustenem snehu, chtel jsem udelat ty tri kroky. vic zima uz mi byt nemuze. neudelal jsem je a nedal na pritelovy rady, abych uz vic nechodil k rece. v lete v ni jde plavat, v zime na ni pozorovat labute.<br>
+<br>
+vzpomel jsem si na tancovacky. na nuz. na ulice. na vsechny jazyky, ktere jsem kdy slysel. na to, ze bych mel zdobit vanocni stromek, na to, co vsechno po chci a co vsechno sam davam.<br>
+jak jsem se tak vzbudil zimou do noci a v desti.<br>
+<br>
+cumim do blba, kdyz tohle pisu a neni na tom ani zrnicko predstav a snu, takhle to proste bylo...<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/rainPF.jpg"><input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">16:38:32 23.12.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9073;n=0461">1 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">za hedoonismu, krasu, pochopeni, lasku, prozitou i prezitou penu dni a zivot modlim se JA<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=9032;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=9032;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9032;n=0461">za hedoonismu, krasu, pochopeni, lasku, prozitou i prezitou penu dni a zivot modlim se JA</a></h3><pre>modlim se za to, co chci
+modlim se za To, abys mohla kracet svou cestou
+za to abys nasla poznani
+za to, abys mi byla rovnocenou
+za to abych Te mohl milovat a bojovat s Tebou
+a abych Te nezranoval krute
+modlim se za to, abych nedelal chyby, kterym se nedokazu vyhnout
+ale aby tyhle chyby nemohly zranit
+tak jako kdybych byl zly a nenavidel
+modlim se za to, aby kdyz me zacnes prevysovat
+dokazal jsem se od Tebe ucit
+a ne abych zarlil
+modlim se za to, ze Ty jsi zena a ja muz
+modlim se za silu dvou v jedno spojenou, ktera je vic nez soucet casti
+modlim se za protiklad
+ktery jediny dava rust
+modlim se za vodu na Tvojich nadrech a za slzy v mojich ocich
+modlim se za krasne a zrucne, chytre deti
+modlim se za to, abychom se dokazali ucit
+a abychom jednou mohli polozit kvetiny na hrob toho druheho
+s tim
+ze to byl dobry a plny zivot
+modlim se za to, ze nebudem litovat toho, co jsme udelali
+modlim se
+
+k Slunci, k Mesici, ke vzuchu, k Zemi
+ke kameni a drevu
+k masu i myslence
+modlim se
+</pre><input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">6:57:32 14.12.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=9032;n=0461">5 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Sex, drugs + Rock'n'Roll : Tri kontroverzni genderove myslenky vhodne k diskuzi [neusporadane]<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=8795;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=8795;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8795;n=0461">Sex, drugs + Rock'n'Roll : Tri kontroverzni genderove myslenky vhodne k diskuzi [neusporadane]</a></h3><u><strong>proc chlapi, co fetujou</strong></u> [tvrdy] casto rikaj, ze potrebujou zenckou, co jim bude ridit zivot a dokonce o to prosej? <br>
+<br>
+Myslim, ze je to ptoto, ze kdyz chlap fetuje [tvrdy], dela to po jiste dobe ze slabosti nebo kvuli nejakym problemum se sebou samotnym a je to upadek vule. Spolecnost je docela dobre pripravena takoveho padu si vubec nevsimat.  Coz ale vede k tomu, ze nema ani moznost chlapkovi pak pomoct. [Pozoruj na pripadu padu muze alkoholika do sameho pekla.]<br>
+Kdyz fetuje holka, dost se predtim zamysli a rozhodne, dela to casto pro nekoho nebo pro sebe, ale s vuli v zadech. Spolecnost navic na zeny tlaci v podobe kultu krasy a i pozadavkem jakesi pricetnosti, snad proto, ze zena=rodina. Ne snad, ze by nekod pomohl ucinnej, kdyz jde z tlustejch do tenkejch. [Typicky opovrzeni a verejne vyjadrene pohorseni nad zenckou akoholickou.]<br>
+Nerikam, ze to vzdycky plati, ale mohl by to byt duvod, proc jsou chlapi na drogach spis slabosi a fetacky zencky silny osobnosti.<br>
+Vysledek je, po jistem case, stejny ale zacatek hry je podle meho jiny a koreny jsou pomerne hluboko, mj. diky tomu, ze vetsinovy nazor je porad vytvaren predevsim muzi [predatory bez predatora]. Inteligentni fetaci, chlapi, si podle meho podvedome vytvareji predatora.<br>
+Pouceni z pribehu: Muze byt obrazem i spolecnosti obecne, zkoumano na drogach, protoze vyostruji vse do extremu a jsou tak jakousi poholnejsiho petriho miskou patologii a vztahu.<br>
+<br>
+<i>~ uvaha u Te, co ma vlci jin-jang na ruce</i>
+<br><br>
+<u><strong>Vymyslel jsem u Ni</strong></u>
+<br>
+"Hele vis proc ma hodne holek deprese nebo jsou nejake celkove podivne mentalne nevyrovnane?<br>
+No ja si myslim, ze je to tim, ze jste vevnitr dute a prazdne. Ne v hlave, myslim ve zbytku tela. A ten pocit dutosti mate dokud si neporidite dite. Pak je dutina uspokojena a s hodne zenckejma se pak da pomerne v klidu vyjit i kdyz predtim to bylo vazne slozite. Hlavne zacnou vychazet ony samy se sebou mam takovy dojem."
+<br>
+<i>~ slova poulicniho psychiatra</i>
+<br><br>
+<u><strong>Uz me mas, je to tak snadny, jako jak to chces</strong></u>
+<br>
+Nase spolecnost vyzdvihuje u zen vysadu sexualni pritazlivosti, proti zneuzivani ktere ja osobne nemam zadnou obranu krom lasky [prirovnej ctenarum k safranu].<br>
+Protoze na otevrenem sexu, potazmo vizualnich vjemech, zkracenych do podoby klipu, ktery pusobi zrejme nejen na me, ale na kazdeho z nas, se zaklada dnes vetsina veci co se prodavaji, od reklamy na vodku az po sekretarku v realitni kancelari, hrozive jsme sexualitu vyzvedli a zmrzacenim karikovali. Tittytaiment tomu rika Keller [ceckata zabava].<br>
+<br>
+Mimo jine, ale mnoho zen, ktere poznavam a znam, dovedlo tohle uvolneni/tlak k pyse presne v duchu vtipu, ve kterem si dve deti ukazuji prirozeni a ona nad jeho ohrne nos se slovy "Toho budu mit za par let, kolik si jen budu prat." Tuhle pychu si pak nejdene muze plest se stestim nebo hedonismem.<br>
+<br>
+Je to jako "Bud hezka a hubena!". Masaz pro me, pro kluka, co pro nej hubena je  malo, stejne jako masaz pro holku, ktera se hubena nenarodila a ani nikdy nebude. <em>Podvedoma, podprahova, podla, podplacena, podvyzivena, podmaniva.</em> Muzem stokrat tvrdit, ze nam to nevadi a stejne nakonec citime, co se nam rika i kdyz vidime jen koutkem oka a slysime jen jednim uchem.
+<br>
+Umyslne neprijimam temer zadna vizualni media a utikam k textu, ackoliv ten ma stejnou moc, dava krom pornografie prirozenych krivek nasich tel, take erotiku spletitych ornamentu nasich snu. Sex a nasili jsou pro me hra, kterou hraju vemi rad a i kdyz o tematu zivocisnosti casto pisu, tajne doufam, ze je to jina hra, nez hraje majitel televize a holka se zlatym napisem <em>"I'm bitch!!!"</em> pres prsa tricka nad pupek.<br>
+<br>
+<strong>I'm not Fuckhead. I'm Tristram and I'm alive!</strong><br>
+<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">9:54:14 10.10.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8795;n=0461">1 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Jak jsem se stal straníkem<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=8397;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=8397;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8397;n=0461">Jak jsem se stal straníkem</a></h3>Česká Pirátská Strana  ( <a href="http://www.ceskapiratskastrana.cz/" rel="nofollow" class="odkaz">http://www.ceskapiratskastrana.cz/</a> ) vznikla relativně nedávno, dokonce ještě ani nemá psaný policický program, tak proč někdo jako já  stal jejém jejím členem?<br>
+Důvodů je měkolik a pokusím se je zde ozřejmit stejně jako definovat vám i sobě to, co od své, nově nabyté, stranické příslušnosti očekávám.<br>
+<br>
+Mé názory možná budou znít idealisticky, možná nekonzistentně, možná najivně, vždyť jen sotva si dokážu představit, co je to reálná politická práce, co znamenají stoly plné papírů, informací a názorů, ale přesto se chci pokusit.<br>
+<br>
+Čím je pro mne demokracie? Tak především samozřejmostí, kterou jsem však nikdy nezažil, ačkoliv jsem se do ní narodil. Můj hlas nebyl zatím nikdy slyšet jinde než v debatách a hádkách rozdílené úrovně, ve kterých jsem sice nabyl jisté zručnosti a obratnosti, ale nikdy z nich nebylo nic víc.<br>
+Po jisté době jsem došel k přesvědčení, že politika se vzdálila z mého dosahu natolik, že jejím sledováním v součastné sobě netrávím téměř žádný čas. Nevím tedy, kdo je ministrem kterého resortu, neznám ty lidi po jméně. Konečně těch několik málo měsíců, které většinou tráví v úřadu mi připomínají uchazeče o práci, kteří mají v životopisech několik zaměstnání, které vždy po roce opouští a hledají štěstí jinde.<br>
+Nedůvěryhodná jména, která  ani nejsou zvlášť důležitá, důležité jsou pro mě ideje, nápady a jejich realizace.<br>
+Poltický názor je také idea, její realizace je však zřejmě nezbytně podložena snahou, stejně jako talent ve hře na hudební nástroj není samonosný, ale musí se snoubit se spoustou cvičení.<br>
+Demokracie pro mne nikdy nebyla vládou většiny, ve v jejíž inteligenci nevěřím, politika je o osobní zodpovědnosti, schopnosti a snaze jedinců, kteří dokáží většině (v horším případě) alespoň poskytnout iluzi, že využívají tyto své přednosti v  její prospěch.<br>
+<br>
+Je až podivuhodné jak málo se v naší malé zemi používá slovo občan a jak málo se skloňuje občanská zodpovědnost. Obojí jsou to však zásadní termíny, které jsou pro mě základem právě té Demokracie s velkým D.<br>
+<br>
+Každý člověk má právo na svůj názor a jeho vyjádření, každý člověk má právo na vzdělání a každý člověk, který dosáhnul zákonného věku má právo volit a být volen.<br>
+Tyto zásadní svobody, tak velkoryse nám garantované nejen ústavně, ale i společensky jsou něco, čeho si váží sice mnozí, ale také to není něco, co by pro mnohé bylo hodné přemíšlení a meditace.<br>
+Ne tak pro mě osobně. Politika pro mne vždy představovala jakousi živou vědu, která se běžně provozuje (jak je krásnou Českou tradicí) v hospodách, na ulici a poslední dobou také v undergroundových kavárnách, galeriích a na prknech improvizovaných divadel, koncertů a happeningů.<br>
+Za dvacet let svobody jsme došli právě takhle daleko.<br>
+<br>
+Osobně se cítím být zástupcem zklamané generace, která však, přes pohled Franze Kafky a Havlových her, má co říct. Bojím se, že má slova o svobodě (slova svobody) zaniknou v soukolích finančních lobby (být Slovák, bojím se, že by ideje zanikaly pod tlakem lobby národnostních a církevních) a bojím se, že dravost je bohužel spojena s hloupostí, zlem a ignorancí.<br>
+<br>
+Nemám zvlášť silný hlas, spíše takový, jako většina mužů mého věku, ale umím mluvit a psát, aniž bych přitom zapomínal přemýšlet.<br>
+<br>
+Přátelé, kamarádi, kolegové se mě ptají, někteří obdivně, jiní s opovržením, proč jsem se přidal k politické straně bez programu a s provokativním názvem a já cítím potřebu odpovědět popravdě a když něco nevím, i to říct popravdě.<br>
+Tedy přidal jsem se k nově vzniklé policické staraně provokativního jsména proto, že ačkoliv mám dobré zaměstnání, dobré kolegy a rodinu kterých si vážím, cítím se umlčený a nespokojený.<br>
+Ačkoliv myslím a snažím se organizovat nebo alespoň podporovat kulturní i politické akce, cítím, že má snaha je bojem s větrnými mlýny. A přitom stále věřím, že nově vznikající strana bez politického programu, jen s mravním kodexem, mi poskytne možnost politický program konečně tvořit a ne  jen ztotožňovat. Doufám, že provokativní název a kontroverzní sesterské strany, čerstvě vznikající po celé Evropě, mi umožní diskutovat a utvářet názory, umožní mi a potažmo nám, být slyšet. Hrdě řešeno doufám, že ve svých osumadvaceti letch začnu utvářet a měnit svět.<br>
+<br>
+<i>Super. Tak to bys mi moh vysvetlit, jak to maji vymysleny s rozpoctem, zahranicni politikou a co hodlaj delat se zemedelcama, aby neblokovali silnice. Taky jsem se nedoslechla - za predpokladu ze oni poptavaji a ja nabizim - jakej maji postoj vuci majetkovymu vyrovnani s cirkvema a kterejma a kdyz uz jsme u toho Israele - hodlaj dal posilat vojaky do Afghanistanu?</i><br>
+- Citace slečny Jany Krauzové z "mé zdi" na facebooku)<br>
+<br>
+<i>Jaký máte program. Ptám se, abych věděl, jak budete zvedat ruce v parlamentu, až se tam dostanete.</i> - Otázka mladého muže na prvním happeningu České Pirátské Strany na Náměstí Míru, 15.7. 2009<br>
+<br>
+Popravdě neůžu mluvit za své kolegy a možná budoucí kamarády, za ostatní lidi ve straně, mluvím sám za sebe, ale politický program je pro mne jedna z věcí, která odtrhla voliče od prosazení jejich zájmů a názorů v reálném světe.<br>
+To politický program nás zahnal s názorem do kaváren a hospod.<br>
+Jan Keller v jedné své knize poznamenal, něco v tom smyslu, že politická strana, které má názor na všechno, se stává pro většinu přemýšlejících lidí nevolitelnou, protože, ačkoliv pravděpodobně v některých ohledech zastává názor svého voliče, v jiných jej zcela jistě nerespektuje. České příloví pak říká obdobně a trefně "Není ten, kdo zavděčil by se všem.". A to je i má pravda.<br>
+<br>
+Důležitý je dialog, důležité je, aby zákon byl tvořen podle potřeb (ne jen podle mínění) většiny lidí, kterých se týká. Vždyť jak můžu například kriminalizovat chování, které je běžné v osumdesáti procentech společnosti? Neznamená to snad, že zákon byl vytvořen nedemokraticky, díky tomu, že volení zástupci zcela zřejmě nerespektují a nehájí ideje svých voličů?<br>
+Byl-li mi jednou svěřen hlas, potažmo politický mandát, je mou poviností vnímat zároveň veřejné mínění, ale také návrhy odborníků v dané problematice a tvořit z nich pak budoucnost.<br>
+Nebo se snad mílím?<br>
+Já sám nejsem odborníkem na mezinárodní vztahy, slyším a vnímám názory na problmémy Izraele a Palestiny, které prezentují lidé okolo mně. A jsou to názory kontorverzní, rozporuplné. Vnímám a slyším názory na problém, které zaznívají v médiích, možná se tam vyjadčují i odbornící, ale rozhodně ne jejich široká veřejnost. Tak mám-li mluvit nejen za sebe, chci krom těchto veřejně dostupných zdrojů mít i možnost za peníze (daňových poplatníků, tedy nás všech), nechat provést výzkum na dané téma, například. A teprve potom rozhodnout.<br>
+<br>
+Ačkoliv jsem vysokošklosky vzdělaný člověk, nemyslím si, že jen a pouze můj názor je něčím víc, než názr automechanika vyjadřujícího se k potratům nebo protidrogové politice, ne můj hlas a názor není silnější než názor žen a mužů (nejen) v mém věku.<br>
+Tedy nedovoluji si prosazovat se v oblastech, kde potřebuji pomoct a myslím si, že říct "nevím" (jak již jsem psal) není u gentlemana něčím, co by vedlo ke ztrátě společenského kreditu. Nevím mnoho věcí, jiné zase ano.<br>
+<br>
+Přál bych si, aby kažý úřad měl například zákonnou povinost informovat občana o tom, že jeho žádosti jsou v řešení (a nakonec) i vyřešeny, tak, jako to dělá dnes každý internetový obchodník, při objednání zboží a jeho doručování.<br>
+Příl bych si, aby tyhle úřady měly zákonnou povinnost takto informovat občana s tím, že informace by díky elektronickému podpisu nebo razítku, byly právně hodnotné, závazné a důvěryhodné.<br>
+Vím, že své přání v tomhle ohledu jsem schopen a ochoten prosazovat.<br>
+Jak tohle definovat v obecném politickém programu, vždyť něco takového se zdá jen minoritním problémem?<br>
+Samozřejmě, že je možné hrdě a zcela obecně, napsat, že by Česká Pirátská Strana chtěla dosáhnout větší informovanosti společnosti o jejích zákonných právech pomocí (nejen) elektronických médií.<br>
+Chtěl bych, a přál bych si, aby naše university, poskytovaly svojím studentům větší možnosti profesního uplatnění v oboru, díky tomu, že by na základě dobrovolného souhlasu mohly být výsledky studentů veřejně k dispozici soukromému i státnímu výrobnímu i vědnímu prúmyslovému sektoru, například v podobě, veřejne snadno dostupných, prospěchových žebříčků a veřejně snadno dostupných školních prací.<br>
+A znova by bylo snadné napsat nicneříkající obecné provolání na téma podpory vědy, výzkumu a kultury.<br>
+Mohl by zřejmě vzniknout (a možná i vznikne) politický pamflet, který by hájil ochranu osobních údajů, ale já bych daleko raděj, aby veškeré pouliční kamery byly jasně označeny a podléhaly registraci a licencování ze stany státu, které by bylo jasně spojeno se zákonem o ochraně osobních údajů.<br>
+<br>
+Tak (a nejen tak), uvažuji o svém vstupu do politické strany bez politického programu a s provokativním názvem.<br>
+Česká Pirátská Strana je pro mne příležitostí, jak vytvářet vlastní budoucnost. Česká Pirátská Strana je pro mne nejen hlas, který odevzdám, ale také můj hlas který bude slyšet a promiňte mi,  jsem-li sna přílišným idealistou, prosím, podpořte raděi ideu, než formu, která by se vám snad mohla zdát nedospělá nebo se vám může nelíbit z jiného důvodu. Důkežitý je duch, ne už tolik litera, jak praví jedno z novějších českých přísloví.<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">23:50:01 15.7.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8397;n=0461">1 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Krajinami<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=8382;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=8382;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8382;n=0461">Krajinami</a></h3>Dnes, zase jednou zastavil náš vlak na dlouhé chvíle v poli, dělává to rád. Vždy si představuji, že je potřeba napojit všechny ty schvácené koně, kteří do ztrhání pohání lokomotivu svou obrovskou silou. Představuji si, jak je v těch polích vypřahají a vedou ke korytům stojícím poblíž trati již odedávna. A najednou cítím jakoby i slunce a mraky chtěli umocnit můj pocit, mou touhu po létě...<br>
+Tak sedím v poli, ve ztichlém, spícím, odpolením vlaku a pozoruji panorama pod temějícími bouřkovými mraky. Ostré zlaté slunce dodává krajně s polem slunečnic a topoly v povzdálí krásnou plastičnost a jakousi tichou naléhavost. Cítím se okouzlen a zároveň zrazen.<br>
+Mé oči zklouznou na bezútěsný betonový perón, do hněda zbarvený, nevím čím, možná rzí z oprýskaných žluto-černě pruhovaných sloupů, možná prostě stářím.<br>
+A pohled klouže dál, na hromadu zlámaných betonových pražců, která se rozvalila ve zlatém řezu mého vnímání a doufá, že nikým nepovšimnuta zaroste heřmánkem.<br>
+Dál plyne mé vědomí tím světlem a hledá stopy prvních těžkých dešťových kapek na náspu, na neútulné ploše prázného nástupiště bez laviček či přístřeší, a pak raděj, prudkým střihem kamera přeostří zpět na zorané a zvláčené pole, kde mohla ještě před týdnem vonět levandule, na, jako pravítkem narýsovanou, hranu slunečnic, sklánějících takhle navečer své zlaté hlavy v očekávání boubře.<br>
+Oči těkají, jako vždy, jsou zvědavé a neposedné, chtějí pohladit ztepilé topoly, ty vojáky stojící na stráži nehledíc na prudké poryvy větru, které zachvíli jistě přijdou.<br>
+Krajina je zatím klidná, tichá, tak jako náš vlak, a já mám příležitost snít o létě v Aix en Provence pod olivovníky, u vína v provoněných húrkách Les Calanques, přepadne mne stesk po koních z Camargue. Sním o místech kde chtěl umřít pan Horníček, tam kde si přeju dožít i já.<br>
+Najednou, bleskne mou hlavou vzpomínka, na tarotové karty, dnešní větrné ráno, na stole jsou jen tři, odkrývám poslední s otázkou. Odpovídá mi pětka pohárů, propletené proudy kalichů Zklamání. Stejná scéna zas a ještě jednou, když nechápavě jsem se ptal "Proč?". Vysoká figura prince mečů a znovu zklamání.<br>
+Tak najednou, když vlak se rozjíždí aniž bych spatřil první náznaky bouře, tak najednou si uvědumuji, že můj oheň a meč prohrává díky činům našich matek a otců.<br>
+Mé zklamání, které ztišil heřmánek na hromadě sutě, vytryskne v povzdechu, když za ladnými stožáry topolů zůstane pohled zaražený odpudivým plechovým objektem, fabrikou včerejška i dneška. Možná logistická firma, ke které se jako mravenci sbíhají kamiony, možná ocelokolna budoucího supermaketu.<br>
+Ne, nejsou to slunečnice, topoly a dešťová mračna nad námi, ani zlaté světlo tak vhodné na plátno impressionistovo, co vžene mi do očí slzy. To generace našich rodičů, a zřejmě i ta naše zničila krajinu svou prací, prý tak bezpodmínečne nutnou, tak dokonale ji pošpinila a zneútulnila, že kažá zastávka vlaku, byť i ve zlátnoucích polích nutí mě křičet zoufalstvím. Zklamáním.<br>
+~ Nová Ves u Kolína, 10. 7. 2009<br>
+<br>
+<br>
+V kupé na sedadle, schoulena do klubíčka, spí mladá slovenka. Typ, co se mi líbí, soběstačná, ale bez potřeby na to poukazovat. I já pospávám, zabalený ve vojenském svetru nad Kainarovými blues. Smráká se nad, stále bouřkou hrozící, krajinou Česko-Slovenského pohraničí, kdesi před Horní Lidčí.<br>
+V kupé se konečně rozsvítí, dnes mám štěstí na čistý a nový vlak, ba ani koně už nepotřebovali přepřahat.<br>
+A mé oči začnou klouzat malebnou, rázovitou krajinou posledních chapadel Bílých Karpat. <br>
+Zase jednen z těch pocitů. To uchvacujicí pošpiněné okouzlení, které zažívám snad jen na cestách, v umirajících industriálních zónách a v cizích městech.<br>
+Díky zářivkovému světlu v kupé, zdá se být venku ještě více tma, než ve skutečnosti asi je. Tmavě modrá oblaka táhnou za sebou závoje oparů a mlh vystupující z potemělých zbytků lesů, červené střechy, ostré jako skřítkovské čepice, krásně ladí k zelenému pozadí pastvin. Dokonce i obláčky ovcí, které možná teprve čekají, na zahnání sveřepím psíkem (snad nebyudou nocovat pod hvězdami, zalituji je nachviličku) zahlédnu spásat temějící trávu.<br>
+Na pultíku pod oknem stojí plechovka plzeňského piva, jejíž nápis se při správné hloubce ostrosti odráží na sitnici zároveň s ovečkami, kopci, rudými střechami a oblohou těhotnou mraky a sny. <br>
+Spící slovenské děvče se probudí a v jejich očích uvidím, že i ona má ten pocit, kterž zmizí za dalším ohybem tratě.<br>
+Odkládám Kainara a začínám, dnes podruhé, psát do bloku.<br>
+~ kdesi na Česko-Slovenském pohraničí, stejný vlak, 10. 7. 2009<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">15:33:16 11.7.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8382;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Mé já ve sprše<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=8107;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=8107;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8107;n=0461">Mé já ve sprše</a></h3><i>tenhle text se mi vubec nelibi, ale je to proste aktualni nalada, tak jsem jej dal sem, verejne, co uz</i><br>
+<br>
+Stojím ve sprše, nahé tělo poškrábané, vyhublé, od snahy přežít a urvat den. Minulé pocity vepsané na kůži tetováními a dotyky tropického slunce.<br>
+<br>
+Několik týdnů nemyté vlasy se lepí na obličej.<br>
+Nespěchám. Připadám si špinavý jako nikdy jindy.<br>
+Není to viditelná špína, prach, který se mi usadil na nohavicích a zadku lewisek odhozených na koberci, úpěnlivě prosících o vyprání, není to pot a vyčichlý parfém, ne, nic tak konkrétního.<br>
+Cítím se špinavý dotyky, pohledy, polibky, slovy, pocity.<br>
+Tak, jako zpívá Topol a Psí Vojáci, tak ze mě déšť neuspěchané sprchy smývá týdenní kocoviny z červeného vína, vrstvy pohlazení, slibů. Proudy horké vody  mě nutí zavřít oči, které lžou, dopřává mi bezhlasnou samotu. "Smejvá to špínu".<br>
+<br>
+Vrátil jsem se po měsíci z magické země jiných mravů, jiných krajů, napjatý jako struna každodení prací, každodenním kontaktem s lidmi, kteří nejsou přátelé, ale dobré kontakty, po měsíci nonstop ostražitosti a sebekontroly. Napjatá struna praskla.<br>
+<br>
+Každý den v jiné posteli, každý den s lahví zahánějící smutek, nudu, jakýkoliv pocit, u stolu, ve vlaku, sám i ve dvou. Jedna tajná chvilka naděje mi zlomila stehení kost, vyrazla dech a opustila mne.<br>
+<br>
+Moje oči lžou, nejen vám všem (upřimnost, pozornost, drzý úsměšek), ale i mě. Ty oči mne zrazují tím, že se nedotýkají světa, ale zahleděly se na mě, dovnitř. Pozorují mě upřímě, pozorně i s drzým úšklebkem.<br>
+<br>
+Stojím před hranicí, kterou nedokážu překročit o víc než úsměv. <br>
+Kašlu na to, teď když na kostnatá záda dopadají kapky horké vody. Kašlu na všechny ty předešlé úsměvy, kterýma jsem vyjadřoval, že poslouchám, chápu, mám rád, na všechny ty, které jsem si za to vysloužil. Kašlu na to, že nevymáchaný jazyk, zůstal ostrý, jako břitva starého muže, a každé zvednutí koutků změnil v krvavý šrám cynismu. Kašlu na to, že krok zpět už udělat nejde. Kašlu na to, že tou hodinovou sprchou nenávratně ničím naši modrou planetu, kašlu na záchvěvy šílenství, plynoucí ze snahy všechno vidět a chápat. Neskládám teď na šňůrku skleněné perly, ne teď jsem Stepní Vlk. <br>
+<br>
+Žiletka klouže po tváři, voda hřeje a dodává mi sílu. Odřezávám kousky pavučin sociálních vazeb, které mne opřádají. Kapa krve z jemného šrámu u levého ucha, budiž obětí mé minulosti i budoucnosti. <br>
+Stojím tu teď a tady, nahý až na kožu, mokrý jako myš.<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">14:03:59 13.5.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=8107;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Trocha vzpominek, nafocene fotky a jine upominky<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=7525;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=7525;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7525;n=0461">Trocha vzpominek, nafocene fotky a jine upominky</a></h3>Tak tedy stopy me historie, bez ladu a skladu:<br>
+<a href="http://www.flickr.com/photos/overdrive_cz/sets/72157615080257274/" rel="nofollow" class="odkaz">http://www.flickr.com/photos/overdrive_cz/sets/72157615080257274/</a><br>
+<br>
+1] listek na Boba Dylana, muj prvni velkej koncert, 15tis lidi, tusim 1994, neni to tam napsany bohuzel<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/3345428220_f625066a98.jpg"><br>
+<br>
+2] malickej bastardik Overdrive, zajimave srovnat s fotkou dcery Mii [ta barevna]<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/3345423130_3498f8d5d1_b.jpg"><br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/3329223016_ece1582f8c.jpg"><br>
+<br>
+3] muj otec asi tak v mem veku, ja asi tak ve veku Mii. tehdy nejak zacal pracovat na zoufalem overdrive rozsekani se chlastem a praskama az do uplneho sebezniceni. nasledovalo nekolik leceni [to vim z doslechu, nikdy jsem se s nim o tom nebavil], ziskana schyzofrenie, toxicka psychoza... byl mozna trosku mladsi nez ja na tyhle fotce, rek bych tak 25 mu tam je<br>
+Hrozne by me zajimalo proc. Mozna by mi pomohlo pochopit, proc jsem to udelal uplne stejne. Ale nevim jak se ho mam zeptat, nechci to otvirat kvuli nemu. Od te doby, co se takhle rozsekal a prisel tak o moji mati [ktere portrety, co je maloval, ma porad povesene na zdech] nikdy si nenasel zadnou dalsi zenckou ani chlapa. uz skoro tricet let tomu bude... mam jeho dusi, skoro celou. pry i jeho inteligenci rika mama.<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/3344593239_3ecccd8b7d.jpg"><br>
+<br>
+4] sveho casu nejvetsi kurevnik v Olomouci. Mel snad kazdou na kterou si vzpomel. Dnes drubezi saman jehoz charisma z tyhle doby kazdej kluk, kerej ho tehdy znal rad zapomina. Proste na to mel a uzil si to, panacek... ale jinak obcas taky smutna postavicka s veselym usklebkem.<br>
+Muj zamilovany ucitel, plne se hlasim k jeho odkazu. Tak zdar a silu Slunko, pico!!! Kdo ho uvidite, tak ho pozdravujte, brunatneho tuhaka ;]]<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/3344591981_9d2ae72ae8.jpg"><br>
+<br>
+5] Overdriveratko kterymu chytili holuba, aby si ho moh pohladit, mozna jen tak na ulici do kabatu... byli hodne svobodomyslni, svobodni hezci a asi i zamilovani, moji rodice... po me mame mam tvar a zidovskej nos<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/3344589681_06d423781f.jpg"><br>
+<br>
+6] a posledni, kterou dam sem [v te galerce na flickru je jeste par dalsich i s popiskama, treba je tam paradni netopiri PF od Cryystal tusim z 2006 roku, moc peknej tisk]... slibenej Overdrive v korzetu pri cteni uvodniku a basni u prilezitosti vernisaze Honzika Jenisty... Evelina s ocima, na ktery by potrebovala zbrojni pas... asi tak mesic predtim, nez jsem si pro ni porezal tvar strepem z pullitru ;] <br>
+to sme byli este mladi a krasni, ted uz jsme navic i daleko chytrejsi ;]]] <br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/3344592651_0db1fb8687_b.jpg"><input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">23:59:59 10.3.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7525;n=0461">3 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Faux pas, kava a cigareta<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=7483;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=7483;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7483;n=0461">Faux pas, kava a cigareta</a></h3>tyvoe dam k dobrymu historku, takove fatal faux pas, ne starsi 10 minut, aby bylo jasny, ze umim taky zajimavy veci a nejsem zadnej luzr:<br>
+<br>
+vstal jsem dneska docela brzo, po neprospane noci nekdy ve 12. Kolem 3/4 na tri uz me znudilo trefovat se do vsech okolo na nyxu slovnimi presmickami a impertinencemi schovanymi za smajliky, tak jsem si uvaril kafe, ubalil cigaro a sel pekne na chodbu, do relativniho tepla [cca 12°C], si zakourit a probudit se s tou hypercernou a hypersladkou kavou.<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/Bob+Dylan+breakfast.jpg"><br>
+<br>
+Este reknu ve dverich cau spolubydlakum, keri dou nekam [Bog vi kam], asi k rodicum na obed.<br>
+Bejt sam doma mi dnes nevadi, mam poslouchaci a psaci naladu, jedine dobre tak.<br>
+Dokourim a jdu domu...<br>
+Na nohach [naboso] sandaly, letni kalhoty, triko a pres nej hozeny bombr...<br>
+V kapsach 3 zapalovace, par papiru z vlaku, bank... a... aaaaagh... nic -kurva- dalsiho.<br>
+Ani klice, ani cigara, ani zadna navstivenka na nekoho z kamosu, ani telefon, poznamkovej blok, proste nic, jen sluchatka jsem jeste vyhrabal, samozrejme bez playeru.<br>
+Zvonim domu, a... a... aaaaagh2... a nikdo. Kundou ke zdi, pica z ryby... No jasny, dyk jsem se s nima loucil ve dverich pred peti minutama.<br>
+Zvonim na protejsi, sprateleny byt... a zase nikdo.<br>
+Bezva.<br>
+Naboso uprostred Zizkova, bez penez, bez jedineho cisla, bez karty nebo aspon cigar. Venku ctyri stupne nad nulou.<br>
+A spolubydlaci muzou prijit kdykoliv.<br>
+V ruce hrnek s rozpitym sladkym chladnoucim kafem.<br>
+<br>
+No nakonec se drama odpoledniho sezeni zamotanej v bombru na chodbe plne pruvanu zmenilo jen v cca 20min cekani, pac jedni ze spolubydlaku sli nastesti jen na nakup, ale musim rict, ze teplo a veselo mi teda jako nebylo.<br>
+<br>
+No jasny, doslo mi ted, jako spravnej zidak nesmim o v sobotu ridit dopravni prostredky a nosit v kapsach klice, oh Bog je nekonecny a milostivi, budiz mu bahoreceno ;]]]<br>
+<br>
+Uuuuf.<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">15:35:22 7.3.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7483;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Next Life, upejr, kombucha, yarrdesh : kratka poznamka [z last.fm pro Rav]<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=7326;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=7326;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7326;n=0461">Next Life, upejr, kombucha, yarrdesh : kratka poznamka [z last.fm pro Rav]</a></h3><a href="http://www.last.fm/event/870848" rel="nofollow" class="odkaz">http://www.last.fm/event/870848</a><br>
+<br>
+24 Feb 2009, 11:33<br>
+Mon 23 Feb – Next Life, upejr, kombucha, yarrdesh<br>
+<br>
+Docela jsem se vcera bavil, skoda, ze Next Life nehrali dyl, jak spravne podotkla paradni barmanka S, ze bylo potreba je chvilku poslouchat, nez je clovek nasel. Gameboy music hardcore brat.<br>
+Libil se mi hlukovy Upejr, sekal do lidi ty davky z automatickejch zbrani a sicich stroju docela intenzivne, pro kulomet ma zda se cit [horsi s plochama, kde se ztraci, coz sam taky rikal], nastesti je dokazal vzdycky dobre poslat dal a nenudil ani minutu. Zaslouzil by si lepsi a hlucnejsi zvuk. Rozhodne bych jej jeste chtel videt na nejakym treba EBM vecirku.<br>
+Kombucha je docela paradne zahranej hc od Rage Against Machine po Primus, obcas smerovany az do klasickeho rocku s tim, ze si ze vseho berou to nelepsi a rozhodne to byl uceleny zazitek, zadne vykradacky "kazdej pes jina ves". Dobri hudebnici, keri vedej, co chteji hrat a hrajou to dobre.<br>
+<br>
+Dik za vcera.<br>
+<br>
+Taky dobry, ze na Last.fm se konecne objevuji pozvanky na konciky v CR.<br>
+<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">11:20:09 24.2.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7326;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">"Prague Apocalyptic Evening" : ORDO ROSARIUS EQUILIBRIO (SWE), IN SLAUGHTER NATIVES (SWE), VESTIGIAL<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=7297;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=7297;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7297;n=0461">"Prague Apocalyptic Evening" : ORDO ROSARIUS EQUILIBRIO (SWE), IN SLAUGHTER NATIVES (SWE), VESTIGIAL</a></h3>"Prague Apocalyptic Evening" : ORDO ROSARIUS EQUILIBRIO (SWE), IN SLAUGHTER NATIVES (SWE), VESTIGIAL (I), TÁBOR RADOSTI (CZ) 17.30 : Rock Café<br>
+<br>
+<b>PRAGUE APOCALYPTIC EVENING (It took 12 years to come back)</b> ~ <a href="http://www.ordo-rosarius-equilibrio.net/" rel="nofollow" class="odkaz">http://www.ordo-rosarius-equilibrio.net/</a><br>
+<br>
+Jinak OrdoRosariusEqulibro nejsou IMHO folk, ale neco jako ...ehm... apokalyptickej mrdaci pop ~ strejda Jeagr osobne ;]]]<br>
+<br>
+<i>...exploring within a broad musical spectrum, ranging from cold and sacral soundscapes/ambience to triumphant and bombastic orchestral compositions. The goal of this project is to stimulate the listener's imagination and let them individually discover the story within the music. Up till now the results/reactions have been very interesting concerning this matter.</i> ~ puvodne komentar k nejake blize neurcene kapele na serveru last.fm<br>
+<br>
+Splnil jsem si jeden svuj hudebni sen z doby 16-17 let veku, ktery me drzel dodnes. Konecne se mi podarilo videt Ordo Rosarius Equilibrio.<br>
+Sice v dobe vzniku snu to byli jen Ordo Equilibrio, ale stejne... sen se jen rozrostl.<br>
+<br>
+[ze stranek Rock Cafe, k tomuhle koncertu: <i>Rozšířenou koncertní podobu O.R.E. tvoří kromě ústřední dvojice Tomas Pettersson a Rose-Marie Larsen, také Juoni Havakuinen z IN SLAUGHTER NATIVES, dále Axel Menz z německého neofolkového souboru Hekate a Fredrik Bergström ze švédského dark ambientního projektu No Festival of Light.</i>]<br>
+<br>
+<br>
+Krome Truce [je to proste nase kapela], se kterou jsme okamzite kazdy sbalili plakat a byly nadseni jako male deti, se koncert nikomu [ano Rav pozadal o vyjimku ;] z "odborne poroty pratel" nijak zvlast nezamlouval [prumer].<br>
+Osobne nechapu, proc by mi melo vadit, ze Ordo hraji porad to same uz 10 let, vzdyt je to bezva, ne? [navic to maji v nazvu ;]<br>
+Ponury neofolk, goticke pisne lasky, jarmarecni odrhovacka,... obcas zachazeji az do nechutne vykradeneho popu, chytlavosti melodii se temer blizi formatu rozhlasove znelky, a to vsechno s ume poschovavanymi narazkami, nenapadnymi zmenami detailu, pocitanim na divne doby a podobne.<br>
+K atmosfericke monotonni rytmice pridejme texty o dusevnim zdravi vraha, o nekonecne vzajemne lasce pod vuli i mimo ni, o zkoumani, kam az je mozne jit v poznani sexuality, bolesti, krasy. Pribehy o bludisti osobnich tuzeb a snu, no a mame tu... splneny Overdrivuv sen.<br>
+<br>
+Samotne Ordo je mojim velkym ulovkem, [mimo jine] proto ze se jedna defacto o jednu z prvnich kapel ze sceny, kterou jsem zacinal [tehdy deskou Conquest, Love &amp; Self Perseverance, zaroven s projekty Six Comm + Mother Destruction, Cobalt 60, Yasnaia, Diamanda Galaas - Schrei X :: schvalne, kdo si to da dnes ;].<br>
+<br>
+Nicmene musim rict, ze se mi jeste trochu vic libil projekt/kapela <b>In Slaughter Natives</b>, v hodne rozsirene podobe [ze stranek Rock Cafe, k vcerejsimu koncertu]: <i> Mozkem I.S.N. je Juoni Havukainen, který svá studiová alba komponuje a natáčí povětšinou sám. Při živé prezentaci mu však bude vypomáhat jeho žena Kathleen Binder a Tomas Pettersson z ORDO ROSARIUS EQUILIBRIO.</i><br>
+To, ceho Ordo dosahuje jemnym BDSM vystupovanim a naladovym duchem skladeb, toho In Slaughter Natives dosahuji predevsim zukem samotnym. Od napeti, pres smich az po usklebek nebo nevidouci pohled zamysleni. Od minimalismu s septanou deklamaci textu az k plocham, temer vazne hudbe, pak zase zpet do tempa EBM a hlucnemu kontrastu totalni anihilace.<br>
+Starodavne veci zda se stale maji co rict, alespon tedy me.<br>
+<br>
+Moc prijemne bylo nacasovani videa, ktere In Slaughter Natives obcas vtipne doplnovalo a rozvijelo, pripadne upravovalo hrube zrno nalad.<br>
+Bezne k "vaznejsim", lepe receno poslechovejsim, druhum hudby nemam vizualizace prilis rad, tady ale sedela presne a cilene. Neutocila, neztrhavala pozornost, ale zaroven mela co rict temer kdykoliv, kdy jsem ji sledoval. Zadny zazrak, spise technicka dokonalost nez-li treskuta invence, nicmene to nijak nesnizuje vysledny dojem, ktery byl pro me velice prijemny, plny naladovych posunu, klicek a zvratu.<br>
+<br>
+Video tvorilo take pomerne zajimavy kontext k <b>Tabor Radosti</b> [Epidemie Record], mimo jine proto, ze runova estetika neni v soucastne Evrope bezne prijimana zvlaste tolerantne. Skoda jen, ze samotne video mi pomerne neprijeme kolidovalo s hudbou v usich, at uz naladou [to spis vyjimecne], tak tempem vnimani [casto]. Samotny Tabor Radosti je vlastne jakesi, do soucastnosti posunute, pravdepodobne EBM [klidne me nekdo opravte] a posluchac muze tedy zaplesat nad nejednou skocnou a libivou pisnickou.<br>
+Rozhodne jsem se nenudil, kdyz se prezeme prehnali ctyri jezdci apokalypsy, v podobe seismickych a sonickych vln.<br>
+<br>
+Naproti tomu dost me nepobavil <b>Vestigial</b>, italsky jednomuzny projekt, balancujici na pomezi samanskeho ucinku monotonniho opakovani a zaroven vrstevnate plosnosti ambientnich atmosfer.<br>
+Ostatni pratele si Vestigial pomerne pochvalovali [nadprumer].<br>
+Me pripadlo, ze zvuk nici sve vlastni napady a nalady, ze myslenky nejsou dotazene a spise povrchni, casto i bez jakehokoliv pokusu uzavrit ci pointovat, muzikantsky zaujmout, nabyt vyznam.<br>
+Uvedomuji si, ze se jedna o projekt veskrze ambientni, takze prilisne hrani si, by mohlo vest ke spatnym koncum, ale ta uzavrenost a soudrznost mi prave u ambientu prijdou dulezite. Zahodit myslenku, diky spatnemu, prilis vyraznemu prechodu nebo diky spatne drzenemu [pripadne prilis slozitem] rytmu na perkuse, to mi pripadne jako velka skoda. Ale dluzno podotknout, ze jsem asi vyrazne zpovykany treba ambientnim Biosphere, s kterymzto projektem se pro me cokoliv jevi nesrovnatelne slabsi.<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/ordo.jpg"><input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">14:31:30 22.2.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7297;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Toy Box v NODu : barvou proti šedi každodennosti<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=7252;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=7252;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7252;n=0461">Toy Box v NODu : barvou proti šedi každodennosti</a></h3>-= díky za každý výkřik, který nezanikne v tichu =-<br>
+18.2.2009 (18:00) - 19.2.2009 (1:00) CR - Praha - experimentální prostor NOD<br>
+<a href="http://nod.roxy.cz/?p=642#more_text-642" rel="nofollow" class="odkaz">http://nod.roxy.cz/</a><br>
+<br>
+Když jsem se včera, kolem osmé hodiny večerní konečně dostal do Experimentálního Prostoru Nod, byl jsem mile překvapený, jak kdysi nevzhledná betonová kostka prohlédla, přecejenom jsem tam už nějaký čas nebyl. Hezký, čistě působící bar ve světlých, nijak rušivých tónech je příjemným knontrastem k všem těm místům vymalovaným na červeno a oranžovo, kterých je posledních několik let spousta. To, že člověk může v galerii kouřit je v době útlaku kuřáků taky příjemné.<br>
+Ale dost k Nodu jako takovému.<br>
+<br>
+Druhým překvapením byl pro mě počet lidí, kteří postávali a posedávali snad na každém volném místě, co jen se jich našlo. A směsice ty byla v pravdě různorodá, jako když pejsek s kočičkou vařili dort, od pankáčů a sqatterů, přes běžné vysokoškoláky až po černě obrýlené havrany intelektuálské gardy. Pokud byl někde nějaký novinář nebo fotograf, zřejmě jsem jej přehlídnul, což možná naznačuje, že Toy_Box je stále ještě především udnerground i přes články například v Respektu (<a href="http://komiks.respekt.cz/Toy-BOX.html" rel="nofollow" class="odkaz">link na článek, obsahující i některé komixy</a>  --- tady na nyxu ma samozrejme Toy_Box vic veci k videni).<br>
+<br>
+Pokud se konal nějaký proslov ke komixům a malovánkám drobné slečny Toy Box, bohužel jsem jej nestihnul, nicméně myslím, že ani nebyl nijak zvlášť potřeba, protože comixy a asambláže mluví za sebe. A k tomu jsou zřejmě určeny.<br>
+Punkovou poetikou vykládají příběhy o zbytečném útlaku normálních lidí světem paneláků, revizorů a nepochopitelných bludišť nezájmu.<br>
+Formu noir detektivky vypráví příběhy o drogách a jejich uživatelých tak, jak opravdu jsou. Bez příkras a varování, každodenně. Každodennost se odráží ve výkřicích zoufalství nad kostkami paneláků.<br>
+Konkrétní protest, proti neosobnímu rozhodování ve věcech tak osobních, jakým je výchova dítěte.<br>
+Barevná bolest intenzivní lásky.<br>
+Vesele depresivní strypy kostky cukru.<br>
+Dokument o Íránském grafitti. První a osamocená barva.<br>
+Toy_Box se vyjadřuje ke všemu, co se týká mladého člověka žijícího ve světě ve kterém žijeme my všichni.<br>
+Proto se vyjadřuje k pózám pózou, proto se vyjadřuje na ulicích, možná proto se vyjadřuje populární směsicí stylů.<br>
+Toy_Box má co říct a říká to formou, která spojuje intelektuální anarchysty, nespokojence, pozéry, kritiky i lidi, kteří se chtějí jen bavit.<br>
+Dokument i politika ulice.<br>
+Díky za výstavu, díky za všechny ty lidi, které přivedla na jedno místo. Díky za každý výkřik, který nezanikne v tichu, jen tak dál.<br>
+<br>
+Samozřejmě taky dík za muziku a video projekci, obojí pobavilo.<br>
+<br>
+<br>
+<center><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/pozvanka.jpg"></center><input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">11:32:28 19.2.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7252;n=0461">0 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">HC LOVE : deska pro lidi co maj naladu na sklamanou lasku<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=7184;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=7184;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7184;n=0461">HC LOVE : deska pro lidi co maj naladu na sklamanou lasku</a></h3>Dnes vecer jsem si udelal playlist pro kamaradku, pro zklamanou lasku, tak tady je ten playlist ku stazeni v plnem zneni.<br>
+Nikdo ze zucastnenych samozrejme NESOUHLASIL s uverejnenim sve hudby, tak prosim, pokud se vam zalibi, KUPTE SI JI, podporovat dobre kapely neni spatnej napad.<br>
+Cekam nejakou odezvu, cekam, ze nekoho moje "deska" potesi...<br>
+<br>
+Playlist:<br>
+<br>
+<img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/hc_love.jpg"><br>
+<br>
+<a href="https://dl.getdropbox.com/u/225896/hc_love.zip" rel="nofollow" class="odkaz">Samotna deska ke stazeni : 112mb</a><br>
+<br>
+<input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">6:06:12 13.2.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7184;n=0461">10 komentářů</a></p></form></div></div><div class="b " id="pref_last_blog"><h2 class="s">Valčík s Bašírem : o válce kterou jsem nebojoval<div class="wcontrols"><span class="edit"><a href="http://www.nyx.cz/index.php?l=user;blog=7167;n=0461">upravit</a></span><span class="delete"><a href="http://www.nyx.cz/index.php?l=userexec;delete_blog=7167;imgsec=8ec;n=0461" onclick="return delete_block(this, &#39;&#39;)">smazat</a></span></div></h2><div class="bc text"><form action="http://www.nyx.cz/index.php?l=userexec" method="post" name="blogexec"><h3><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7167;n=0461">Valčík s Bašírem : o válce kterou jsem nebojoval</a></h3>Recenze jde asi napsat více způsoby, některé jsou špatné, jiné dobré. K těm špatným prý patří psaní  jen o vlastních pocitech a nedostatečná znalost tématu, námětu, recenzovaného díla. Tak tedy varuji, protože tahle recenze bude vlastně obsahovat oba nešvary...<br>
+Valčík s Bašírem je pro mě vyprávění o válce, o které nevím ani dost málo, o válce jejíž utrpení jsem nepoznal a necítím za ni vinu. Jsem z generace dětí, které se novodobé dějiny nedotkly ve školních lavicích, a zároveň z generace mládeže, která odmítala mediální masáž. Proto nevím.<br>
+<br>
+Nevím o masakru, a nejen o tom, o kterém mluví film, nevím o mnoha dalších, proto nebudu vyrpávět já a nechám vyprávět samotný vizuálně nádherně a téměř klasicky zvládnutý kreslený příběh.<br>
+<br>
+Takový je totiž Valčík s Bašírem.<br>
+<br>
+Kreslený film režírovaný dokumentární technikou, pomalý a bezcitný, přesto narativní jako pohádka od maminky před spaním.<br>
+<br>
+Jen občas, v přesně načasovaných momentech, jsou poklidné tempo a chladné mrtvé výrazy tváří postav náhle narušeny intenzivními obrazy. Rozpačitě těkajícíma očima, mrtvými koňmi, nedotknutelným červeným mercedesem, hudebním klipem.<br>
+<br>
+Intenzivních momentů není v obraze moc, jako by samotná válka, vraždění a mučení, o kterých příběh vypráví mluvili svou vlastní řečí. Není potřeba gest a patosu, aby bylo sděleno svědectví o věcech na které se vypravěč raději pokusil zapomenout. Téměř úspěšně.<br>
+<br>
+Narozdíl od Čekého národa, od Čekého člověka, však existují lidé, kteří si chtějí pamatovat. Pamatují si utrpení v koncentračních táborech,  ale i svou temnou stránku, své chyby a násilí, které sami páchají, nebo musí alespoň přihlížet. Právě ta paměť a kontinuita vnímání dává příběhu další kousek vypravěčské síly, další rovinu.<br>
+<br>
+Nikam nemanipulujeme, nenutíme vás v kině plakat, jen vám chceme vyprávět příběh, na který by možná nebylo dobré zapomenout. Tím byl pro mne Valčík s Bašírem. <input type="hidden" name="id" value="OVERDRIVE"><input type="hidden" name="blogexec" value="1"><p><span class="time date">23:31:57 11.2.2009</span></p><p><a href="http://www.nyx.cz/index.php?l=user;section=blog;id=OVERDRIVE;blog=7167;n=0461">0 komentářů</a></p></form></div></div><div class="b navbar" id="bottom_navbar"><div class="bc text"><input type="hidden" name="max_id" value="9595"><input type="hidden" name="min_id" value="7167"><input type="hidden" name="position" value=""><input type="hidden" name="wu_submit" value="1"><button type="submit" name="nav" value="&lt;&lt;">&lt;&lt;</button> <button type="submit" name="nav" value="&lt;">&lt;</button> <button type="submit" name="nav" value="&gt;">&gt;</button> <button type="submit" name="nav" value="&gt;&gt;">&gt;&gt;</button></div></div></div></div><div id="primary"></div><div id="footer" style="position: absolute; "><div id="footer_left"><a id="rtm_status" onclick="chat_prefs()"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/status_online.png"></a></div><div id="footer_right"><a href="http://www.nyx.cz/index.php?l=plugexec;id=18;n=0461"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/bug.png"> Nahlásit chybu</a><a href="http://www.nyx.cz/index.php?l=reklama_info;f=footer;n=0461"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/map.png"> Reklama</a><a href="http://www.nyx.cz/index.php?l=plug;n=0461"><img src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/plugin.png"> Rozšíření</a></div></div><div id="growl"></div><iframe style="display: block; width: 0px; height: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; overflow-x: hidden; overflow-y: hidden; visibility: hidden; " src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/xsdrBridge.htm"></iframe><iframe style="display: block; width: 0px; height: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; overflow-x: hidden; overflow-y: hidden; visibility: hidden; " src="./Nyx-zaloha-blogy-OVERDRIVE-30.9.2010_files/xsdrBridge(1).htm"></iframe></body></html>

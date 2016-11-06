@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+	<head>
+		<title>Sage OPML Export</title>
+	</head>
+	<body>
+		<outline text="Sage Feeds">
+			<outline text="Sage Feeds">
+				<outline text="Zpravy">
+					<outline type="rss" text="iHNed.cz - Zahraniční zpravodajství" title="iHNed.cz - Zahraniční zpravodajství" xmlUrl="http://zahranicni.ihned.cz/?p=003000_rss"/>
+					<outline type="rss" text="iHNed.cz - Domácí zpravodajství" title="iHNed.cz - Domácí zpravodajství" xmlUrl="http://domaci.ihned.cz/?p=002000_rss"/>
+					<outline type="rss" text="iHNed.cz - Ekonomické zpravodajství" title="iHNed.cz - Ekonomické zpravodajství" xmlUrl="http://ekonomika.ihned.cz/?p=001000_rss"/>
+					<outline type="rss" text="Hlavní události – Zprávy Google" title="Hlavní události – Zprávy Google" xmlUrl="http://news.google.cz/?output=atom"/>
+					<outline type="rss" text="Most Popular - Google News" title="Most Popular - Google News" xmlUrl="http://news.google.com/?ned=us&amp;topic=po&amp;output=atom"/>
+					<outline type="rss" text="Lidovky.cz - zpravodajský server Lidových novin" title="Lidovky.cz - zpravodajský server Lidových novin" xmlUrl="http://www.lidovky.cz/export/rss.asp?c=ln_lidovky"/>
+					<outline type="rss" text="BListy.cz" title="BListy.cz" xmlUrl="http://blisty.cz/rss2.rb?all=1"/>
+					<outline type="rss" text="Hlavní události – Zprávy Google" title="Hlavní události – Zprávy Google" xmlUrl="http://news.google.cz/?output=atom"/>
+					<outline type="rss" text="Forex &amp; Finance. All about finance" title="Forex &amp; Finance. All about finance" xmlUrl="http://fin-forex.com/feed/atom/"/>
+				</outline>
+				<outline text="MuSick">
+					<outline type="rss" text="Palermo Syndrom" title="Palermo Syndrom" xmlUrl="http://palermosyndrom.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Psychotic Leisure Music" title="Psychotic Leisure Music" xmlUrl="http://p-l-m.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="╬ §ĬÇҜИξ§§ ΛБΘЏИĐ§ ╬" title="╬ §ĬÇҜИξ§§ ΛБΘЏИĐ§ ╬" xmlUrl="http://sickness-abounds.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Thee Outernet" title="Thee Outernet" xmlUrl="http://theeouternet.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="An Idiot's Guide to Dreaming" title="An Idiot's Guide to Dreaming" xmlUrl="http://loki23.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Because  God Told Me To Do It" title="Because  God Told Me To Do It" xmlUrl="http://theebradmiller.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="The Thing On The Doorstep" title="The Thing On The Doorstep" xmlUrl="http://thethingonthedoorstep.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="MY FUNERAL" title="MY FUNERAL" xmlUrl="http://my-funeral.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="." title="." xmlUrl="http://hangoverhard.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Esoteric sanctuarY" title="Esoteric sanctuarY" xmlUrl="http://esoteric-sanctuary.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="INDUSTRIAL_SKADS" title="INDUSTRIAL_SKADS" xmlUrl="http://industrialskads.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="NECROTICA" title="NECROTICA" xmlUrl="http://2shcansion.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Terror Noise Audio" title="Terror Noise Audio" xmlUrl="http://terrornoiseaudio.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="exp etc" title="exp etc" xmlUrl="http://experimentaletc.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Misterioso Impossível" title="Misterioso Impossível" xmlUrl="http://misteriosoimpossivel.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="100 Mirrors Project #36" title="100 Mirrors Project #36" xmlUrl="http://100mirrorsproject.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Misántropo Humanofóbico" title="Misántropo Humanofóbico" xmlUrl="http://markocentrismo.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Band Logos - Brand Upon The Brain" title="Band Logos - Brand Upon The Brain" xmlUrl="http://pictograms.blogspot.com/feeds/posts/default"/>
+					<outline type="rss" text="Comments on weescoosa: Psychic TV Themes" title="Comments on weescoosa: Psychic TV Themes" xmlUrl="http://weescoosa.blogspot.com/feeds/4164513077380668705/comments/default"/>
+					<outline type="rss" text="weescoosa" title="weescoosa" xmlUrl="http://weescoosa.blogspot.com/feeds/posts/default"/>
+				</outline>
+				<outline text="Technologie">
+					<outline type="rss" text="underground.cz -" title="underground.cz -" xmlUrl="http://www.underground.cz/rss.xml"/>
+					<outline type="rss" text="Debian Package of the Day" title="Debian Package of the Day" xmlUrl="http://debaday.debian.net/feed/atom/"/>
+					<outline type="rss" text="Ubuntu Geek" title="Ubuntu Geek" xmlUrl="http://www.ubuntugeek.com/feed/"/>
+					<outline type="rss" text="Debian GNU/Linux System Administration Resources" title="Debian GNU/Linux System Administration Resources" xmlUrl="http://www.debian-administration.org/atom.xml"/>
+					<outline type="rss" text="Planet Debian" title="Planet Debian" xmlUrl="http://planet.debian.org/rss20.xml"/>
+					<outline type="rss" text="Packet Storm Security Headlines" title="Packet Storm Security Headlines" xmlUrl="http://packetstormsecurity.org/headlines.xml"/>
+					<outline type="rss" text="Root.cz - články" title="Root.cz - články" xmlUrl="http://rss.root.cz/clanky/"/>
+				</outline>
+				<outline text="Obrazky">
+					<outline type="rss" text="Uploads from nyxatko" title="Uploads from nyxatko" xmlUrl="http://api.flickr.com/services/feeds/photos_public.gne?id=67145983@N00&amp;lang=en-us&amp;format=atom"/>
+					<outline type="rss" text="Uploads from dpdl" title="Uploads from dpdl" xmlUrl="http://api.flickr.com/services/feeds/photos_public.gne?id=61094407@N00&amp;lang=en-us&amp;format=atom"/>
+					<outline type="rss" text="Uploads from theresqa" title="Uploads from theresqa" xmlUrl="http://api.flickr.com/services/feeds/photos_public.gne?id=15144150@N04&amp;lang=en-us&amp;format=atom"/>
+					<outline type="rss" text="Uploads from nynewe / untitled" title="Uploads from nynewe / untitled" xmlUrl="http://api.flickr.com/services/feeds/photos_public.gne?id=40062397@N00&amp;lang=en-us&amp;format=atom"/>
+				</outline>
+				<outline type="rss" text="SiouxWIRE" title="SiouxWIRE" xmlUrl="http://www.siouxwire.com/feeds/posts/default"/>
+				<outline type="rss" text="Uploads from LavaTwilight" title="Uploads from LavaTwilight" xmlUrl="http://api.flickr.com/services/feeds/photos_public.gne?id=10556072@N05&amp;lang=en-us&amp;format=atom"/>
+				<outline type="rss" text="http://kultura.ihned.cz/?p=005000_rss" title="http://kultura.ihned.cz/?p=005000_rss" xmlUrl="http://kultura.ihned.cz/?p=005000_rss"/>
+				<outline type="rss" text="CD-R server" title="CD-R server" xmlUrl="http://www.cdrserver.cz/cdrrss.php"/>
+				<outline type="rss" text="NerdwithSwag.com" title="NerdwithSwag.com" xmlUrl="http://www.nerdwithswag.com/feed"/>
+				<outline type="rss" text="Comics. Often dirty." title="Comics. Often dirty." xmlUrl="http://pipes.yahoo.com/pipes/pipe.run?_id=_j_P8zpm3hGBTmHJHzfpSg&amp;_render=rss"/>
+				<outline type="rss" text="BuzzMag" title="BuzzMag" xmlUrl="http://feeds2.feedburner.com/BuzzMag"/>
+				<outline type="rss" text="DVD přílohy" title="DVD přílohy" xmlUrl="http://www.dvdprilohy.cz/feed.xml"/>
+				<outline type="rss" text="RIIVA :: novoromantismus.blog.cz" title="RIIVA :: novoromantismus.blog.cz" xmlUrl="http://novoromantismus.blog.cz/feed/rss"/>
+				<outline type="rss" text="URZA :: rolywholyover" title="URZA :: rolywholyover" xmlUrl="http://blog.oikoo.net/urza/feed/"/>
+				<outline type="rss" text="Michael Kocáb : Blog" title="Michael Kocáb : Blog" xmlUrl="http://kocab.blog.idnes.cz/rss/"/>
+				<outline type="rss" text="Methods and Black Squares" title="Methods and Black Squares" xmlUrl="http://digitalphilosophy.wordpress.com/feed/"/>
+				<outline type="rss" text="Tank Girl Blog" title="Tank Girl Blog" xmlUrl="http://tank-girl.com/blog/?feed=rss2"/>
+				<outline type="rss" text="STAON : Staonův svět : Ondra Starek" title="STAON : Staonův svět : Ondra Starek" xmlUrl="http://www.staon.net/rss.php"/>
+				<outline type="rss" text="Linus' blog" title="Linus' blog" xmlUrl="http://torvalds-family.blogspot.com/feeds/posts/default"/>
+				<outline type="rss" text="Dirty Laundry" title="Dirty Laundry" xmlUrl="http://4dirtylaundry.blogspot.com/feeds/posts/default"/>
+				<outline type="rss" text="};-)" title="};-)" xmlUrl="http://julyz.tumblr.com/rss"/>
+				<outline type="rss" text="Cyberpunk Review" title="Cyberpunk Review" xmlUrl="http://www.cyberpunkreview.com/feed/"/>
+				<outline type="rss" text="Blog: Rudolf Havlík" title="Blog: Rudolf Havlík" xmlUrl="http://havlik.blog.idnes.cz/rss/"/>
+				<outline type="rss" text="FFFILM" title="FFFILM" xmlUrl="http://fffilm.fuxoft.cz/feeds/posts/default"/>
+				<outline type="rss" text="I:\truce\notes | |  thou hast no right but to do thy will. Do that, and no other shall say nay." title="I:\truce\notes | |  thou hast no right but to do thy will. Do that, and no other shall say nay." xmlUrl="http://www.nyx.cz/code/atom.php?user=26905;id=8487;passcode=b9e510f4ac764af4753dd4f10f4cbf34"/>
+				<outline type="rss" text="Disparity: Smile, Relax, Attack!" title="Disparity: Smile, Relax, Attack!" xmlUrl="http://disparityblog.blogspot.com/feeds/posts/default"/>
+				<outline type="rss" text="COOLna - zapomenutá krabice" title="COOLna - zapomenutá krabice" xmlUrl="http://svoboda.bloguje.cz/tema-19-zapomenuta-krabice.xml"/>
+				<outline type="rss" text="Marigold.cz" title="Marigold.cz" xmlUrl="http://feeds.feedburner.com/Marigold"/>
+				<outline type="rss" text="Alraune" title="Alraune" xmlUrl="http://www.alraune.cz/cs/rss/default.aspx"/>
+				<outline type="rss" text="FFFFOUND! / EVERYONE" title="FFFFOUND! / EVERYONE" xmlUrl="http://feeds.feedburner.com/ffffound/everyone"/>
+				<outline type="rss" text="U L T R A V I O L E N C I A" title="U L T R A V I O L E N C I A" xmlUrl="http://babypanda.tumblr.com/rss"/>
+				<outline type="rss" text="baby art blog" title="baby art blog" xmlUrl="http://www.pileup.com/babyart/blog/wp-rss2.php"/>
+				<outline type="rss" text="One Girl's Life" title="One Girl's Life" xmlUrl="http://onegirlslife-juleska.blogspot.com/feeds/posts/default"/>
+				<outline type="rss" text="TokyoBunnie" title="TokyoBunnie" xmlUrl="http://feeds.feedburner.com/Tokyobunnie"/>
+				<outline type="rss" text="Synopsi Blog" title="Synopsi Blog" xmlUrl="http://feeds.feedburner.com/synopsi"/>
+				<outline type="rss" text="Blog: Tomáš Petrů" title="Blog: Tomáš Petrů" xmlUrl="http://petru.blog.idnes.cz/rss/"/>
+				<outline type="rss" text="elfův blog" title="elfův blog" xmlUrl="http://elf106.blogspot.com/feeds/posts/default"/>
+				<outline type="rss" text="Deník zahraničních zpravodajů" title="Deník zahraničních zpravodajů" xmlUrl="http://www2.rozhlas.cz/podcast/podcast_porady.php?p_po=2640"/>
+			</outline>
+		</outline>
+	</body>
+</opml>
