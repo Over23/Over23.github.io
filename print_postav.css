@@ -1,0 +1,30 @@
+/*tiskovy styl pro homepage a stranky k ni sdruzene  */
+
+
+body {color : black; font-size: 10pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica;} 
+
+h1{color : black; font-size:18pt; margin: 10px 0 10px 0; font-style: strong;}
+h2{color : black; font-size:16pt; margin: 10px 0 10px 0; font-style: strong;}
+h3{color : black; font-size:12pt; margin: 10px 0 10px 0; font-style: strong}
+h4{color : black; font-size:10pt; margin: 10px 0 10px 0; font-style: strong}  
+
+
+a:link    {color : black; text-decoration:none}
+a:visited {color : black; text-decoration:none}
+a:hover   {color : black; text-decoration:none}
+
+
+.reklama {display:none;}
+.citace {color : black; font-size: 8pt; text-align:right; font-style: italic}
+.odkud  {color : black; font-size:  7pt; text-align:right; font-style: italic}
+.break {page-break-before : always;}
+.menu {display: none;}
+
+.obal {position: relative; top:auto; left: auto; right:auto; bottom:auto; border: none; 
+border-width: 1px;}
+
+.celek {position: relative; top:auto; left: auto; right:auto; bottom:auto; border: none; 
+border-width: 1px;}
+
+.usek {position: relative; top:auto; left: auto; right:auto; bottom:auto;border: none; border-width: 1px;}
+
