@@ -1,0 +1,22 @@
++------------+
+|  R00T L4B  |
+|  lvl.basic |
++------------+
+
+LAB: 
+Download of ISO by wget, create bootable USB stick by dd
+	# wget http://buildlogs.centos.org/rolling/7/isos/x86_64/CentOS-7-x86_64-Minimal.iso
+	# cat /proc/mount
+	insert USB stick
+	# cat /proc/mount # any change? if not, mount USB? how?
+	if needed mount usb
+	# lsusb
+	# dmesg
+	#
+Installing linux on Virtual machine
+
+Disk partitioning
+Installation of OS on virtual machine
+
+Initial configuration
+
