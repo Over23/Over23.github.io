@@ -1,2 +1,2 @@
 #!/bin/bash
-gpg --output unixtest.txt --decrypt unixtest.txt.asc
+gpg --output unixtest.txt --decrypt unixtest*.asc
