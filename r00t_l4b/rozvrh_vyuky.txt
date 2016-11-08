@@ -1,0 +1,103 @@
++------------------------+
+| ROZVRH VYUKY R00T L4BU |
++------------------------+
+
+nezarazene poznamy:
+- rozdil mezi Linuxem a Windows
+- kde jsou v Linuxu drovery? To nemuzu mit nejaky externi?
+- co jsou moduly jadra?
+- proc vadi binarni moduly?
+- proc je vsechno soubor, proc se se vsim da pracovat na standardnim vstupu a vystupu : neajky WOW priklad?
+- doplnil bych automatizace Ansible, Puppet, Salt [predevsim vsak Ansible]
+- pro samotny deploy masin bude asi uzitecny Vagrant, logstash, pozdej mozna docker
+- na cteni logu doporucuju pouzivat lnav
+- jako okynka bych zkusil pouzit i3wm
+- jako terminal Terminator [tyhle zminene jsou vsecko epel, ale at ukazem novackum taky neco cutting edge s prichuti hackeriny]
+- vsecko musi byt moc hezky barevne - viz predchozi zavorka; muzem jim ukazat i nejake hodne poladene GUI, s vsema tema nesmyslnejma CONKY, chytrejma okynkama atd. cilem labu je to, aby kazdy jeden, co jim projde, nejen umel pouzivat Linux na commandline, ale aby mel dojem, ze si okamzite chce nainstalovat Linux na svou domaci masinu a uplne se vykasalt na windows. Proto jsem taky proto, ukazat jim i Ubuntu, ale ne s Unity, ale bud s KDE nebo s i3wm
+
+
+X) uplne kompletni zaklady commanline obecne
+0) na installaci OS zatim kaslu, na to nemam infra a to ani v Okinu, resp R007 L4bu, ale :
+=============
+Disky
+-------
+1) rozdeleni disku (fdisk, make2fs, fstab, mount, proc mount)
+2) NFS
+3) by mile poresit SMB a nejaky ad-hoc mountovani (fleska v terminalu?) - poresime, az budou mit neco Windowzaci
+4) LVM - dnes jen najdu doc, nemam na to infra
+5) povidani o filesystemech a software a hw raidu
+
+User
+------
+1) zaloz usera, shell bash vs fis vs ksh
+2) barvicky a config terminalu
+3) konfig ssh, generovani a pouziti, config
+	3.1) povidani o sifrach z asymetricke rodiny vs symetricke, hlane jak a proc
+	3.2) restart sluzeb (rhel 6 vs 7)
+	3.3) cteni logu (pomoci lnav? ;) - secure, last, w(ho)
+	3.4) jak otestuju, ze mi ssh?
+	3.4.1) Osi vs Tcp/ip model, co jsou porty, jake, proc, kde je na serveru vic configu
+4) scp (varianty ssh rsyncu? Dam se poddat)
+5) install toolu (yum, mozna apt-get, kompilace, git clone <--- ne vic)
+6) user rights
+7) SeLinux
+
+SystemD vs SystemV, grub
+--------------------------
+*** Jeste uplne nevim (oduci ondra, poprve?) ***
+		1) runlevely
+	2) jak pridat kam sluzbu 6 vs 7)
+	3) grub + hacko singl usr + bios
+	... (?) : zkusit migraci 6koveho treba Apache na 7? Sledovat oroblemy? Cist logy?
+
+	Zaklady sitariny - tady by byl dobry Betik nebo Duchar jako prednasejici
+	-———•• –——
+	1) rozdil mezi ip a ipconfig/ivconfig
+	1.1) konfigy sitovek
+	1.2) aliasy sitovek, bonding
+	1.3) ipv4 vs 6
+	1.4) rozdil mezi udp a tcp
+	1.5) znova porty
+	2) routovani
+	3) (telnet), netcat, socat
+	4) trace*, mtr
+	5) osi/tcp
+	5.1) rozdil mezi rtr, hub, switch
+	6) arp
+	7) tcpdump, wireshark
+	8) port fwding/tunely
+	9) zaklady a smysl vpn (OpenVPN v praxi? Jinou?)
+	10) ssh a mosh
+
+	Servery
+	----------
+	0) wget, kompilace, rucni install baliku, cteni logu
+	1) install LAMP
+	1.1) certy, Lets encrypt
+	1.2) garet umi nejake uplne free domeny, tak prirazeni domeny
+	1.3) hello word v html5 a cgi - staci bash
+	2) ownCloud
+	2.1) kolaborativni OpenOffice (bacha devel, RC)
+	3) docuWiki
+	4) dns
+	4.1) dnsec
+	4.2) bind a nahrada, co propaguje 
+	root.cz (??)
+	4.0) teorie - kdo je cim panem, typy zaznamu, problemy, bezpecnost a lidska blbost (prednasi spis Ondra, TP se uci, pac nevi nic)
+	5) mail server
+	6) git server (jakej, viz cz.nic)
+	7) server repozitaru rhel
+
+	Other
+	-------
+	1) vim
+	2) git
+	3) sed, awk
+	4) iconv
+	5) strace, dtrace, ptrace
+	6) luks/dm - je na zacatku certifikace, btw
+	7) SeLinux a ACL - taktez
+	8) cron
+	9) screen
+	10) irssi
+	11) alpine/mutt
