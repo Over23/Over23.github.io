@@ -1,0 +1,72 @@
++------------+
+|  R00T L4B  |
+|  lvl.basic |
++------------+
+
+LAB: 
+Download of ISO by wget, create bootable USB stick by dd
+	# mkdir ~/Linux_ISO; cd ~/Linux_ISO/
+	# wget http://buildlogs.centos.org/rolling/7/isos/x86_64/CentOS-7-x86_64-Minimal.iso
+	# cat /proc/mount
+	insert USB stick
+	# cat /proc/mount # any change? if not, mount USB? how?
+	if needed mount usb
+	# lsusb
+	# dmesg
+	 whatever you have found as target device [e.g. /dev/sda1/ mounted as /USB], it must be dismounted 
+	# cat /proc/mounts | grep USB
+	# umount /USB
+	# dd bs=1m if=~/Linux_ISO/CentOS-7-x86_64-Minimal.iso of=/dev/sda1
+	 by pressing CTRL+T you can see how many bites was already copied to sda1 [question: what is ctrl+t, what kill signal will send simillar?]
+
+Okin terminal config:
+--------------------
+Your name: Lab1
+Computer Name: Okin-Lab1
+Usr:  okin
+Pwd: OkinOstrava
+
+wiifi:
+
+sda1 : NFS : 40MB: 271MB : /rescue windows
+sda2 : NFS : 95GB : 51GB : / windows
+sda3 ---  
+sda4 ---
+sda5 : 25GB : /
+sda6 : 4GB : /boot
+sda7 : 10GB : /var
+sda8 : 14GB : /opt
+sda9 :  10GB : /usr
+sda10 : 10GB : /usr/local
+sda11 : 9.9GB : /srv
+sda12 : 127GB : /home
+sda13 : 10GB : /swap
+
+
+
+
+Installing linux on Virtual machine
+-----------------------------------
+	----> need to lab on our side, just to mount ISO? depend on ESX host
+	----> Garet?
+
+Disk partitioning
+-----------------
+	-----> Manual avail : http://www.tldp.org/HOWTO/Partition/fdisk_partitioning.html
+
+Disk mounting
+-------------`
+
+
+Initial configuration
+---------------------
+
+
+
+NFS (network file system)
+-------------------------
+...
+*-------*
+|Servery|
+*-------*
+LAMP (Linux, Apache, MySQL, PHP)

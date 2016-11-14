@@ -1,0 +1,541 @@
+Příliš žluťoučký kůň úpěl ďábelské ódy (.CZ?!) - Lupa.cz
+
+MAN
+===
+Ponevadž manuálových stránek je velké množství, byly seskupeny do ocíslovaných sekcí. Tento systém je už tak zavedený, že mužete casto videt
+odkazy na mauálové stránky ruzných programu vcetne uvedení císla príslušné sekce. Napríklad jste už možná videli zápis: man(1). To vám ríká, že
+príkaz man je dokumentován v sekci 1. Mužete sami specifikovat císlo sekce pro žádaný príkaz; napríklad mužete napsat man 1 man. Uvedení císla
+sekce, kterou má príkaz man prohledávat je užitecné v prípade výskytu vícero ruzných položek s tím samým jménem v ruzných sekcích.
+
+Tabulka 2−1. Sekce manuálových stránek
+
+Sekce 		Obsah
+Sekce 1 	uživatelské príkazy (pouze úvod)
+Sekce 2 	systémová volání
+Sekce 3 	volání C knihovny
+Sekce 4 	zarízení (napr: hd, sd)
+Sekce 5 	formáty souboru a protokoly (napr: wtmp, /etc/passwd, nfs)
+Sekce 6 	hry (jen úvod)
+Sekce 7 	konvence, balícky maker, atd.
+Sekce 8 	správa systému (jen úvod)
+
+Další užitečné commandy jsou
+apropos(1)
+whatis(1)
+	which
+
+Struktura souborového systému
+=============================
+/bin
+	Zde jsou uloženy ty nejzákladnejší uživatelské programy. Ty predstavují nejminimálnejší sadu programu nutných k tomu, aby uživatel mohl
+systém používat. Jsou tu uloženy takové veci, jako je shell, príkazy souborového systému (ls, cp) a podobne. Adresár /bin se po
+nainstalování systému už zpravidla nemení. Pokud ano, tak obvykle jen z duvodu upgradu softwarových balícku.
+
+/boot
+	Zde jsou soubory, které používá Linux Loader (LILO). I v tomto adresári se toho po nainstalování systému už moc nemení.
+
+/dev
+	Se všemi vecmi v Linuxu se zachází jako se soubory. Takže i s hadrwarovými zarízeními jako napr. sériovými porty, harddisky a scanery.
+Abychom mohli k temto zarízením pristupovat, musí být prítomen speciální soubor nazývaný "device node". Všechy "device nodes" jsou
+uloženy v adresári /dev. Zjistíte, že takhle je to udeláno ve vetšine operacních systému Unixového typu.
+
+/etc
+	V tomto adresári jsou uloženy systémové konfiguracní soubory. Všechno od konfigruacních souboru pro X Window, pres uživatelské
+databáze až po systémové startovací skripty je zde. Systémový administrátor se casem s tímto adresárem hodne sžije.
+
+/home
+	Linux je víceuživatelský operacní systém. Každému uživateli je v systému zrízen úcet a jedinecný adresár pro jeho osobní soubory. Tento
+adresár je nazýván jako uživateluv domovský (home). Adresár /home je používán jako defaultní lokace pro umístení uživatelských
+domovských adresáru.
+
+/lib
+	Zde jsou uloženy systémové knihovny, které jsou vyžadovány pro základní operace. Najdeme tu napríklad knihovnu jazyka C, dynamický
+zavadec, knihovnu ncurses, moduly jádra, atd.
+
+/lost+found
+	Pri startu systému probíhá i kontrola souborových systému na chyby. Jsou−li chyby zjišteny, spustí se program fsck, aby zjistil, zda pujdou
+opravit. Opravené cásti souborového systému jsou zapsány do adresáre /lost+found.
+	
+/mnt
+	Tento adresár je používán jako docasný prípojný bod (mount point) pro práci na pevných discích ci vyjímatelných médiích.
+
+/opt
+	Volitelné (optional) softwarové balícky. Hlavní myšlenkou pro /opt je, aby se každý softwarový balícek instaloval do
+/opt/<software package>, což usnadnuje jeho pozdejší odstranení. Slackware umístuje nejaké veci do /opt (napr. KDE dává do
+/opt/kde). I vy si mužete do /opt svobodne pridávat co chcete.
+
+/proc
+	Toto je velmi zvláštní adresár. Ve skutecnosti není cástí souborového systému, ale je virtuálním souborovým systémem, který poskytuje
+prístup k informacím jádra. Ruzné informace, které vám chce kernel dávat na vedomí, jsou vám dávány prostrednictvím "souboru" v
+adresári /proc. Rovež vy mužete zasílat informace do kernelu prostrednictvím nekterých techto "souboru". Vyzkoušejte si treba cat
+/proc/cpuinfo.
+
+/root
+	Správce systému − administrátor − je systému znám pod jménem "root". Rootuv domovský adresár je v /root místo v /home/root.
+Duvod k tomu je jednoduchý. Co kdyby /home byl na jiném diskovém oddílu než / a nemohl by být pripojen? Root by se mel prirozene
+prihlásit do systému a opravit tento problém. Kdyby byl jeho domovský adresár na poškozeném filesystému, asi by mu to prihlašování
+hodne zkomplikovalo.
+
+/sbin
+	Zde jsou programy, které muže spouštet jen root a nebo které jsou spoušteny v prubehu startu systému. Normální uživatelé nemohou
+spouštet programy z tohoto adresáre.
+
+/tmp
+	Místo pro umistování docasne existujících souboru. Všichni uživatelé mohou z tohoto adresáre císt i zapisovat do nej.
+
+/usr
+	Toto je nejvetší adresár v linuxovém systému. Všechno ostatní musí jít hezky sem: Programy, dokumentace, zdrojový kód kernelu a X
+Window systém. Vetšinu programu budete instalovat do tohoto adresáre.
+
+/var
+	Systémové logovací soubory, cache data a programové zámky jsou ukládány sem. Toto je adresár pro casto se menící data.
+
+	
+
+Vyhledávání souboru
+===================
+Ted už víte, co který adresár obsahuje, ale pri hledání souboru vám to až tak moc nepomuže. Jiste, mužete se probírat jednotlivými adresári, ale jsou tu
+i rychlejší cesty. V Slackwaru máme ctyri základní príkazy pro vyhledávání souboru.
+
+which
+-----
+	Prvním z nich je príkaz which(1). Obvykle je používán k rychlému zjištení umístení nejakého programu. Prohledává jen adresáre uvedené "v ceste"
+PATH a jako výsledek vrací první výskyt hledaného souboru a adresárovou cestu k nemu. Príklad:
+
+	$ which bash
+	/bin/bash
+
+Tady vidíte, že bash je v adresári /bin. Toto je velmi omezený príkaz, protože prohledává jen adresáre v PATH.
+
+whereis
+-------
+Príkaz whereis(1) pracuje podobne jako which, ale navíc muže vyhledávat man stránky a zdrojové soubory. whereis vyhledávání soboru bash by melo
+dát tento výsledek:
+	$ whereis bash
+	bash: /bin/bash /usr/bin/bash /usr/man/man1/bash.1.gz
+
+Tento príkaz nám neríká jen, kde je hledaný program, ale též kde je uložena online dokumetace k nemu. Rovnež tento príkaz je omezený. Co kdybyste
+chteli nalézt nejaký konfiguracní soubor? Na to nemužete použít which ani whereis.
+
+find
+----
+Príkaz find(1) umí hledat cokoliv. Když bychom napríklad chteli prohledat celý systém, abychom zjistili, kde se nachází defaultní xinitrc soubor,
+napíšeme:
+	
+	$ find / −name xinitrc
+	./var/X11R6/lib/xinit/xinitrc
+
+	Práce príkazu find trvá trochu déle, protože musí prohledat celý adresárový strom. Navíc, pokud jej spouštíte jako normální uživatel, obdržíte nejspíš
+spoustu chybových hlášení o odmítnutém prístupu do adresáru, které smí prohlížet jenom root. Ale find nám soubor našel a to je príma. Jenom, kdyby
+to mohlo být trochu rychlejší...
+
+locate
+------
+Príkaz locate(1) prohledává celý souborový systém stejne, jako to delá príkaz find, ale namísto skutecného souborového systému prohledává svoji
+databázi. Databáze je nastavena tak, aby se automaticky updatovala ve 4:40 ráno, abyste meli v systému hodne cerstvý seznam souboru. Databázi pro
+locate mužete updatovat i rucne spuštením príkazu updatedb(1). Príkaz updatedb(1) nemuže spouštet normální uživatel. Tady je príklad príkazu
+
+locate v akci:
+	$ locate xinitrc
+	# we don't have to go to the root
+	# nemusíme být prihlášeni jako root
+	/var/X11R6/lib/xinit/xinitrc
+	var/X11R6/lib/xinit/xinitrc.fvwm2
+	var/X11R6/lib/xinit/xinitrc.openwin
+	/var/X11R6/lib/xinit/xinitrc.twm
+
+Dostali jsme víc, než jsme ocekávali, a ješte k tomu rychle. S temito príkazy byste meli být schopni nalézt cokoli co chcete.
+
+INIT vs SYSTEMD
+===============
+<<<< TO BE WRITTEN >>>>
+
+System V Compatibility
+System V init compatibility byla zavedena v Slackware 7.0. Mnoho jiných linuxových distribucí používá tento styl místo BSD stylu. V podstate je v
+System V každému runlevelu pridelen podadresár, kde má umísteny svoje init skripty, zatímco BSD styl dává každému runlevelu po jednom skriptu.
+Skript rc.sysvinit vyhledává inicializacní skripty pro System V, které máte v /etc/rc.d a spouští je, odpovídá−li to danému runlevelu. To je
+užitecné pro nekteré komercní softwarové balícky, které instalují inicializacní skripty jak pro System V, tak i pro BSD styl.
+
+
+	RUNLEVELS
+	=========
+<<<< TO BE WRITTEN >>>>
+- switch to runlevel 1
+- gain root
+
+Konfigurace sítě
+================
+Konfigurace GRUBu
+=================
+
+Root vs normalni uzivatel
+==========================
+<<<< TO BE WRITTEN >>>>
+
+Pokud se rozhodnete stát rootem v situaci kdy jste prihlášeni jako normální uživatel, mužete použít príkaz su(1). Ten se vás zeptá na
+rootovo heslo a mužete pracovat jako root dokud se zase neodhlásíte príkazem exit nebo logout (pp: nebo ctrl+d). Príkz su, nabízí možnost stát se
+jakýmkoliv jiným uživatelem, pokud znáte jeho heslo. Napríklad su franta vás prihlásí jako uživatele "franta".
+
+Práva souborů a adresářů
+=========================
+- jaký je rozdíl mezi právy souborů a adresářů
+- jak se mění práva oktetem, jak se mění písmeny?
+- groupy, useri, rozšířená práva
+
+<<<< TO BE WRITTEN >>>>
+
+Souborový systém ukládá informace o vlastnictví pro každý soubor a adresár v systému. Tj. který uživatel a skupina vlastní ten který soubor. Nejsnazší
+zpusob jak zobrazit tyto informace je použít príkaz ls:
+
+	$ ls −l /usr/bin/wc
+	−rwxr−xr−x 1 root bin 7368 Jul 30 1999 /usr/bin/wc
+
+	Zajímá nás tretí a ctvrtý sloupec. Ty obsahují jméno uživatele a skupiny, kterí vlastní tento soubor. Vidíme, že tento soubor vlastní uživatel "root" a skupina "bin".
+
+	Vlastníky mužeme menit príkazy chown(1) (znací "change owner" − zmen vlastníka) a chgrp(1) (značí "change group" − zmen skupinu). Abychom
+zmenili vlastníka souboru na "daemon", použijeme chown:
+
+	# chown daemon /usr/bin/wc
+
+Ke zmene skupiny vlastníku na "root" použijeme chgrp:
+	
+	# chgrp root /usr/bin/wc
+
+Pomocí chown mužeme zmenit i vlastníka i skupinu:
+
+	# chown daemon.root /usr/bin/wc
+
+Vlastnictví souboru je velmi duležitou cástí práce s linuxovým systémem, a to i když jste jen uživatelem. Obcas potrebujete upresnit vlastnictví souboru a nódu zarízení.
+
+
+Práce se soubory
+================
+ls
+cd
+more
+less
+cat
+touch
+echo
+mkdir
+ln
+cp
+mv
+rm
+rmdir
+
+Správa procesů
+==============
+Backgrounding
+Foregrounding
+ps
+kill
+top and htop
+
+Každý bežící program se nazývá proces. Tyto procesy zahrnují vše od takových vecí jako je X Window Systém až po systémové programy (démony),
+které se spouštejí behem startu pocítace. Každý proces beží jako nejaký konkrétní uživatel. Procesy spouštené behem bootu (zavádení systému)
+obvykle beží jako root nebo nobody. Procesy, které spouštíte vy, pobeží jako vy. Procesy spuštné jiným uživatelem pobeží jako tento uživatel.
+Máte vládu nad procesy, které jste sputili vy. Navíc root má vládu úplne nad všemy procesy v systému, vcetne tech, které spustili jiní uživatelé. Procesy
+mohou být ovládány a monitorovány pomocí nekolika programu a rovnež nekolika shellovými prikazy.
+
+Backgrounding
+-------------
+Programy spouštené z príkazové rádky nastartují na popredí (foreground). To vám umožnuje videt veškerý výstup techto programu a komunikovat s
+nimi. Nicméne existují prípady, kdy byste dali prednost spuštení programu bez toho, aby zabral terminál. Tomu ríkáme spouštení programu na pozadí
+(background). Je nekolik zpusobu, jak toho dosáhnout.
+První zpusob jak dostat proces na pozadí je pridat znak ampersand na príkazovou rádku, kterou spouštíte program. Napríklad predpokládejme, že byste
+chteli použít príkazo−rádkový prehrávac mp3 mpg321, aby prehrával adresár plný mp−trojek, ale potrebovali byste na tom samém terminálu delat neco
+jiného. Následující príkazový rádek spustí mpg321 na pozadí:
+	
+	$ mpg321 *.mp3 &
+
+	Program se rozbehne jako obvykle, ale vrátí se vám prompt na monitor.
+Jiný zpusob jak dostat proces na pozadí je udelat to, když už program beží. Nejprve spustte nejaký program. Když beží, stisknete control+z. To ten
+proces pozastaví. Okamžite zastaví jeho beh, ale muže být kdykoliv znovu rozbehnut. Jakmile je proces pozastaven, vrátí se vám na monitor prompt.
+Pak mužete rozbehnout pozastavený proces na pozadí tak, že napíšete:
+	
+	$ bg
+
+Nyní beží predtím pozastavený proces na pozadí.
+
+<<<< fOREGROUNDING - TO BE WRITTEN >>>>
+
+ps
+----------
+Takže ted už víte, jak prepínat do pozadí a zpet vícero procesu, které jste si spustili z príkazové rádky. A rovnež víte, že tu porád beží celá rada
+procesu. Takže, jak si je všechny zjistit? K tomu použijete príkaz ps(1). Tento príkaz má mnoho voleb. My tady popíšeme jen ty nejduležitejší z nich.
+Jejich úplný seznam najdete v manuálové stránce príkazu ps. Manuálové stránky jsou podrobne popsány v sekci man ve 2. kapitole.
+Pouhým zapsáním ps získáte seznam programu, které beží na vašem terminálu. Casto to bývá dost strucný seznam:
+	$ ps
+	PID TTY TIME CMD
+	7923 ttyp0 00:00:00 bash
+	8059 ttyp0 00:00:00 ps
+
+	Ackoliv se zdá, že to není mnoho procesu, ta informace je velmi typická. Dostanete ty samé sloupce bez ohledu na to, kolik proceu beží. Takže, co
+znamenají?
+
+PID je ID procesu. Každý bežící proces má unikátní identifikátor.
+
+Sloupec TTY ríká, na kterém terminálu poces beží. Zadáním prostého ps získáme výpis pouze tech programu, které beží na aktuálním terminálu. Takže
+všechy údaje v tomto sloupci budou stejné. Jak vidíte, oba uvedené procesy beží na ttyp0.
+
+Sloupec TIME ríká, kolik CPU casu tento proces spotreboval. To se liší od skutecné doby, po kterou daný proces beží. Pripomenme si, že Linux je
+multitaskingový (víceúlohový) operacní systém. V jednom okamžiku tu beží více pocesu najednou a každý tento proces si vezme malou cást casu
+procesoru. Takže sloupec TIME by mel pro každý proces ukazovat mnohem méne casu, než jak dlouho už skutecne beží. Pokud tu uvidíte více než
+nekolik minut, muže to znamenat, že neco není v porádku.
+
+	$ ps ax
+	$ ps ef
+
+Vetšina tech procesu je na vetšine systému spouštena v case bootování.
+
+Jak vidíte, pomocí −ax se zobrazily u jmen procesu i volby, s
+nimiž byly ony procesy spoušteny. Také to pridalo další sloupec a nejaký zajímavý výstup.
+První ceho si všimnete je, že vetšina tech procesu má uvedeno, že beží na tty ?. To jsou procesy, které byly spoušteny z terminálu, který už není aktivní.
+Proto už nejsou spojeny s žádným konktrétním terminálem
+
+Dále je tu nový sloupec STAT. Ten ukazuj stav (status) procesu. S znamená "spící": Proces ceká na neco, co se má stát. Z znamená "zombie" (nemrtvý)
+proces. To je takový proces, jehož rodič zemřel a zanechal po sobě proces−decko (child process). To není dobrá vec.
+Chcete−li videt ješte více informací o bežících procesech, vyzkoušejte tohle:
+
+$ ps aux
+
+To už je docela dost informací. Máme tu nove informaci o tom, který uživatel proces spustil, kolik systémových zdroju proces využívá (%CPU,
+%MEM, VSZ a RSS), a kdy byl proces spušten. To už je obvykle dostatek informací, které mohou být systémovému administrátorovi k užitku. To zase
+prináší další potíž: Informace ted vybíhají za pravý okraj obrazovky, takže je nevidíte všechny. Spravíme to použitím volby −w.
+
+# tree
+	$ ps axjf    
+
+# jak dlouho beží proces
+	$ ps -eo pid,etime | grep PID  
+
+
+kill
+----
+Obcas se stane, že se nejaký proces zacne divne chovat, a vy jej potrebujete odstranit. Program, sloužící k takovéto administraci se nazývá kill(1)
+(zabít) a k ovládání procesu muže být použit nekolika zpusoby. Nejobvyklejším použitím príkazu kill je zabití procesu. Budete to potrebovat, když se
+nejaký proces zabehne a používá príliš mnoho systémových zdroju, nebo když vás nejaký proces proste jenom štve.
+Abyste mohli proces zabít, budete potrebovat znát bud jeho PID, nebo jeho jméno. Pro získání PID použijte príkaz ps, který jsme probrali v predchozí
+sekci.
+
+$ kill
+$ killall
+
+Obycejný kill
+posílá procesum signál SIGTERM (terminate − ukoncit). kill −9 posílá procesum signál SIGKILL (kill − zabít). K dispozici máte celou radu ruzných
+signálu. Jejich seznam mužete získat napsáním:
+
+$ kill −l
+1) SIGHUP 		2) SIGINT 		3) SIGQUIT 		4) SIGILL
+5) SIGTRAP 		6) SIGABRT 		7) SIGBUS 		8) SIGFPE
+9) SIGKILL 		10) SIGUSR1 	11) SIGSEGV 	12) SIGUSR2
+13) SIGPIPE 	14) SIGALRM 	15) SIGTERM 	17) SIGCHLD
+18) SIGCONT 	19) SIGSTOP 	20) SIGTSTP 	21) SIGTTIN
+22) SIGTTOU 	23) SIGURG 		24) SIGXCPU 	25) SIGXFSZ
+26) SIGVTALRM 	27) SIGPROF 	28) SIGWINCH 	29) SIGIO
+30) SIGPWR
+
+Další možností jak využít príkaz kill je použít ho k restartování nejakého procesu. Zasláním signálu SIGHUP primejete vetšinu procesu, aby
+znovunačetly své konfigurašní soubory. To je obzvlášte užitecné, potřebujete−li nějaký systémový proces přimět k znovunačtení konfiguračního
+souboru poté, co jste jej upravili.
+
+ top
+----
+
+<< to be writtten >>
+
+
+Pro zvedavé
+
+ftp
+----
+Príkaz Úcel
+ls Vypíše názvy souboru v aktuálním adresári vzdáleného pocítace
+cd <adresar> Zmena adresáre
+get <jmeno_souboru> Stáhne soubor
+put <jmeno_souboru> Odešle soubor
+hash Prepíná (ne)vypisování "#" indikátoru za každý prenesený buffer
+prom Prepíná interaktivní režim pro stahování
+mget <maska> Stáhne jeden nebo více souboru. Pri zadávání jmen mužete používat
+"wildcards" (* a ?)
+mput <maska> Odešle jeden nebo více souboru. Pri zadávání jmen mužete používat
+"wildcards" (* a ?)
+quit Odhlášení od FTP serveru
+
+mailx
+======
+mailx(1) je príkazorádkove ovládaný mailový klient. Je velice prostý a nenabízí prakticky nic ve stylu uživatelských rozhraní. Nicméne se hodí ve chvílích, kdy potrebujete rychle neco mailnout, napsat skript na rozesílání vetšího objemu zpráv, nebo neco takového.
+Výchozí podoba príkazové rádky je:
+
+	$ mailx −s <subject> <to−addr>
+
+mailx cte telo zprávy ze standardního vstupu. Takže mužete text proste zacít psát a až budete hotoví, stisknete ctrl+D. Rovnež mužete predat text
+mailx−u príkazem cat.
+
+Následuje príklad zaslání souboru se zdrojákem programu nejaké další osobe.
+
+	$ cat randomfunc.c | mailx −s "Here's that function" asdf@example.net
+
+Manuálová stránka vysvetluje více, co mailx dokáže, takže asi budete chtít nejdrív kouknout tam, než ho zacnete používat.
+
+
+user rights 
+===========
+4 - read (r)
+2 - write (w)
+1 - execute (x)
+
+compression
+============
+why tar?
+--------
+
+Are there features of the tar file format that other file formats, such as .7z and .zip do not have?
+Since tar is such an old file format, and newer file formats exist today, why is tar (whether encapsulated in gzip, bzip2 or even the new xz) still so widely used today on GNU/Linux, Android, BSD, and other such UNIX operating systems, for file transfers, program source and binary downloads, and sometimes even as a package manager format?
+
+tar stores UNIX permissions within its file metadata, and is very well known and tested for successfully packing up a directory with all kinds of different permissions, symbolic links, etc. There’s more than a few instances where one might need to glob a bunch of files into a single file or stream, but not necessarily compress it (although compression is useful and often used).
+
+Many tools are distributed in source or binary form as .tar.gz or .tar.bz2 because it is a “lowest common denominator” file format: much like most Windows users have access to .zip or .rar decompressors, most Linux installations, even the most basic, will have access to at least tar and gunzip, no matter how old or pared down. Even Android firmwares have access to these tools.
+
+New projects targeting audiences running modern distributions may very well distribute in a more modern format, such as .tar.xz (using the Xz (LZMA) compression format, which compresses better than gzip or bzip2), or .7z, which is similar to the Zip or Rar file formats in that it both compresses and specifies a layout for encapsulating multiple files into a single file.
+
+You don’t see .7z used more often for the same reason that music isn’t sold from online download stores in brand new formats like Opus, or video in WebM. Compatibility with people running ancient or very basic systems.
+
+
+practical commands:
+-------------------
+
+tar cf file.tar files - tar files into file.tar
+tar xf file.tar - untar
+tar tf file.tar - show contents of file
+
+c = create archive
+t = table of contents
+x = extract
+f = spefify filename
+z = use zip/unzip
+j = bzi2 compression
+k = do not overwrite
+T = files from file
+w = ask for confirmation
+v = verbose
+
+gzip file - compres file and add .gz
+gzip -d file.gz - decompress file
+
+
+wget
+====
+wget is a free utility for non-interactive download of files from the web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
+
+wget is non-interactive, meaning that it can work in the background, while the user is not logged on. This allows you to start a retrieval and disconnect from the system, letting wget finish the work. By contrast, most web browsers require constant user interaction, which make transferring a lot of data difficult.
+
+wget can follow links in HTML and XHTML pages and create local versions of remote websites, fully recreating the directory structure of the original site. This is sometimes called "recursive downloading.'' While doing that, wget respects the Robot Exclusion Standard (robots.txt). wget can be instructed to convert the links in downloaded HTML files to the local files for offline viewing.
+
+wget has been designed for robustness over slow or unstable network connections; if a download fails due to a network problem, it will keep retrying until the whole file has been retrieved. If the server supports regetting, it will instruct the server to continue the download from where it left off.
+
+	$ wget http://website.com/files/file.zip
+
+-c = continue download after disconection
+-r, --recursive  =	Turn on recursive retrieving.
+-l depth, --level=depth = Specify recursion maximum depth level depth. The default maximum depth is 5.
+-b = background download
+
+When invoked with this option, wget will behave as a web spider, which means that it will not download the pages, just check that they are there. For example, you can use wget to check your bookmarks:
+
+	$ wget --spider --force-html -i bookmarks.html
+
+And many many more, important is possibility to limit number of bites per second, number of files per second [time], recursive download; you can specifi password and username for ftp and http
+
+	$ wget --mirror -p --convert-links -P ./example-mirror http://www.example.org
+
+Download a complete mirror of the website www.example.org to the folder ./example-mirror for local viewing.
+
+Good manual could be found here: http://www.computerhope.com/unix/wget.htm
+
+curl
+====
+curl is a tool to transfer data from or to a server, using one of the supported protocols (HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE). The command is designed to work without user interaction.
+
+Difference between wget and curl?
+------
+curl offers proxy support, user authentication, FTP uploading, HTTP posting, SSL connections, cookies, file transfer resume, Metalink, and many other features, listed below.
+
+You can specify multiple URLs or parts of URLs by writing part sets within braces as in:
+
+http://site.{one,two,three}.com
+
+or you can get sequences of alphanumeric series by using [] as in:
+
+ftp://ftp.numericals.com/file[1-100].txt
+ftp://ftp.numericals.com/file[001-100].txt
+ftp://ftp.letters.com/file[a-z].txt
+
+Nested sequences are not supported, but you can use several ones next to each other:
+
+http://any.org/archive[1996-1999]/vol[1-4]/part{a,b,c}.html
+
+You can specify any amount of URLs on the command line. They will be fetched in a sequential manner in the specified order.
+
+You can specify a step counter for the ranges to get every Nth number or letter:
+
+http://www.numericals.com/file[1-100:10].txt
+http://www.letters.com/file[a-z:2].txt
+
+Useful examples:
+----------------
+	### this will give you external IP of your server [parsed from web page]
+	$ curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'  
+
+	### production if test.com is running
+	$ curl -I -L -k https://test.com
+
+-I = only headers
+-k, --insecure = ignore unsecure certificate [as in Firefox "add exeption"]
+-L =  follow when page was moved [typically when http -> https]
+-s = silent mode [usefull in scripts]
+
+MUCH MUCH more in man curl and http://www.computerhope.com/unix/curl.htm
+
+
+mtr, trace, ping, netstat
+=========================
+
+
+vi and vim [complete basics]
+===========
+Some basic should be give ANY user and Amdin of Linux/Unix, because vi or vim is ubiquous text editor.
+Ther is kind of famous joke:
+
+"I've been using Vim for about 2 years now, mostly because I can't figure out how to exit it."
+
+So there are two basic modes of Vi resp Vim: comman one, you can get there by pressing <esc>; that is mode where you can open files [:e], exit vi [:q]; save file [:w] and copy - paste.
+Note that commands are starting with ":".
+
+Nice is "w" and "b" [next and previous word].
+
+To delete line use "dd", to delete character use d and arrow or movemet key.
+
+To swhitch to edit mode pres "i" for insert or "a" for append.
+
+Since copy and paste is important lets show: v or V is selecting lines [so called visual mode, and usually upperscore is doing something till the end of sentence/line/paragraph]; when selected pres "y" as yank - which does mean "copy to clipboard" and than "p" is paste from clipboard.
+
+To move around Vim in <esc> mode you can use 
+h,j,k,l - it behaves like arrow, but its kind of unntuitive... you can train your vim-fu here: http://vim-adventures.com/
+Nice feature is to combine hjkl with numbers, os 10k will jump 10 lines up and same way you can usually combine any command [10dd will do delete of 10 lines].
+
+One interesting command is ctrl+w and than you can use commands from <esc> mode.
+
+To open file use :e path but you can directly open :v
+
+
+
+Notes:
+- systemd
+- yum
+- date
+- Xkeyboard
+- https://www.certdepot.net/rhel7-rhcsa-sample-exam-1/
+
+

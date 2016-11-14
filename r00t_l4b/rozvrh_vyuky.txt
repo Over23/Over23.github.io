@@ -2,6 +2,8 @@
 | ROZVRH VYUKY R00T L4BU |
 +------------------------+
 
+https://github.com/Over23/Over23.github.io/tree/master/r00t_l4b
+
 nezarazene poznamy:
 - rozdil mezi Linuxem a Windows
 - kde jsou v Linuxu drovery? To nemuzu mit nejaky externi?
@@ -15,6 +17,11 @@ nezarazene poznamy:
 - jako terminal Terminator [tyhle zminene jsou vsecko epel, ale at ukazem novackum taky neco cutting edge s prichuti hackeriny]
 - vsecko musi byt moc hezky barevne - viz predchozi zavorka; muzem jim ukazat i nejake hodne poladene GUI, s vsema tema nesmyslnejma CONKY, chytrejma okynkama atd. cilem labu je to, aby kazdy jeden, co jim projde, nejen umel pouzivat Linux na commandline, ale aby mel dojem, ze si okamzite chce nainstalovat Linux na svou domaci masinu a uplne se vykasalt na windows. Proto jsem taky proto, ukazat jim i Ubuntu, ale ne s Unity, ale bud s KDE nebo s i3wm
 
+https://www.atlassian.com/git/tutorials/comparing-workflows
+ LINK TITLE: Git Workflows and Tutorials | Atlassian Git Tutorial
+
+ 17:27:48 <@embargo> dron23: https://tools.ietf.org/html/rfc4648
+ 17:27:50 <@Secretary> embargo: LINK TITLE: RFC 4648 - The Base16, Base32, and Base64 Data Encodings
 
 X) uplne kompletni zaklady commanline obecne
 0) na installaci OS zatim kaslu, na to nemam infra a to ani v Okinu, resp R007 L4bu, ale :
@@ -29,7 +36,7 @@ Disky
 
 User
 ------
-1) zaloz usera, shell bash vs fis vs ksh
+1) zaloz usera, shell bash vs fish vs ksh
 2) barvicky a config terminalu
 3) konfig ssh, generovani a pouziti, config
 	3.1) povidani o sifrach z asymetricke rodiny vs symetricke, hlane jak a proc
