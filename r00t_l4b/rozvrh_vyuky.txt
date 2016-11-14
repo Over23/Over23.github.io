@@ -24,7 +24,7 @@ https://www.atlassian.com/git/tutorials/comparing-workflows
  17:27:50 <@Secretary> embargo: LINK TITLE: RFC 4648 - The Base16, Base32, and Base64 Data Encodings
 
 X) uplne kompletni zaklady commanline obecne
-0) na installaci OS zatim kaslu, na to nemam infra a to ani v Okinu, resp R007 L4bu, ale :
+0) na installaci OS zatim kaslu, na to nemam infra a to ani v Okinu, resp R00T L4bu, ale :
 =============
 Disky
 -------
